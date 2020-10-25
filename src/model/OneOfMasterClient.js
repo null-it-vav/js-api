@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import Service from './Service';
 
 /**
- * The InlineResponse2001 model module.
- * @module model/InlineResponse2001
+ * The OneOfMasterClient model module.
+ * @module model/OneOfMasterClient
  * @version 1.2.1
  */
-class InlineResponse2001 {
+class OneOfMasterClient {
     /**
-     * Constructs a new <code>InlineResponse2001</code>.
-     * @alias module:model/InlineResponse2001
+     * Constructs a new <code>OneOfMasterClient</code>.
+     * @alias module:model/OneOfMasterClient
      */
     constructor() { 
         
-        InlineResponse2001.initialize(this);
+        OneOfMasterClient.initialize(this);
     }
 
     /**
@@ -38,18 +37,18 @@ class InlineResponse2001 {
     }
 
     /**
-     * Constructs a <code>InlineResponse2001</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>OneOfMasterClient</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineResponse2001} obj Optional instance to populate.
-     * @return {module:model/InlineResponse2001} The populated <code>InlineResponse2001</code> instance.
+     * @param {module:model/OneOfMasterClient} obj Optional instance to populate.
+     * @return {module:model/OneOfMasterClient} The populated <code>OneOfMasterClient</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineResponse2001();
+            obj = obj || new OneOfMasterClient();
 
             if (data.hasOwnProperty('response')) {
-                obj['response'] = ApiClient.convertToType(data['response'], [Service]);
+                obj['response'] = ApiClient.convertToType(data['response'], OneOfMasterClient);
             }
         }
         return obj;
@@ -59,14 +58,14 @@ class InlineResponse2001 {
 }
 
 /**
- * @member {Array.<module:model/Service>} response
+ * @member {module:model/OneOfMasterClient} response
  */
-InlineResponse2001.prototype['response'] = undefined;
+OneOfMasterClient.prototype['response'] = undefined;
 
 
 
 
 
 
-export default InlineResponse2001;
+export default OneOfMasterClient;
 

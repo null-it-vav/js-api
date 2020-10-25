@@ -14,7 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Bearer from '../model/Bearer';
-import InlineResponse200 from '../model/InlineResponse200';
+import OneOfMasterClient from '../model/OneOfMasterClient';
 
 /**
 * OAuth service.
@@ -123,7 +123,7 @@ export default class OAuthApi {
      * Callback function to receive the result of the oauthMeGet operation.
      * @callback module:api/OAuthApi~oauthMeGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {module:model/OneOfMasterClient} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -131,7 +131,7 @@ export default class OAuthApi {
      * 
      * 
      * @param {module:api/OAuthApi~oauthMeGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * data is of type: {@link module:model/OneOfMasterClient}
      */
     oauthMeGet(callback) {
       let postBody = null;
@@ -148,7 +148,7 @@ export default class OAuthApi {
       let authNames = ['bearerAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse200;
+      let returnType = OneOfMasterClient;
       return this.apiClient.callApi(
         '/oauth/me', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

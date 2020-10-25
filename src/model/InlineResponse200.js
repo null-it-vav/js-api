@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import OneOfMasterClient from './OneOfMasterClient';
+import Promotion from './Promotion';
 
 /**
  * The InlineResponse200 model module.
@@ -49,7 +49,7 @@ class InlineResponse200 {
             obj = obj || new InlineResponse200();
 
             if (data.hasOwnProperty('response')) {
-                obj['response'] = ApiClient.convertToType(data['response'], OneOfMasterClient);
+                obj['response'] = ApiClient.convertToType(data['response'], [Promotion]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class InlineResponse200 {
 }
 
 /**
- * @member {module:model/OneOfMasterClient} response
+ * @member {Array.<module:model/Promotion>} response
  */
 InlineResponse200.prototype['response'] = undefined;
 

@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2003 from '../model/InlineResponse2003';
+import InlineResponse2002 from '../model/InlineResponse2002';
 import WorkingDiapason from '../model/WorkingDiapason';
 
 /**
@@ -39,7 +39,7 @@ export default class WorkingDiapasonApi {
      * Callback function to receive the result of the clientClientMasterMasterWorkingDiapasonGet operation.
      * @callback module:api/WorkingDiapasonApi~clientClientMasterMasterWorkingDiapasonGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2003} data The data returned by the service call.
+     * @param {module:model/InlineResponse2002} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -54,7 +54,7 @@ export default class WorkingDiapasonApi {
      * @param {String} opts.dateStart Начало периода
      * @param {String} opts.dateEnd Конец периода
      * @param {module:api/WorkingDiapasonApi~clientClientMasterMasterWorkingDiapasonGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2003}
+     * data is of type: {@link module:model/InlineResponse2002}
      */
     clientClientMasterMasterWorkingDiapasonGet(masterID, clientID, opts, callback) {
       opts = opts || {};
@@ -86,7 +86,7 @@ export default class WorkingDiapasonApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2003;
+      let returnType = InlineResponse2002;
       return this.apiClient.callApi(
         '/client/{client}/master/{master}/working-diapason', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2001 from '../model/InlineResponse2001';
+import InlineResponse200 from '../model/InlineResponse200';
 import Promotion from '../model/Promotion';
 
 /**
@@ -39,7 +39,7 @@ export default class PromotionApi {
      * Callback function to receive the result of the clientClientPromotionGet operation.
      * @callback module:api/PromotionApi~clientClientPromotionGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -51,7 +51,7 @@ export default class PromotionApi {
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
      * @param {module:api/PromotionApi~clientClientPromotionGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/InlineResponse200}
      */
     clientClientPromotionGet(clientID, opts, callback) {
       opts = opts || {};
@@ -76,7 +76,7 @@ export default class PromotionApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/client/{client}/promotion', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

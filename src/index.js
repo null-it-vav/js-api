@@ -19,8 +19,8 @@ import InlineObject from './model/InlineObject';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import InlineResponse2002 from './model/InlineResponse2002';
-import InlineResponse2003 from './model/InlineResponse2003';
 import Master from './model/Master';
+import OneOfMasterClient from './model/OneOfMasterClient';
 import Order from './model/Order';
 import Promotion from './model/Promotion';
 import Service from './model/Service';
@@ -110,16 +110,16 @@ export {
     InlineResponse2002,
 
     /**
-     * The InlineResponse2003 model constructor.
-     * @property {module:model/InlineResponse2003}
-     */
-    InlineResponse2003,
-
-    /**
      * The Master model constructor.
      * @property {module:model/Master}
      */
     Master,
+
+    /**
+     * The OneOfMasterClient model constructor.
+     * @property {module:model/OneOfMasterClient}
+     */
+    OneOfMasterClient,
 
     /**
      * The Order model constructor.

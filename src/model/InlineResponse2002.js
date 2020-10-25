@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Service from './Service';
+import WorkingDiapason from './WorkingDiapason';
 
 /**
  * The InlineResponse2002 model module.
@@ -49,7 +49,7 @@ class InlineResponse2002 {
             obj = obj || new InlineResponse2002();
 
             if (data.hasOwnProperty('response')) {
-                obj['response'] = ApiClient.convertToType(data['response'], [Service]);
+                obj['response'] = ApiClient.convertToType(data['response'], [WorkingDiapason]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class InlineResponse2002 {
 }
 
 /**
- * @member {Array.<module:model/Service>} response
+ * @member {Array.<module:model/WorkingDiapason>} response
  */
 InlineResponse2002.prototype['response'] = undefined;
 
