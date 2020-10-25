@@ -115,7 +115,7 @@ No authorization required
 
 ## clientClientMasterMasterGet
 
-> Object clientClientMasterMasterGet(clientID, master)
+> Object clientClientMasterMasterGet(clientID, masterID)
 
 Получение информации по конкретному мастеру
 
@@ -128,8 +128,8 @@ import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
 let clientID = 1; // Number | ID салона
-let master = 56; // Number | Id мастера
-apiInstance.clientClientMasterMasterGet(clientID, master, (error, data, response) => {
+let masterID = 56; // Number | Id мастера
+apiInstance.clientClientMasterMasterGet(clientID, masterID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -144,7 +144,7 @@ apiInstance.clientClientMasterMasterGet(clientID, master, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **master** | **Number**| Id мастера | 
+ **masterID** | **Number**| Id мастера | 
 
 ### Return type
 
@@ -162,7 +162,7 @@ No authorization required
 
 ## clientClientMasterMasterWorkingDiapasonGet
 
-> InlineResponse2003 clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts)
+> InlineResponse2003 clientClientMasterMasterWorkingDiapasonGet(masterID, clientID, opts)
 
 Получение расписания мастера
 
@@ -174,7 +174,7 @@ Store *WorkingDiapason* entity
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
-let master = 56; // Number | Id мастера
+let masterID = 56; // Number | Id мастера
 let clientID = 1; // Number | ID салона
 let opts = {
   'limit': 25, // Number | Как много элементов должно возвращаться за один запрос
@@ -182,7 +182,7 @@ let opts = {
   'dateStart': "dateStart_example", // String | Начало периода
   'dateEnd': "dateEnd_example" // String | Конец периода
 };
-apiInstance.clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts, (error, data, response) => {
+apiInstance.clientClientMasterMasterWorkingDiapasonGet(masterID, clientID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -196,7 +196,7 @@ apiInstance.clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **master** | **Number**| Id мастера | 
+ **masterID** | **Number**| Id мастера | 
  **clientID** | **Number**| ID салона | [default to 1]
  **limit** | **Number**| Как много элементов должно возвращаться за один запрос | [optional] [default to 25]
  **offset** | **Number**| Смещение от первого | [optional] [default to 0]
@@ -219,7 +219,7 @@ No authorization required
 
 ## clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet
 
-> Object clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason)
+> Object clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(masterID, clientID, workingDiapasonID)
 
 Получение деталей временного отрезка
 
@@ -231,10 +231,10 @@ No authorization required
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
-let master = 56; // Number | Id мастера
+let masterID = 56; // Number | Id мастера
 let clientID = 1; // Number | ID салона
-let workingDiapason = 1; // Number | Id requested WorkingDiapason
-apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason, (error, data, response) => {
+let workingDiapasonID = 1; // Number | Id requested WorkingDiapason
+apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(masterID, clientID, workingDiapasonID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -248,9 +248,9 @@ apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, cl
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **master** | **Number**| Id мастера | 
+ **masterID** | **Number**| Id мастера | 
  **clientID** | **Number**| ID салона | [default to 1]
- **workingDiapason** | **Number**| Id requested WorkingDiapason | 
+ **workingDiapasonID** | **Number**| Id requested WorkingDiapason | 
 
 ### Return type
 

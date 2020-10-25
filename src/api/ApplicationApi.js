@@ -141,24 +141,24 @@ export default class ApplicationApi {
      * Получение информации по конкретному мастеру
      * 
      * @param {Number} clientID ID салона
-     * @param {Number} master Id мастера
+     * @param {Number} masterID Id мастера
      * @param {module:api/ApplicationApi~clientClientMasterMasterGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientMasterMasterGet(clientID, master, callback) {
+    clientClientMasterMasterGet(clientID, masterID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterGet");
       }
-      // verify the required parameter 'master' is set
-      if (master === undefined || master === null) {
-        throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterGet");
+      // verify the required parameter 'masterID' is set
+      if (masterID === undefined || masterID === null) {
+        throw new Error("Missing the required parameter 'masterID' when calling clientClientMasterMasterGet");
       }
 
       let pathParams = {
         'clientID': clientID,
-        'master': master
+        'masterID': masterID
       };
       let queryParams = {
       };
@@ -189,7 +189,7 @@ export default class ApplicationApi {
     /**
      * Получение расписания мастера
      * Store *WorkingDiapason* entity
-     * @param {Number} master Id мастера
+     * @param {Number} masterID Id мастера
      * @param {Number} clientID ID салона
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
@@ -199,12 +199,12 @@ export default class ApplicationApi {
      * @param {module:api/ApplicationApi~clientClientMasterMasterWorkingDiapasonGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2003}
      */
-    clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts, callback) {
+    clientClientMasterMasterWorkingDiapasonGet(masterID, clientID, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'master' is set
-      if (master === undefined || master === null) {
-        throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterWorkingDiapasonGet");
+      // verify the required parameter 'masterID' is set
+      if (masterID === undefined || masterID === null) {
+        throw new Error("Missing the required parameter 'masterID' when calling clientClientMasterMasterWorkingDiapasonGet");
       }
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
@@ -212,7 +212,7 @@ export default class ApplicationApi {
       }
 
       let pathParams = {
-        'master': master,
+        'masterID': masterID,
         'clientID': clientID
       };
       let queryParams = {
@@ -248,31 +248,31 @@ export default class ApplicationApi {
     /**
      * Получение деталей временного отрезка
      * 
-     * @param {Number} master Id мастера
+     * @param {Number} masterID Id мастера
      * @param {Number} clientID ID салона
-     * @param {Number} workingDiapason Id requested WorkingDiapason
+     * @param {Number} workingDiapasonID Id requested WorkingDiapason
      * @param {module:api/ApplicationApi~clientClientMasterMasterWorkingDiapasonWorkingDiapasonGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason, callback) {
+    clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(masterID, clientID, workingDiapasonID, callback) {
       let postBody = null;
-      // verify the required parameter 'master' is set
-      if (master === undefined || master === null) {
-        throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
+      // verify the required parameter 'masterID' is set
+      if (masterID === undefined || masterID === null) {
+        throw new Error("Missing the required parameter 'masterID' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
       }
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
       }
-      // verify the required parameter 'workingDiapason' is set
-      if (workingDiapason === undefined || workingDiapason === null) {
-        throw new Error("Missing the required parameter 'workingDiapason' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
+      // verify the required parameter 'workingDiapasonID' is set
+      if (workingDiapasonID === undefined || workingDiapasonID === null) {
+        throw new Error("Missing the required parameter 'workingDiapasonID' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
       }
 
       let pathParams = {
-        'master': master,
+        'masterID': masterID,
         'clientID': clientID,
-        'working-diapason': workingDiapason
+        'workingDiapasonID': workingDiapasonID
       };
       let queryParams = {
       };

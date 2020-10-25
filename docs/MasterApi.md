@@ -65,7 +65,7 @@ No authorization required
 
 ## clientClientMasterMasterDelete
 
-> clientClientMasterMasterDelete(clientID, master)
+> clientClientMasterMasterDelete(clientID, masterID)
 
 
 
@@ -82,8 +82,8 @@ bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.MasterApi();
 let clientID = 1; // Number | ID салона
-let master = 56; // Number | Id мастера
-apiInstance.clientClientMasterMasterDelete(clientID, master, (error, data, response) => {
+let masterID = 56; // Number | Id мастера
+apiInstance.clientClientMasterMasterDelete(clientID, masterID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -98,7 +98,7 @@ apiInstance.clientClientMasterMasterDelete(clientID, master, (error, data, respo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **master** | **Number**| Id мастера | 
+ **masterID** | **Number**| Id мастера | 
 
 ### Return type
 
@@ -116,7 +116,7 @@ null (empty response body)
 
 ## clientClientMasterMasterGet
 
-> Object clientClientMasterMasterGet(clientID, master)
+> Object clientClientMasterMasterGet(clientID, masterID)
 
 Получение информации по конкретному мастеру
 
@@ -129,8 +129,8 @@ import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.MasterApi();
 let clientID = 1; // Number | ID салона
-let master = 56; // Number | Id мастера
-apiInstance.clientClientMasterMasterGet(clientID, master, (error, data, response) => {
+let masterID = 56; // Number | Id мастера
+apiInstance.clientClientMasterMasterGet(clientID, masterID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -145,7 +145,7 @@ apiInstance.clientClientMasterMasterGet(clientID, master, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **master** | **Number**| Id мастера | 
+ **masterID** | **Number**| Id мастера | 
 
 ### Return type
 
@@ -163,7 +163,7 @@ No authorization required
 
 ## clientClientMasterMasterPatch
 
-> clientClientMasterMasterPatch(clientID, master, opts)
+> clientClientMasterMasterPatch(clientID, masterID, opts)
 
 
 
@@ -180,7 +180,7 @@ bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.MasterApi();
 let clientID = 1; // Number | ID салона
-let master = 56; // Number | Id мастера
+let masterID = 56; // Number | Id мастера
 let opts = {
   'id': 789, // Number | 
   'image': "image_example", // String | 
@@ -191,7 +191,7 @@ let opts = {
   'email': "email_example", // String | 
   'password': "password_example" // String | 
 };
-apiInstance.clientClientMasterMasterPatch(clientID, master, opts, (error, data, response) => {
+apiInstance.clientClientMasterMasterPatch(clientID, masterID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -206,7 +206,7 @@ apiInstance.clientClientMasterMasterPatch(clientID, master, opts, (error, data, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **master** | **Number**| Id мастера | 
+ **masterID** | **Number**| Id мастера | 
  **id** | **Number**|  | [optional] 
  **image** | **String**|  | [optional] 
  **imageUpload** | **File**|  | [optional] 

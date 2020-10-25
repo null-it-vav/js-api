@@ -67,7 +67,7 @@ null (empty response body)
 
 ## clientClientOrderOrderDelete
 
-> clientClientOrderOrderDelete(order)
+> clientClientOrderOrderDelete(orderID)
 
 
 
@@ -83,8 +83,8 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.OrderApi();
-let order = 1; // Number | Id requested Order
-apiInstance.clientClientOrderOrderDelete(order, (error, data, response) => {
+let orderID = 1; // Number | Id requested Order
+apiInstance.clientClientOrderOrderDelete(orderID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -98,7 +98,7 @@ apiInstance.clientClientOrderOrderDelete(order, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | **Number**| Id requested Order | 
+ **orderID** | **Number**| Id requested Order | 
 
 ### Return type
 
@@ -116,7 +116,7 @@ null (empty response body)
 
 ## clientClientOrderOrderGet
 
-> Order clientClientOrderOrderGet(order)
+> Order clientClientOrderOrderGet(orderID)
 
 
 
@@ -132,8 +132,8 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.OrderApi();
-let order = 1; // Number | Id requested Order
-apiInstance.clientClientOrderOrderGet(order, (error, data, response) => {
+let orderID = 1; // Number | Id requested Order
+apiInstance.clientClientOrderOrderGet(orderID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -147,7 +147,7 @@ apiInstance.clientClientOrderOrderGet(order, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | **Number**| Id requested Order | 
+ **orderID** | **Number**| Id requested Order | 
 
 ### Return type
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ## clientClientOrderOrderPatch
 
-> clientClientOrderOrderPatch(order, order)
+> clientClientOrderOrderPatch(orderID, order)
 
 
 
@@ -181,9 +181,9 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.OrderApi();
-let order = 1; // Number | Id requested Order
+let orderID = 1; // Number | Id requested Order
 let order = new GroomerService.Order(); // Order | Optional description in *Markdown*
-apiInstance.clientClientOrderOrderPatch(order, order, (error, data, response) => {
+apiInstance.clientClientOrderOrderPatch(orderID, order, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -197,7 +197,7 @@ apiInstance.clientClientOrderOrderPatch(order, order, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | **Number**| Id requested Order | 
+ **orderID** | **Number**| Id requested Order | 
  **order** | [**Order**](Order.md)| Optional description in *Markdown* | 
 
 ### Return type

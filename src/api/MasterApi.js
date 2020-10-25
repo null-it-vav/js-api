@@ -94,23 +94,23 @@ export default class MasterApi {
      * 
      * 
      * @param {Number} clientID ID салона
-     * @param {Number} master Id мастера
+     * @param {Number} masterID Id мастера
      * @param {module:api/MasterApi~clientClientMasterMasterDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientMasterMasterDelete(clientID, master, callback) {
+    clientClientMasterMasterDelete(clientID, masterID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterDelete");
       }
-      // verify the required parameter 'master' is set
-      if (master === undefined || master === null) {
-        throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterDelete");
+      // verify the required parameter 'masterID' is set
+      if (masterID === undefined || masterID === null) {
+        throw new Error("Missing the required parameter 'masterID' when calling clientClientMasterMasterDelete");
       }
 
       let pathParams = {
         'clientID': clientID,
-        'master': master
+        'masterID': masterID
       };
       let queryParams = {
       };
@@ -142,24 +142,24 @@ export default class MasterApi {
      * Получение информации по конкретному мастеру
      * 
      * @param {Number} clientID ID салона
-     * @param {Number} master Id мастера
+     * @param {Number} masterID Id мастера
      * @param {module:api/MasterApi~clientClientMasterMasterGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientMasterMasterGet(clientID, master, callback) {
+    clientClientMasterMasterGet(clientID, masterID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterGet");
       }
-      // verify the required parameter 'master' is set
-      if (master === undefined || master === null) {
-        throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterGet");
+      // verify the required parameter 'masterID' is set
+      if (masterID === undefined || masterID === null) {
+        throw new Error("Missing the required parameter 'masterID' when calling clientClientMasterMasterGet");
       }
 
       let pathParams = {
         'clientID': clientID,
-        'master': master
+        'masterID': masterID
       };
       let queryParams = {
       };
@@ -191,7 +191,7 @@ export default class MasterApi {
      * 
      * 
      * @param {Number} clientID ID салона
-     * @param {Number} master Id мастера
+     * @param {Number} masterID Id мастера
      * @param {Object} opts Optional parameters
      * @param {Number} opts.id 
      * @param {String} opts.image 
@@ -203,21 +203,21 @@ export default class MasterApi {
      * @param {String} opts.password 
      * @param {module:api/MasterApi~clientClientMasterMasterPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientMasterMasterPatch(clientID, master, opts, callback) {
+    clientClientMasterMasterPatch(clientID, masterID, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterPatch");
       }
-      // verify the required parameter 'master' is set
-      if (master === undefined || master === null) {
-        throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterPatch");
+      // verify the required parameter 'masterID' is set
+      if (masterID === undefined || masterID === null) {
+        throw new Error("Missing the required parameter 'masterID' when calling clientClientMasterMasterPatch");
       }
 
       let pathParams = {
         'clientID': clientID,
-        'master': master
+        'masterID': masterID
       };
       let queryParams = {
       };

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## clientClientMasterMasterWorkingDiapasonGet
 
-> InlineResponse2003 clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts)
+> InlineResponse2003 clientClientMasterMasterWorkingDiapasonGet(masterID, clientID, opts)
 
 Получение расписания мастера
 
@@ -26,7 +26,7 @@ Store *WorkingDiapason* entity
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.WorkingDiapasonApi();
-let master = 56; // Number | Id мастера
+let masterID = 56; // Number | Id мастера
 let clientID = 1; // Number | ID салона
 let opts = {
   'limit': 25, // Number | Как много элементов должно возвращаться за один запрос
@@ -34,7 +34,7 @@ let opts = {
   'dateStart': "dateStart_example", // String | Начало периода
   'dateEnd': "dateEnd_example" // String | Конец периода
 };
-apiInstance.clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts, (error, data, response) => {
+apiInstance.clientClientMasterMasterWorkingDiapasonGet(masterID, clientID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -48,7 +48,7 @@ apiInstance.clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **master** | **Number**| Id мастера | 
+ **masterID** | **Number**| Id мастера | 
  **clientID** | **Number**| ID салона | [default to 1]
  **limit** | **Number**| Как много элементов должно возвращаться за один запрос | [optional] [default to 25]
  **offset** | **Number**| Смещение от первого | [optional] [default to 0]
@@ -120,7 +120,7 @@ null (empty response body)
 
 ## clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete
 
-> clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(master, clientID, workingDiapason)
+> clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(masterID, clientID, workingDiapasonID)
 
 
 
@@ -136,10 +136,10 @@ let bearerAuthMaster = defaultClient.authentications['bearerAuthMaster'];
 bearerAuthMaster.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.WorkingDiapasonApi();
-let master = 56; // Number | Id мастера
+let masterID = 56; // Number | Id мастера
 let clientID = 1; // Number | ID салона
-let workingDiapason = 1; // Number | Id requested WorkingDiapason
-apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(master, clientID, workingDiapason, (error, data, response) => {
+let workingDiapasonID = 1; // Number | Id requested WorkingDiapason
+apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(masterID, clientID, workingDiapasonID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -153,9 +153,9 @@ apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(master,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **master** | **Number**| Id мастера | 
+ **masterID** | **Number**| Id мастера | 
  **clientID** | **Number**| ID салона | [default to 1]
- **workingDiapason** | **Number**| Id requested WorkingDiapason | 
+ **workingDiapasonID** | **Number**| Id requested WorkingDiapason | 
 
 ### Return type
 
@@ -173,7 +173,7 @@ null (empty response body)
 
 ## clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet
 
-> Object clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason)
+> Object clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(masterID, clientID, workingDiapasonID)
 
 Получение деталей временного отрезка
 
@@ -185,10 +185,10 @@ null (empty response body)
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.WorkingDiapasonApi();
-let master = 56; // Number | Id мастера
+let masterID = 56; // Number | Id мастера
 let clientID = 1; // Number | ID салона
-let workingDiapason = 1; // Number | Id requested WorkingDiapason
-apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason, (error, data, response) => {
+let workingDiapasonID = 1; // Number | Id requested WorkingDiapason
+apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(masterID, clientID, workingDiapasonID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -202,9 +202,9 @@ apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, cl
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **master** | **Number**| Id мастера | 
+ **masterID** | **Number**| Id мастера | 
  **clientID** | **Number**| ID салона | [default to 1]
- **workingDiapason** | **Number**| Id requested WorkingDiapason | 
+ **workingDiapasonID** | **Number**| Id requested WorkingDiapason | 
 
 ### Return type
 
@@ -222,7 +222,7 @@ No authorization required
 
 ## clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch
 
-> clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(master, clientID, workingDiapason, workingDiapason)
+> clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(masterID, clientID, workingDiapasonID, workingDiapason)
 
 
 
@@ -238,11 +238,11 @@ let bearerAuthMaster = defaultClient.authentications['bearerAuthMaster'];
 bearerAuthMaster.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.WorkingDiapasonApi();
-let master = 56; // Number | Id мастера
+let masterID = 56; // Number | Id мастера
 let clientID = 1; // Number | ID салона
-let workingDiapason = 1; // Number | Id requested WorkingDiapason
+let workingDiapasonID = 1; // Number | Id requested WorkingDiapason
 let workingDiapason = new GroomerService.WorkingDiapason(); // WorkingDiapason | Optional description in *Markdown*
-apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(master, clientID, workingDiapason, workingDiapason, (error, data, response) => {
+apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(masterID, clientID, workingDiapasonID, workingDiapason, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -256,9 +256,9 @@ apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(master, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **master** | **Number**| Id мастера | 
+ **masterID** | **Number**| Id мастера | 
  **clientID** | **Number**| ID салона | [default to 1]
- **workingDiapason** | **Number**| Id requested WorkingDiapason | 
+ **workingDiapasonID** | **Number**| Id requested WorkingDiapason | 
  **workingDiapason** | [**WorkingDiapason**](WorkingDiapason.md)| Optional description in *Markdown* | 
 
 ### Return type
