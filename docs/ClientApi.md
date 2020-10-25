@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## clientClientDelete
 
-> clientClientDelete(client)
+> clientClientDelete(clientID)
 
 
 
@@ -30,8 +30,8 @@ let bearerAuthAdmin = defaultClient.authentications['bearerAuthAdmin'];
 bearerAuthAdmin.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.ClientApi();
-let client = 1; // Number | ID салона
-apiInstance.clientClientDelete(client, (error, data, response) => {
+let clientID = 1; // Number | ID салона
+apiInstance.clientClientDelete(clientID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -45,7 +45,7 @@ apiInstance.clientClientDelete(client, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
 
 ### Return type
 
@@ -63,7 +63,7 @@ null (empty response body)
 
 ## clientClientGet
 
-> Object clientClientGet(client)
+> Object clientClientGet(clientID)
 
 Получение данных салона - адреса, телефоны, социалки и т.п.
 
@@ -75,8 +75,8 @@ null (empty response body)
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ClientApi();
-let client = 1; // Number | ID салона
-apiInstance.clientClientGet(client, (error, data, response) => {
+let clientID = 1; // Number | ID салона
+apiInstance.clientClientGet(clientID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -90,7 +90,7 @@ apiInstance.clientClientGet(client, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
 
 ### Return type
 
@@ -108,7 +108,7 @@ No authorization required
 
 ## clientClientPatch
 
-> clientClientPatch(client, client)
+> clientClientPatch(clientID, client)
 
 
 
@@ -124,9 +124,9 @@ let bearerAuthAdmin = defaultClient.authentications['bearerAuthAdmin'];
 bearerAuthAdmin.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.ClientApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let client = new GroomerService.Client(); // Client | Optional description in *Markdown*
-apiInstance.clientClientPatch(client, client, (error, data, response) => {
+apiInstance.clientClientPatch(clientID, client, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -140,7 +140,7 @@ apiInstance.clientClientPatch(client, client, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **client** | [**Client**](Client.md)| Optional description in *Markdown* | 
 
 ### Return type

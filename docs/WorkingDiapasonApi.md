@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## clientClientMasterMasterWorkingDiapasonGet
 
-> InlineResponse2003 clientClientMasterMasterWorkingDiapasonGet(master, client, opts)
+> InlineResponse2003 clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts)
 
 Получение расписания мастера
 
@@ -27,14 +27,14 @@ import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.WorkingDiapasonApi();
 let master = 56; // Number | Id мастера
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let opts = {
   'limit': 25, // Number | Как много элементов должно возвращаться за один запрос
   'offset': 0, // Number | Смещение от первого
   'dateStart': "dateStart_example", // String | Начало периода
   'dateEnd': "dateEnd_example" // String | Конец периода
 };
-apiInstance.clientClientMasterMasterWorkingDiapasonGet(master, client, opts, (error, data, response) => {
+apiInstance.clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -49,7 +49,7 @@ apiInstance.clientClientMasterMasterWorkingDiapasonGet(master, client, opts, (er
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **master** | **Number**| Id мастера | 
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **limit** | **Number**| Как много элементов должно возвращаться за один запрос | [optional] [default to 25]
  **offset** | **Number**| Смещение от первого | [optional] [default to 0]
  **dateStart** | **String**| Начало периода | [optional] 
@@ -120,7 +120,7 @@ null (empty response body)
 
 ## clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete
 
-> clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(master, client, workingDiapason)
+> clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(master, clientID, workingDiapason)
 
 
 
@@ -137,9 +137,9 @@ bearerAuthMaster.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.WorkingDiapasonApi();
 let master = 56; // Number | Id мастера
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let workingDiapason = 1; // Number | Id requested WorkingDiapason
-apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(master, client, workingDiapason, (error, data, response) => {
+apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(master, clientID, workingDiapason, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -154,7 +154,7 @@ apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(master,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **master** | **Number**| Id мастера | 
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **workingDiapason** | **Number**| Id requested WorkingDiapason | 
 
 ### Return type
@@ -173,7 +173,7 @@ null (empty response body)
 
 ## clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet
 
-> Object clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, client, workingDiapason)
+> Object clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason)
 
 Получение деталей временного отрезка
 
@@ -186,9 +186,9 @@ import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.WorkingDiapasonApi();
 let master = 56; // Number | Id мастера
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let workingDiapason = 1; // Number | Id requested WorkingDiapason
-apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, client, workingDiapason, (error, data, response) => {
+apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -203,7 +203,7 @@ apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, cl
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **master** | **Number**| Id мастера | 
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **workingDiapason** | **Number**| Id requested WorkingDiapason | 
 
 ### Return type
@@ -222,7 +222,7 @@ No authorization required
 
 ## clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch
 
-> clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(master, client, workingDiapason, workingDiapason)
+> clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(master, clientID, workingDiapason, workingDiapason)
 
 
 
@@ -239,10 +239,10 @@ bearerAuthMaster.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.WorkingDiapasonApi();
 let master = 56; // Number | Id мастера
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let workingDiapason = 1; // Number | Id requested WorkingDiapason
 let workingDiapason = new GroomerService.WorkingDiapason(); // WorkingDiapason | Optional description in *Markdown*
-apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(master, client, workingDiapason, workingDiapason, (error, data, response) => {
+apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(master, clientID, workingDiapason, workingDiapason, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -257,7 +257,7 @@ apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(master, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **master** | **Number**| Id мастера | 
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **workingDiapason** | **Number**| Id requested WorkingDiapason | 
  **workingDiapason** | [**WorkingDiapason**](WorkingDiapason.md)| Optional description in *Markdown* | 
 

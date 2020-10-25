@@ -130,7 +130,7 @@ var GroomerService = require('groomer_service');
 
 
 var api = new GroomerService.ApplicationApi()
-var client = 1; // {Number} ID салона
+var clientID = 1; // {Number} ID салона
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -138,7 +138,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.clientClientGet(client, callback);
+api.clientClientGet(clientID, callback);
 
 ```
 

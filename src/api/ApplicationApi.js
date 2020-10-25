@@ -48,19 +48,19 @@ export default class ApplicationApi {
     /**
      * Получение данных салона - адреса, телефоны, социалки и т.п.
      * Получение данных для салона
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {module:api/ApplicationApi~clientClientGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientGet(client, callback) {
+    clientClientGet(clientID, callback) {
       let postBody = null;
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientGet");
       }
 
       let pathParams = {
-        'client': client
+        'clientID': clientID
       };
       let queryParams = {
       };
@@ -91,23 +91,23 @@ export default class ApplicationApi {
     /**
      * Получение списка мастеров конкретного салона
      * 
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
      * @param {module:api/ApplicationApi~clientClientMasterGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientMasterGet(client, opts, callback) {
+    clientClientMasterGet(clientID, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientMasterGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterGet");
       }
 
       let pathParams = {
-        'client': client
+        'clientID': clientID
       };
       let queryParams = {
         'limit': opts['limit'],
@@ -140,16 +140,16 @@ export default class ApplicationApi {
     /**
      * Получение информации по конкретному мастеру
      * 
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Number} master Id мастера
      * @param {module:api/ApplicationApi~clientClientMasterMasterGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientMasterMasterGet(client, master, callback) {
+    clientClientMasterMasterGet(clientID, master, callback) {
       let postBody = null;
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientMasterMasterGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterGet");
       }
       // verify the required parameter 'master' is set
       if (master === undefined || master === null) {
@@ -157,7 +157,7 @@ export default class ApplicationApi {
       }
 
       let pathParams = {
-        'client': client,
+        'clientID': clientID,
         'master': master
       };
       let queryParams = {
@@ -190,7 +190,7 @@ export default class ApplicationApi {
      * Получение расписания мастера
      * Store *WorkingDiapason* entity
      * @param {Number} master Id мастера
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
@@ -199,21 +199,21 @@ export default class ApplicationApi {
      * @param {module:api/ApplicationApi~clientClientMasterMasterWorkingDiapasonGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2003}
      */
-    clientClientMasterMasterWorkingDiapasonGet(master, client, opts, callback) {
+    clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'master' is set
       if (master === undefined || master === null) {
         throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterWorkingDiapasonGet");
       }
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientMasterMasterWorkingDiapasonGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterWorkingDiapasonGet");
       }
 
       let pathParams = {
         'master': master,
-        'client': client
+        'clientID': clientID
       };
       let queryParams = {
         'limit': opts['limit'],
@@ -249,20 +249,20 @@ export default class ApplicationApi {
      * Получение деталей временного отрезка
      * 
      * @param {Number} master Id мастера
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Number} workingDiapason Id requested WorkingDiapason
      * @param {module:api/ApplicationApi~clientClientMasterMasterWorkingDiapasonWorkingDiapasonGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, client, workingDiapason, callback) {
+    clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason, callback) {
       let postBody = null;
       // verify the required parameter 'master' is set
       if (master === undefined || master === null) {
         throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
       }
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
       }
       // verify the required parameter 'workingDiapason' is set
       if (workingDiapason === undefined || workingDiapason === null) {
@@ -271,7 +271,7 @@ export default class ApplicationApi {
 
       let pathParams = {
         'master': master,
-        'client': client,
+        'clientID': clientID,
         'working-diapason': workingDiapason
       };
       let queryParams = {
@@ -344,23 +344,23 @@ export default class ApplicationApi {
     /**
      * Получение списка акций для салона
      * 
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
      * @param {module:api/ApplicationApi~clientClientPromotionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2001}
      */
-    clientClientPromotionGet(client, opts, callback) {
+    clientClientPromotionGet(clientID, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientPromotionGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientPromotionGet");
       }
 
       let pathParams = {
-        'client': client
+        'clientID': clientID
       };
       let queryParams = {
         'limit': opts['limit'],
@@ -393,16 +393,16 @@ export default class ApplicationApi {
     /**
      * Получение детальной информации по акции
      * 
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Number} promotion Id requested Promotion
      * @param {module:api/ApplicationApi~clientClientPromotionPromotionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientPromotionPromotionGet(client, promotion, callback) {
+    clientClientPromotionPromotionGet(clientID, promotion, callback) {
       let postBody = null;
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientPromotionPromotionGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientPromotionPromotionGet");
       }
       // verify the required parameter 'promotion' is set
       if (promotion === undefined || promotion === null) {
@@ -410,7 +410,7 @@ export default class ApplicationApi {
       }
 
       let pathParams = {
-        'client': client,
+        'clientID': clientID,
         'promotion': promotion
       };
       let queryParams = {
@@ -442,23 +442,23 @@ export default class ApplicationApi {
     /**
      * Получение списка Услуг, которые оказывает салон
      * Store *Service* entity
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
      * @param {module:api/ApplicationApi~clientClientServiceGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2002}
      */
-    clientClientServiceGet(client, opts, callback) {
+    clientClientServiceGet(clientID, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientServiceGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientServiceGet");
       }
 
       let pathParams = {
-        'client': client
+        'clientID': clientID
       };
       let queryParams = {
         'limit': opts['limit'],
@@ -491,16 +491,16 @@ export default class ApplicationApi {
     /**
      * Получение детальной информации услуги
      * 
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Number} service ID услуги
      * @param {module:api/ApplicationApi~clientClientServiceServiceGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientServiceServiceGet(client, service, callback) {
+    clientClientServiceServiceGet(clientID, service, callback) {
       let postBody = null;
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientServiceServiceGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientServiceServiceGet");
       }
       // verify the required parameter 'service' is set
       if (service === undefined || service === null) {
@@ -508,7 +508,7 @@ export default class ApplicationApi {
       }
 
       let pathParams = {
-        'client': client,
+        'clientID': clientID,
         'service': service
       };
       let queryParams = {

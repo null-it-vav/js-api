@@ -47,7 +47,7 @@ export default class WorkingDiapasonApi {
      * Получение расписания мастера
      * Store *WorkingDiapason* entity
      * @param {Number} master Id мастера
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
@@ -56,21 +56,21 @@ export default class WorkingDiapasonApi {
      * @param {module:api/WorkingDiapasonApi~clientClientMasterMasterWorkingDiapasonGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2003}
      */
-    clientClientMasterMasterWorkingDiapasonGet(master, client, opts, callback) {
+    clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'master' is set
       if (master === undefined || master === null) {
         throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterWorkingDiapasonGet");
       }
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientMasterMasterWorkingDiapasonGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterWorkingDiapasonGet");
       }
 
       let pathParams = {
         'master': master,
-        'client': client
+        'clientID': clientID
       };
       let queryParams = {
         'limit': opts['limit'],
@@ -147,19 +147,19 @@ export default class WorkingDiapasonApi {
      * 
      * 
      * @param {Number} master Id мастера
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Number} workingDiapason Id requested WorkingDiapason
      * @param {module:api/WorkingDiapasonApi~clientClientMasterMasterWorkingDiapasonWorkingDiapasonDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(master, client, workingDiapason, callback) {
+    clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete(master, clientID, workingDiapason, callback) {
       let postBody = null;
       // verify the required parameter 'master' is set
       if (master === undefined || master === null) {
         throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete");
       }
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonDelete");
       }
       // verify the required parameter 'workingDiapason' is set
       if (workingDiapason === undefined || workingDiapason === null) {
@@ -168,7 +168,7 @@ export default class WorkingDiapasonApi {
 
       let pathParams = {
         'master': master,
-        'client': client,
+        'clientID': clientID,
         'working-diapason': workingDiapason
       };
       let queryParams = {
@@ -201,20 +201,20 @@ export default class WorkingDiapasonApi {
      * Получение деталей временного отрезка
      * 
      * @param {Number} master Id мастера
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Number} workingDiapason Id requested WorkingDiapason
      * @param {module:api/WorkingDiapasonApi~clientClientMasterMasterWorkingDiapasonWorkingDiapasonGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, client, workingDiapason, callback) {
+    clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason, callback) {
       let postBody = null;
       // verify the required parameter 'master' is set
       if (master === undefined || master === null) {
         throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
       }
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet");
       }
       // verify the required parameter 'workingDiapason' is set
       if (workingDiapason === undefined || workingDiapason === null) {
@@ -223,7 +223,7 @@ export default class WorkingDiapasonApi {
 
       let pathParams = {
         'master': master,
-        'client': client,
+        'clientID': clientID,
         'working-diapason': workingDiapason
       };
       let queryParams = {
@@ -256,20 +256,20 @@ export default class WorkingDiapasonApi {
      * 
      * 
      * @param {Number} master Id мастера
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {Number} workingDiapason Id requested WorkingDiapason
      * @param {module:model/WorkingDiapason} workingDiapason Optional description in *Markdown*
      * @param {module:api/WorkingDiapasonApi~clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(master, client, workingDiapason, workingDiapason, callback) {
+    clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch(master, clientID, workingDiapason, workingDiapason, callback) {
       let postBody = workingDiapason;
       // verify the required parameter 'master' is set
       if (master === undefined || master === null) {
         throw new Error("Missing the required parameter 'master' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch");
       }
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterWorkingDiapasonWorkingDiapasonPatch");
       }
       // verify the required parameter 'workingDiapason' is set
       if (workingDiapason === undefined || workingDiapason === null) {
@@ -282,7 +282,7 @@ export default class WorkingDiapasonApi {
 
       let pathParams = {
         'master': master,
-        'client': client,
+        'clientID': clientID,
         'working-diapason': workingDiapason
       };
       let queryParams = {

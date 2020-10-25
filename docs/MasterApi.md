@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## clientClientMasterGet
 
-> Object clientClientMasterGet(client, opts)
+> Object clientClientMasterGet(clientID, opts)
 
 Получение списка мастеров конкретного салона
 
@@ -26,12 +26,12 @@ Method | HTTP request | Description
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.MasterApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let opts = {
   'limit': 25, // Number | Как много элементов должно возвращаться за один запрос
   'offset': 0 // Number | Смещение от первого
 };
-apiInstance.clientClientMasterGet(client, opts, (error, data, response) => {
+apiInstance.clientClientMasterGet(clientID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -45,7 +45,7 @@ apiInstance.clientClientMasterGet(client, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **limit** | **Number**| Как много элементов должно возвращаться за один запрос | [optional] [default to 25]
  **offset** | **Number**| Смещение от первого | [optional] [default to 0]
 
@@ -65,7 +65,7 @@ No authorization required
 
 ## clientClientMasterMasterDelete
 
-> clientClientMasterMasterDelete(client, master)
+> clientClientMasterMasterDelete(clientID, master)
 
 
 
@@ -81,9 +81,9 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.MasterApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let master = 56; // Number | Id мастера
-apiInstance.clientClientMasterMasterDelete(client, master, (error, data, response) => {
+apiInstance.clientClientMasterMasterDelete(clientID, master, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -97,7 +97,7 @@ apiInstance.clientClientMasterMasterDelete(client, master, (error, data, respons
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **master** | **Number**| Id мастера | 
 
 ### Return type
@@ -116,7 +116,7 @@ null (empty response body)
 
 ## clientClientMasterMasterGet
 
-> Object clientClientMasterMasterGet(client, master)
+> Object clientClientMasterMasterGet(clientID, master)
 
 Получение информации по конкретному мастеру
 
@@ -128,9 +128,9 @@ null (empty response body)
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.MasterApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let master = 56; // Number | Id мастера
-apiInstance.clientClientMasterMasterGet(client, master, (error, data, response) => {
+apiInstance.clientClientMasterMasterGet(clientID, master, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -144,7 +144,7 @@ apiInstance.clientClientMasterMasterGet(client, master, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **master** | **Number**| Id мастера | 
 
 ### Return type
@@ -163,7 +163,7 @@ No authorization required
 
 ## clientClientMasterMasterPatch
 
-> clientClientMasterMasterPatch(client, master, opts)
+> clientClientMasterMasterPatch(clientID, master, opts)
 
 
 
@@ -179,7 +179,7 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.MasterApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let master = 56; // Number | Id мастера
 let opts = {
   'id': 789, // Number | 
@@ -191,7 +191,7 @@ let opts = {
   'email': "email_example", // String | 
   'password': "password_example" // String | 
 };
-apiInstance.clientClientMasterMasterPatch(client, master, opts, (error, data, response) => {
+apiInstance.clientClientMasterMasterPatch(clientID, master, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -205,7 +205,7 @@ apiInstance.clientClientMasterMasterPatch(client, master, opts, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **master** | **Number**| Id мастера | 
  **id** | **Number**|  | [optional] 
  **image** | **String**|  | [optional] 
@@ -232,7 +232,7 @@ null (empty response body)
 
 ## clientClientMasterPost
 
-> Object clientClientMasterPost(client, opts)
+> Object clientClientMasterPost(clientID, opts)
 
 
 
@@ -248,7 +248,7 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.MasterApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let opts = {
   'id': 789, // Number | 
   'image': "image_example", // String | 
@@ -259,7 +259,7 @@ let opts = {
   'email': "email_example", // String | 
   'password': "password_example" // String | 
 };
-apiInstance.clientClientMasterPost(client, opts, (error, data, response) => {
+apiInstance.clientClientMasterPost(clientID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -273,7 +273,7 @@ apiInstance.clientClientMasterPost(client, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **id** | **Number**|  | [optional] 
  **image** | **String**|  | [optional] 
  **imageUpload** | **File**|  | [optional] 

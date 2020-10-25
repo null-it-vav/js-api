@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## clientClientServiceGet
 
-> InlineResponse2002 clientClientServiceGet(client, opts)
+> InlineResponse2002 clientClientServiceGet(clientID, opts)
 
 Получение списка Услуг, которые оказывает салон
 
@@ -26,12 +26,12 @@ Store *Service* entity
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ServiceApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let opts = {
   'limit': 25, // Number | Как много элементов должно возвращаться за один запрос
   'offset': 0 // Number | Смещение от первого
 };
-apiInstance.clientClientServiceGet(client, opts, (error, data, response) => {
+apiInstance.clientClientServiceGet(clientID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -45,7 +45,7 @@ apiInstance.clientClientServiceGet(client, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **limit** | **Number**| Как много элементов должно возвращаться за один запрос | [optional] [default to 25]
  **offset** | **Number**| Смещение от первого | [optional] [default to 0]
 
@@ -118,7 +118,7 @@ null (empty response body)
 
 ## clientClientServiceServiceDelete
 
-> clientClientServiceServiceDelete(client, service)
+> clientClientServiceServiceDelete(clientID, service)
 
 
 
@@ -134,9 +134,9 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.ServiceApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let service = 1; // Number | ID услуги
-apiInstance.clientClientServiceServiceDelete(client, service, (error, data, response) => {
+apiInstance.clientClientServiceServiceDelete(clientID, service, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -150,7 +150,7 @@ apiInstance.clientClientServiceServiceDelete(client, service, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **service** | **Number**| ID услуги | 
 
 ### Return type
@@ -169,7 +169,7 @@ null (empty response body)
 
 ## clientClientServiceServiceGet
 
-> Object clientClientServiceServiceGet(client, service)
+> Object clientClientServiceServiceGet(clientID, service)
 
 Получение детальной информации услуги
 
@@ -181,9 +181,9 @@ null (empty response body)
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ServiceApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let service = 1; // Number | ID услуги
-apiInstance.clientClientServiceServiceGet(client, service, (error, data, response) => {
+apiInstance.clientClientServiceServiceGet(clientID, service, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -197,7 +197,7 @@ apiInstance.clientClientServiceServiceGet(client, service, (error, data, respons
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **service** | **Number**| ID услуги | 
 
 ### Return type
@@ -216,7 +216,7 @@ No authorization required
 
 ## clientClientServiceServicePatch
 
-> clientClientServiceServicePatch(client, service, service)
+> clientClientServiceServicePatch(clientID, service, service)
 
 
 
@@ -232,10 +232,10 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.ServiceApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let service = 1; // Number | ID услуги
 let service = new GroomerService.Service(); // Service | Optional description in *Markdown*
-apiInstance.clientClientServiceServicePatch(client, service, service, (error, data, response) => {
+apiInstance.clientClientServiceServicePatch(clientID, service, service, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -249,7 +249,7 @@ apiInstance.clientClientServiceServicePatch(client, service, service, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **service** | **Number**| ID услуги | 
  **service** | [**Service**](Service.md)| Optional description in *Markdown* | 
 

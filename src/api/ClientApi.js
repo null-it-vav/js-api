@@ -45,18 +45,18 @@ export default class ClientApi {
     /**
      * 
      * 
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {module:api/ClientApi~clientClientDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientDelete(client, callback) {
+    clientClientDelete(clientID, callback) {
       let postBody = null;
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientDelete");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientDelete");
       }
 
       let pathParams = {
-        'client': client
+        'clientID': clientID
       };
       let queryParams = {
       };
@@ -87,19 +87,19 @@ export default class ClientApi {
     /**
      * Получение данных салона - адреса, телефоны, социалки и т.п.
      * Получение данных для салона
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {module:api/ClientApi~clientClientGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientGet(client, callback) {
+    clientClientGet(clientID, callback) {
       let postBody = null;
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientGet");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientGet");
       }
 
       let pathParams = {
-        'client': client
+        'clientID': clientID
       };
       let queryParams = {
       };
@@ -130,15 +130,15 @@ export default class ClientApi {
     /**
      * 
      * 
-     * @param {Number} client ID салона
+     * @param {Number} clientID ID салона
      * @param {module:model/Client} client Optional description in *Markdown*
      * @param {module:api/ClientApi~clientClientPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientPatch(client, client, callback) {
+    clientClientPatch(clientID, client, callback) {
       let postBody = client;
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientPatch");
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientPatch");
       }
       // verify the required parameter 'client' is set
       if (client === undefined || client === null) {
@@ -146,7 +146,7 @@ export default class ClientApi {
       }
 
       let pathParams = {
-        'client': client
+        'clientID': clientID
       };
       let queryParams = {
       };

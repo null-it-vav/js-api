@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## clientClientGet
 
-> Object clientClientGet(client)
+> Object clientClientGet(clientID)
 
 Получение данных салона - адреса, телефоны, социалки и т.п.
 
@@ -31,8 +31,8 @@ Method | HTTP request | Description
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
-let client = 1; // Number | ID салона
-apiInstance.clientClientGet(client, (error, data, response) => {
+let clientID = 1; // Number | ID салона
+apiInstance.clientClientGet(clientID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -46,7 +46,7 @@ apiInstance.clientClientGet(client, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
 
 ### Return type
 
@@ -64,7 +64,7 @@ No authorization required
 
 ## clientClientMasterGet
 
-> Object clientClientMasterGet(client, opts)
+> Object clientClientMasterGet(clientID, opts)
 
 Получение списка мастеров конкретного салона
 
@@ -76,12 +76,12 @@ No authorization required
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let opts = {
   'limit': 25, // Number | Как много элементов должно возвращаться за один запрос
   'offset': 0 // Number | Смещение от первого
 };
-apiInstance.clientClientMasterGet(client, opts, (error, data, response) => {
+apiInstance.clientClientMasterGet(clientID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -95,7 +95,7 @@ apiInstance.clientClientMasterGet(client, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **limit** | **Number**| Как много элементов должно возвращаться за один запрос | [optional] [default to 25]
  **offset** | **Number**| Смещение от первого | [optional] [default to 0]
 
@@ -115,7 +115,7 @@ No authorization required
 
 ## clientClientMasterMasterGet
 
-> Object clientClientMasterMasterGet(client, master)
+> Object clientClientMasterMasterGet(clientID, master)
 
 Получение информации по конкретному мастеру
 
@@ -127,9 +127,9 @@ No authorization required
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let master = 56; // Number | Id мастера
-apiInstance.clientClientMasterMasterGet(client, master, (error, data, response) => {
+apiInstance.clientClientMasterMasterGet(clientID, master, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -143,7 +143,7 @@ apiInstance.clientClientMasterMasterGet(client, master, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **master** | **Number**| Id мастера | 
 
 ### Return type
@@ -162,7 +162,7 @@ No authorization required
 
 ## clientClientMasterMasterWorkingDiapasonGet
 
-> InlineResponse2003 clientClientMasterMasterWorkingDiapasonGet(master, client, opts)
+> InlineResponse2003 clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts)
 
 Получение расписания мастера
 
@@ -175,14 +175,14 @@ import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
 let master = 56; // Number | Id мастера
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let opts = {
   'limit': 25, // Number | Как много элементов должно возвращаться за один запрос
   'offset': 0, // Number | Смещение от первого
   'dateStart': "dateStart_example", // String | Начало периода
   'dateEnd': "dateEnd_example" // String | Конец периода
 };
-apiInstance.clientClientMasterMasterWorkingDiapasonGet(master, client, opts, (error, data, response) => {
+apiInstance.clientClientMasterMasterWorkingDiapasonGet(master, clientID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -197,7 +197,7 @@ apiInstance.clientClientMasterMasterWorkingDiapasonGet(master, client, opts, (er
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **master** | **Number**| Id мастера | 
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **limit** | **Number**| Как много элементов должно возвращаться за один запрос | [optional] [default to 25]
  **offset** | **Number**| Смещение от первого | [optional] [default to 0]
  **dateStart** | **String**| Начало периода | [optional] 
@@ -219,7 +219,7 @@ No authorization required
 
 ## clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet
 
-> Object clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, client, workingDiapason)
+> Object clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason)
 
 Получение деталей временного отрезка
 
@@ -232,9 +232,9 @@ import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
 let master = 56; // Number | Id мастера
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let workingDiapason = 1; // Number | Id requested WorkingDiapason
-apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, client, workingDiapason, (error, data, response) => {
+apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, clientID, workingDiapason, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -249,7 +249,7 @@ apiInstance.clientClientMasterMasterWorkingDiapasonWorkingDiapasonGet(master, cl
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **master** | **Number**| Id мастера | 
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **workingDiapason** | **Number**| Id requested WorkingDiapason | 
 
 ### Return type
@@ -313,7 +313,7 @@ No authorization required
 
 ## clientClientPromotionGet
 
-> InlineResponse2001 clientClientPromotionGet(client, opts)
+> InlineResponse2001 clientClientPromotionGet(clientID, opts)
 
 Получение списка акций для салона
 
@@ -325,12 +325,12 @@ No authorization required
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let opts = {
   'limit': 25, // Number | Как много элементов должно возвращаться за один запрос
   'offset': 0 // Number | Смещение от первого
 };
-apiInstance.clientClientPromotionGet(client, opts, (error, data, response) => {
+apiInstance.clientClientPromotionGet(clientID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -344,7 +344,7 @@ apiInstance.clientClientPromotionGet(client, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **limit** | **Number**| Как много элементов должно возвращаться за один запрос | [optional] [default to 25]
  **offset** | **Number**| Смещение от первого | [optional] [default to 0]
 
@@ -364,7 +364,7 @@ No authorization required
 
 ## clientClientPromotionPromotionGet
 
-> Object clientClientPromotionPromotionGet(client, promotion)
+> Object clientClientPromotionPromotionGet(clientID, promotion)
 
 Получение детальной информации по акции
 
@@ -376,9 +376,9 @@ No authorization required
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let promotion = 1; // Number | Id requested Promotion
-apiInstance.clientClientPromotionPromotionGet(client, promotion, (error, data, response) => {
+apiInstance.clientClientPromotionPromotionGet(clientID, promotion, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -392,7 +392,7 @@ apiInstance.clientClientPromotionPromotionGet(client, promotion, (error, data, r
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **promotion** | **Number**| Id requested Promotion | 
 
 ### Return type
@@ -411,7 +411,7 @@ No authorization required
 
 ## clientClientServiceGet
 
-> InlineResponse2002 clientClientServiceGet(client, opts)
+> InlineResponse2002 clientClientServiceGet(clientID, opts)
 
 Получение списка Услуг, которые оказывает салон
 
@@ -423,12 +423,12 @@ Store *Service* entity
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let opts = {
   'limit': 25, // Number | Как много элементов должно возвращаться за один запрос
   'offset': 0 // Number | Смещение от первого
 };
-apiInstance.clientClientServiceGet(client, opts, (error, data, response) => {
+apiInstance.clientClientServiceGet(clientID, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -442,7 +442,7 @@ apiInstance.clientClientServiceGet(client, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **limit** | **Number**| Как много элементов должно возвращаться за один запрос | [optional] [default to 25]
  **offset** | **Number**| Смещение от первого | [optional] [default to 0]
 
@@ -462,7 +462,7 @@ No authorization required
 
 ## clientClientServiceServiceGet
 
-> Object clientClientServiceServiceGet(client, service)
+> Object clientClientServiceServiceGet(clientID, service)
 
 Получение детальной информации услуги
 
@@ -474,9 +474,9 @@ No authorization required
 import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
-let client = 1; // Number | ID салона
+let clientID = 1; // Number | ID салона
 let service = 1; // Number | ID услуги
-apiInstance.clientClientServiceServiceGet(client, service, (error, data, response) => {
+apiInstance.clientClientServiceServiceGet(clientID, service, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -490,7 +490,7 @@ apiInstance.clientClientServiceServiceGet(client, service, (error, data, respons
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | **Number**| ID салона | [default to 1]
+ **clientID** | **Number**| ID салона | [default to 1]
  **service** | **Number**| ID услуги | 
 
 ### Return type
