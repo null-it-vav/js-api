@@ -153,6 +153,7 @@ export default class ClientApi {
       let headerParams = {
       };
       let formParams = {
+        "_method":"PATCH"
       };
 
       let authNames = ['bearerAuthAdmin'];
@@ -160,7 +161,7 @@ export default class ClientApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{clientID}', 'PATCH',
+        '/client/{clientID}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

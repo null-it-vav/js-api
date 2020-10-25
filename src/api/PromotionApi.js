@@ -262,6 +262,7 @@ export default class PromotionApi {
       let headerParams = {
       };
       let formParams = {
+        _method: "PATCH"
       };
 
       let authNames = ['bearerAuth'];
@@ -269,7 +270,7 @@ export default class PromotionApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{clientID}/promotion/{promotionID}', 'PATCH',
+        '/client/{clientID}/promotion/{promotionID}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -290,6 +290,7 @@ export default class WorkingDiapasonApi {
       let headerParams = {
       };
       let formParams = {
+        _method: "PATCH"
       };
 
       let authNames = ['bearerAuthMaster'];
@@ -297,7 +298,7 @@ export default class WorkingDiapasonApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{clientID}/master/{masterID}/working-diapason/{workingDiapasonID}', 'PATCH',
+        '/client/{clientID}/master/{masterID}/working-diapason/{workingDiapasonID}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

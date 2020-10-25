@@ -231,7 +231,8 @@ export default class MasterApi {
         'phone': opts['phone'],
         'description': opts['description'],
         'email': opts['email'],
-        'password': opts['password']
+        'password': opts['password'],
+        '_method': "PATCH"
       };
 
       let authNames = ['bearerAuth'];
@@ -239,7 +240,7 @@ export default class MasterApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{clientID}/master/{masterID}', 'PATCH',
+        '/client/{clientID}/master/{masterID}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

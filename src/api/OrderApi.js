@@ -195,6 +195,7 @@ export default class OrderApi {
       let headerParams = {
       };
       let formParams = {
+          _method: "PATCH"
       };
 
       let authNames = ['bearerAuth'];
@@ -202,7 +203,7 @@ export default class OrderApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{clientID}/order/{orderID}', 'PATCH',
+        '/client/{clientID}/order/{orderID}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
