@@ -114,7 +114,7 @@ null (empty response body)
 
 ## clientClientPromotionPromotionDelete
 
-> clientClientPromotionPromotionDelete(clientID, promotion)
+> clientClientPromotionPromotionDelete(clientID, promotionID)
 
 
 
@@ -131,8 +131,8 @@ bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.PromotionApi();
 let clientID = 1; // Number | ID салона
-let promotion = 1; // Number | Id requested Promotion
-apiInstance.clientClientPromotionPromotionDelete(clientID, promotion, (error, data, response) => {
+let promotionID = 1; // Number | Id requested Promotion
+apiInstance.clientClientPromotionPromotionDelete(clientID, promotionID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -147,7 +147,7 @@ apiInstance.clientClientPromotionPromotionDelete(clientID, promotion, (error, da
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **promotion** | **Number**| Id requested Promotion | 
+ **promotionID** | **Number**| Id requested Promotion | 
 
 ### Return type
 
@@ -165,7 +165,7 @@ null (empty response body)
 
 ## clientClientPromotionPromotionGet
 
-> Object clientClientPromotionPromotionGet(clientID, promotion)
+> Object clientClientPromotionPromotionGet(clientID, promotionID)
 
 Получение детальной информации по акции
 
@@ -178,8 +178,8 @@ import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.PromotionApi();
 let clientID = 1; // Number | ID салона
-let promotion = 1; // Number | Id requested Promotion
-apiInstance.clientClientPromotionPromotionGet(clientID, promotion, (error, data, response) => {
+let promotionID = 1; // Number | Id requested Promotion
+apiInstance.clientClientPromotionPromotionGet(clientID, promotionID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -194,7 +194,7 @@ apiInstance.clientClientPromotionPromotionGet(clientID, promotion, (error, data,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **promotion** | **Number**| Id requested Promotion | 
+ **promotionID** | **Number**| Id requested Promotion | 
 
 ### Return type
 
@@ -212,7 +212,7 @@ No authorization required
 
 ## clientClientPromotionPromotionPatch
 
-> clientClientPromotionPromotionPatch(clientID, promotion, promotion)
+> clientClientPromotionPromotionPatch(clientID, promotionID, promotion)
 
 
 
@@ -229,9 +229,9 @@ bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.PromotionApi();
 let clientID = 1; // Number | ID салона
-let promotion = 1; // Number | Id requested Promotion
+let promotionID = 1; // Number | Id requested Promotion
 let promotion = new GroomerService.Promotion(); // Promotion | Optional description in *Markdown*
-apiInstance.clientClientPromotionPromotionPatch(clientID, promotion, promotion, (error, data, response) => {
+apiInstance.clientClientPromotionPromotionPatch(clientID, promotionID, promotion, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -246,7 +246,7 @@ apiInstance.clientClientPromotionPromotionPatch(clientID, promotion, promotion, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **promotion** | **Number**| Id requested Promotion | 
+ **promotionID** | **Number**| Id requested Promotion | 
  **promotion** | [**Promotion**](Promotion.md)| Optional description in *Markdown* | 
 
 ### Return type

@@ -364,7 +364,7 @@ No authorization required
 
 ## clientClientPromotionPromotionGet
 
-> Object clientClientPromotionPromotionGet(clientID, promotion)
+> Object clientClientPromotionPromotionGet(clientID, promotionID)
 
 Получение детальной информации по акции
 
@@ -377,8 +377,8 @@ import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
 let clientID = 1; // Number | ID салона
-let promotion = 1; // Number | Id requested Promotion
-apiInstance.clientClientPromotionPromotionGet(clientID, promotion, (error, data, response) => {
+let promotionID = 1; // Number | Id requested Promotion
+apiInstance.clientClientPromotionPromotionGet(clientID, promotionID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -393,7 +393,7 @@ apiInstance.clientClientPromotionPromotionGet(clientID, promotion, (error, data,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **promotion** | **Number**| Id requested Promotion | 
+ **promotionID** | **Number**| Id requested Promotion | 
 
 ### Return type
 
@@ -462,7 +462,7 @@ No authorization required
 
 ## clientClientServiceServiceGet
 
-> Object clientClientServiceServiceGet(clientID, service)
+> Object clientClientServiceServiceGet(clientID, serviceID)
 
 Получение детальной информации услуги
 
@@ -475,8 +475,8 @@ import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ApplicationApi();
 let clientID = 1; // Number | ID салона
-let service = 1; // Number | ID услуги
-apiInstance.clientClientServiceServiceGet(clientID, service, (error, data, response) => {
+let serviceID = 1; // Number | ID услуги
+apiInstance.clientClientServiceServiceGet(clientID, serviceID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -491,7 +491,7 @@ apiInstance.clientClientServiceServiceGet(clientID, service, (error, data, respo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **service** | **Number**| ID услуги | 
+ **serviceID** | **Number**| ID услуги | 
 
 ### Return type
 

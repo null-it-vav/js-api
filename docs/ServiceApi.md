@@ -118,7 +118,7 @@ null (empty response body)
 
 ## clientClientServiceServiceDelete
 
-> clientClientServiceServiceDelete(clientID, service)
+> clientClientServiceServiceDelete(clientID, serviceID)
 
 
 
@@ -135,8 +135,8 @@ bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.ServiceApi();
 let clientID = 1; // Number | ID салона
-let service = 1; // Number | ID услуги
-apiInstance.clientClientServiceServiceDelete(clientID, service, (error, data, response) => {
+let serviceID = 1; // Number | ID услуги
+apiInstance.clientClientServiceServiceDelete(clientID, serviceID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -151,7 +151,7 @@ apiInstance.clientClientServiceServiceDelete(clientID, service, (error, data, re
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **service** | **Number**| ID услуги | 
+ **serviceID** | **Number**| ID услуги | 
 
 ### Return type
 
@@ -169,7 +169,7 @@ null (empty response body)
 
 ## clientClientServiceServiceGet
 
-> Object clientClientServiceServiceGet(clientID, service)
+> Object clientClientServiceServiceGet(clientID, serviceID)
 
 Получение детальной информации услуги
 
@@ -182,8 +182,8 @@ import GroomerService from 'groomer_service';
 
 let apiInstance = new GroomerService.ServiceApi();
 let clientID = 1; // Number | ID салона
-let service = 1; // Number | ID услуги
-apiInstance.clientClientServiceServiceGet(clientID, service, (error, data, response) => {
+let serviceID = 1; // Number | ID услуги
+apiInstance.clientClientServiceServiceGet(clientID, serviceID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -198,7 +198,7 @@ apiInstance.clientClientServiceServiceGet(clientID, service, (error, data, respo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **service** | **Number**| ID услуги | 
+ **serviceID** | **Number**| ID услуги | 
 
 ### Return type
 
@@ -216,7 +216,7 @@ No authorization required
 
 ## clientClientServiceServicePatch
 
-> clientClientServiceServicePatch(clientID, service, service)
+> clientClientServiceServicePatch(clientID, serviceID, service)
 
 
 
@@ -233,9 +233,9 @@ bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new GroomerService.ServiceApi();
 let clientID = 1; // Number | ID салона
-let service = 1; // Number | ID услуги
+let serviceID = 1; // Number | ID услуги
 let service = new GroomerService.Service(); // Service | Optional description in *Markdown*
-apiInstance.clientClientServiceServicePatch(clientID, service, service, (error, data, response) => {
+apiInstance.clientClientServiceServicePatch(clientID, serviceID, service, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -250,7 +250,7 @@ apiInstance.clientClientServiceServicePatch(clientID, service, service, (error, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientID** | **Number**| ID салона | [default to 1]
- **service** | **Number**| ID услуги | 
+ **serviceID** | **Number**| ID услуги | 
  **service** | [**Service**](Service.md)| Optional description in *Markdown* | 
 
 ### Return type

@@ -150,23 +150,23 @@ export default class ServiceApi {
      * 
      * 
      * @param {Number} clientID ID салона
-     * @param {Number} service ID услуги
+     * @param {Number} serviceID ID услуги
      * @param {module:api/ServiceApi~clientClientServiceServiceDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientServiceServiceDelete(clientID, service, callback) {
+    clientClientServiceServiceDelete(clientID, serviceID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientServiceServiceDelete");
       }
-      // verify the required parameter 'service' is set
-      if (service === undefined || service === null) {
-        throw new Error("Missing the required parameter 'service' when calling clientClientServiceServiceDelete");
+      // verify the required parameter 'serviceID' is set
+      if (serviceID === undefined || serviceID === null) {
+        throw new Error("Missing the required parameter 'serviceID' when calling clientClientServiceServiceDelete");
       }
 
       let pathParams = {
         'clientID': clientID,
-        'service': service
+        'serviceID': serviceID
       };
       let queryParams = {
       };
@@ -198,24 +198,24 @@ export default class ServiceApi {
      * Получение детальной информации услуги
      * 
      * @param {Number} clientID ID салона
-     * @param {Number} service ID услуги
+     * @param {Number} serviceID ID услуги
      * @param {module:api/ServiceApi~clientClientServiceServiceGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientServiceServiceGet(clientID, service, callback) {
+    clientClientServiceServiceGet(clientID, serviceID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientServiceServiceGet");
       }
-      // verify the required parameter 'service' is set
-      if (service === undefined || service === null) {
-        throw new Error("Missing the required parameter 'service' when calling clientClientServiceServiceGet");
+      // verify the required parameter 'serviceID' is set
+      if (serviceID === undefined || serviceID === null) {
+        throw new Error("Missing the required parameter 'serviceID' when calling clientClientServiceServiceGet");
       }
 
       let pathParams = {
         'clientID': clientID,
-        'service': service
+        'serviceID': serviceID
       };
       let queryParams = {
       };
@@ -247,19 +247,19 @@ export default class ServiceApi {
      * 
      * 
      * @param {Number} clientID ID салона
-     * @param {Number} service ID услуги
+     * @param {Number} serviceID ID услуги
      * @param {module:model/Service} service Optional description in *Markdown*
      * @param {module:api/ServiceApi~clientClientServiceServicePatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientServiceServicePatch(clientID, service, service, callback) {
+    clientClientServiceServicePatch(clientID, serviceID, service, callback) {
       let postBody = service;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientServiceServicePatch");
       }
-      // verify the required parameter 'service' is set
-      if (service === undefined || service === null) {
-        throw new Error("Missing the required parameter 'service' when calling clientClientServiceServicePatch");
+      // verify the required parameter 'serviceID' is set
+      if (serviceID === undefined || serviceID === null) {
+        throw new Error("Missing the required parameter 'serviceID' when calling clientClientServiceServicePatch");
       }
       // verify the required parameter 'service' is set
       if (service === undefined || service === null) {
@@ -268,7 +268,7 @@ export default class ServiceApi {
 
       let pathParams = {
         'clientID': clientID,
-        'service': service
+        'serviceID': serviceID
       };
       let queryParams = {
       };

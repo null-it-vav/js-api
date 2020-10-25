@@ -137,23 +137,23 @@ export default class PromotionApi {
      * 
      * 
      * @param {Number} clientID ID салона
-     * @param {Number} promotion Id requested Promotion
+     * @param {Number} promotionID Id requested Promotion
      * @param {module:api/PromotionApi~clientClientPromotionPromotionDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientPromotionPromotionDelete(clientID, promotion, callback) {
+    clientClientPromotionPromotionDelete(clientID, promotionID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientPromotionPromotionDelete");
       }
-      // verify the required parameter 'promotion' is set
-      if (promotion === undefined || promotion === null) {
-        throw new Error("Missing the required parameter 'promotion' when calling clientClientPromotionPromotionDelete");
+      // verify the required parameter 'promotionID' is set
+      if (promotionID === undefined || promotionID === null) {
+        throw new Error("Missing the required parameter 'promotionID' when calling clientClientPromotionPromotionDelete");
       }
 
       let pathParams = {
         'clientID': clientID,
-        'promotion': promotion
+        'promotionID': promotionID
       };
       let queryParams = {
       };
@@ -185,24 +185,24 @@ export default class PromotionApi {
      * Получение детальной информации по акции
      * 
      * @param {Number} clientID ID салона
-     * @param {Number} promotion Id requested Promotion
+     * @param {Number} promotionID Id requested Promotion
      * @param {module:api/PromotionApi~clientClientPromotionPromotionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientPromotionPromotionGet(clientID, promotion, callback) {
+    clientClientPromotionPromotionGet(clientID, promotionID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientPromotionPromotionGet");
       }
-      // verify the required parameter 'promotion' is set
-      if (promotion === undefined || promotion === null) {
-        throw new Error("Missing the required parameter 'promotion' when calling clientClientPromotionPromotionGet");
+      // verify the required parameter 'promotionID' is set
+      if (promotionID === undefined || promotionID === null) {
+        throw new Error("Missing the required parameter 'promotionID' when calling clientClientPromotionPromotionGet");
       }
 
       let pathParams = {
         'clientID': clientID,
-        'promotion': promotion
+        'promotionID': promotionID
       };
       let queryParams = {
       };
@@ -234,19 +234,19 @@ export default class PromotionApi {
      * 
      * 
      * @param {Number} clientID ID салона
-     * @param {Number} promotion Id requested Promotion
+     * @param {Number} promotionID Id requested Promotion
      * @param {module:model/Promotion} promotion Optional description in *Markdown*
      * @param {module:api/PromotionApi~clientClientPromotionPromotionPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientPromotionPromotionPatch(clientID, promotion, promotion, callback) {
+    clientClientPromotionPromotionPatch(clientID, promotionID, promotion, callback) {
       let postBody = promotion;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientPromotionPromotionPatch");
       }
-      // verify the required parameter 'promotion' is set
-      if (promotion === undefined || promotion === null) {
-        throw new Error("Missing the required parameter 'promotion' when calling clientClientPromotionPromotionPatch");
+      // verify the required parameter 'promotionID' is set
+      if (promotionID === undefined || promotionID === null) {
+        throw new Error("Missing the required parameter 'promotionID' when calling clientClientPromotionPromotionPatch");
       }
       // verify the required parameter 'promotion' is set
       if (promotion === undefined || promotion === null) {
@@ -255,7 +255,7 @@ export default class PromotionApi {
 
       let pathParams = {
         'clientID': clientID,
-        'promotion': promotion
+        'promotionID': promotionID
       };
       let queryParams = {
       };
