@@ -35,8 +35,8 @@ export default class ClientApi {
 
 
     /**
-     * Callback function to receive the result of the clientClientDelete operation.
-     * @callback module:api/ClientApi~clientClientDeleteCallback
+     * Callback function to receive the result of the clientClientIDDelete operation.
+     * @callback module:api/ClientApi~clientClientIDDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -46,13 +46,13 @@ export default class ClientApi {
      * 
      * 
      * @param {Number} clientID ID салона
-     * @param {module:api/ClientApi~clientClientDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ClientApi~clientClientIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientDelete(clientID, callback) {
+    clientClientIDDelete(clientID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientDelete");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDDelete");
       }
 
       let pathParams = {
@@ -70,15 +70,15 @@ export default class ClientApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{client}', 'DELETE',
+        '/client/{clientID}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientGet operation.
-     * @callback module:api/ClientApi~clientClientGetCallback
+     * Callback function to receive the result of the clientClientIDGet operation.
+     * @callback module:api/ClientApi~clientClientIDGetCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -88,14 +88,14 @@ export default class ClientApi {
      * Получение данных салона - адреса, телефоны, социалки и т.п.
      * Получение данных для салона
      * @param {Number} clientID ID салона
-     * @param {module:api/ClientApi~clientClientGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ClientApi~clientClientIDGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientGet(clientID, callback) {
+    clientClientIDGet(clientID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientGet");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDGet");
       }
 
       let pathParams = {
@@ -113,15 +113,15 @@ export default class ClientApi {
       let accepts = ['application/json'];
       let returnType = Object;
       return this.apiClient.callApi(
-        '/client/{client}', 'GET',
+        '/client/{clientID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientPatch operation.
-     * @callback module:api/ClientApi~clientClientPatchCallback
+     * Callback function to receive the result of the clientClientIDPatch operation.
+     * @callback module:api/ClientApi~clientClientIDPatchCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -132,17 +132,17 @@ export default class ClientApi {
      * 
      * @param {Number} clientID ID салона
      * @param {module:model/Client} client Optional description in *Markdown*
-     * @param {module:api/ClientApi~clientClientPatchCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ClientApi~clientClientIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientPatch(clientID, client, callback) {
+    clientClientIDPatch(clientID, client, callback) {
       let postBody = client;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientPatch");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPatch");
       }
       // verify the required parameter 'client' is set
       if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientPatch");
+        throw new Error("Missing the required parameter 'client' when calling clientClientIDPatch");
       }
 
       let pathParams = {
@@ -160,7 +160,7 @@ export default class ClientApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{client}', 'PATCH',
+        '/client/{clientID}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

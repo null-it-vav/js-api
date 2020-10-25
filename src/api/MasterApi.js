@@ -34,8 +34,8 @@ export default class MasterApi {
 
 
     /**
-     * Callback function to receive the result of the clientClientMasterGet operation.
-     * @callback module:api/MasterApi~clientClientMasterGetCallback
+     * Callback function to receive the result of the clientClientIDMasterGet operation.
+     * @callback module:api/MasterApi~clientClientIDMasterGetCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -48,15 +48,15 @@ export default class MasterApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
-     * @param {module:api/MasterApi~clientClientMasterGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MasterApi~clientClientIDMasterGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientMasterGet(clientID, opts, callback) {
+    clientClientIDMasterGet(clientID, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterGet");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterGet");
       }
 
       let pathParams = {
@@ -76,15 +76,15 @@ export default class MasterApi {
       let accepts = ['application/json'];
       let returnType = Object;
       return this.apiClient.callApi(
-        '/client/{client}/master', 'GET',
+        '/client/{clientID}/master', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientMasterMasterDelete operation.
-     * @callback module:api/MasterApi~clientClientMasterMasterDeleteCallback
+     * Callback function to receive the result of the clientClientIDMasterMasterIDDelete operation.
+     * @callback module:api/MasterApi~clientClientIDMasterMasterIDDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -95,17 +95,17 @@ export default class MasterApi {
      * 
      * @param {Number} clientID ID салона
      * @param {Number} masterID Id мастера
-     * @param {module:api/MasterApi~clientClientMasterMasterDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MasterApi~clientClientIDMasterMasterIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientMasterMasterDelete(clientID, masterID, callback) {
+    clientClientIDMasterMasterIDDelete(clientID, masterID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterDelete");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterMasterIDDelete");
       }
       // verify the required parameter 'masterID' is set
       if (masterID === undefined || masterID === null) {
-        throw new Error("Missing the required parameter 'masterID' when calling clientClientMasterMasterDelete");
+        throw new Error("Missing the required parameter 'masterID' when calling clientClientIDMasterMasterIDDelete");
       }
 
       let pathParams = {
@@ -124,15 +124,15 @@ export default class MasterApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{client}/master/{master}', 'DELETE',
+        '/client/{clientID}/master/{masterID}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientMasterMasterGet operation.
-     * @callback module:api/MasterApi~clientClientMasterMasterGetCallback
+     * Callback function to receive the result of the clientClientIDMasterMasterIDGet operation.
+     * @callback module:api/MasterApi~clientClientIDMasterMasterIDGetCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -143,18 +143,18 @@ export default class MasterApi {
      * 
      * @param {Number} clientID ID салона
      * @param {Number} masterID Id мастера
-     * @param {module:api/MasterApi~clientClientMasterMasterGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MasterApi~clientClientIDMasterMasterIDGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientMasterMasterGet(clientID, masterID, callback) {
+    clientClientIDMasterMasterIDGet(clientID, masterID, callback) {
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterGet");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterMasterIDGet");
       }
       // verify the required parameter 'masterID' is set
       if (masterID === undefined || masterID === null) {
-        throw new Error("Missing the required parameter 'masterID' when calling clientClientMasterMasterGet");
+        throw new Error("Missing the required parameter 'masterID' when calling clientClientIDMasterMasterIDGet");
       }
 
       let pathParams = {
@@ -173,15 +173,15 @@ export default class MasterApi {
       let accepts = ['application/json'];
       let returnType = Object;
       return this.apiClient.callApi(
-        '/client/{client}/master/{master}', 'GET',
+        '/client/{clientID}/master/{masterID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientMasterMasterPatch operation.
-     * @callback module:api/MasterApi~clientClientMasterMasterPatchCallback
+     * Callback function to receive the result of the clientClientIDMasterMasterIDPatch operation.
+     * @callback module:api/MasterApi~clientClientIDMasterMasterIDPatchCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -201,18 +201,18 @@ export default class MasterApi {
      * @param {String} opts.description 
      * @param {String} opts.email 
      * @param {String} opts.password 
-     * @param {module:api/MasterApi~clientClientMasterMasterPatchCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MasterApi~clientClientIDMasterMasterIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientMasterMasterPatch(clientID, masterID, opts, callback) {
+    clientClientIDMasterMasterIDPatch(clientID, masterID, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterMasterPatch");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterMasterIDPatch");
       }
       // verify the required parameter 'masterID' is set
       if (masterID === undefined || masterID === null) {
-        throw new Error("Missing the required parameter 'masterID' when calling clientClientMasterMasterPatch");
+        throw new Error("Missing the required parameter 'masterID' when calling clientClientIDMasterMasterIDPatch");
       }
 
       let pathParams = {
@@ -239,15 +239,15 @@ export default class MasterApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{client}/master/{master}', 'PATCH',
+        '/client/{clientID}/master/{masterID}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientMasterPost operation.
-     * @callback module:api/MasterApi~clientClientMasterPostCallback
+     * Callback function to receive the result of the clientClientIDMasterPost operation.
+     * @callback module:api/MasterApi~clientClientIDMasterPostCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -266,15 +266,15 @@ export default class MasterApi {
      * @param {String} opts.description 
      * @param {String} opts.email 
      * @param {String} opts.password 
-     * @param {module:api/MasterApi~clientClientMasterPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MasterApi~clientClientIDMasterPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientMasterPost(clientID, opts, callback) {
+    clientClientIDMasterPost(clientID, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientMasterPost");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterPost");
       }
 
       let pathParams = {
@@ -300,7 +300,7 @@ export default class MasterApi {
       let accepts = ['application/json'];
       let returnType = Object;
       return this.apiClient.callApi(
-        '/client/{client}/master', 'POST',
+        '/client/{clientID}/master', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

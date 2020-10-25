@@ -35,8 +35,8 @@ export default class OrderApi {
 
 
     /**
-     * Callback function to receive the result of the clientClientOrderGet operation.
-     * @callback module:api/OrderApi~clientClientOrderGetCallback
+     * Callback function to receive the result of the clientClientIDOrderGet operation.
+     * @callback module:api/OrderApi~clientClientIDOrderGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -48,9 +48,9 @@ export default class OrderApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
-     * @param {module:api/OrderApi~clientClientOrderGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrderApi~clientClientIDOrderGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientOrderGet(opts, callback) {
+    clientClientIDOrderGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -70,15 +70,15 @@ export default class OrderApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{client}/order', 'GET',
+        '/client/{clientID}/order', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientOrderOrderDelete operation.
-     * @callback module:api/OrderApi~clientClientOrderOrderDeleteCallback
+     * Callback function to receive the result of the clientClientIDOrderOrderIDDelete operation.
+     * @callback module:api/OrderApi~clientClientIDOrderOrderIDDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -88,13 +88,13 @@ export default class OrderApi {
      * 
      * 
      * @param {Number} orderID Id requested Order
-     * @param {module:api/OrderApi~clientClientOrderOrderDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrderApi~clientClientIDOrderOrderIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientOrderOrderDelete(orderID, callback) {
+    clientClientIDOrderOrderIDDelete(orderID, callback) {
       let postBody = null;
       // verify the required parameter 'orderID' is set
       if (orderID === undefined || orderID === null) {
-        throw new Error("Missing the required parameter 'orderID' when calling clientClientOrderOrderDelete");
+        throw new Error("Missing the required parameter 'orderID' when calling clientClientIDOrderOrderIDDelete");
       }
 
       let pathParams = {
@@ -112,15 +112,15 @@ export default class OrderApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{client}/order/{order}', 'DELETE',
+        '/client/{clientID}/order/{orderID}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientOrderOrderGet operation.
-     * @callback module:api/OrderApi~clientClientOrderOrderGetCallback
+     * Callback function to receive the result of the clientClientIDOrderOrderIDGet operation.
+     * @callback module:api/OrderApi~clientClientIDOrderOrderIDGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Order} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -130,14 +130,14 @@ export default class OrderApi {
      * 
      * 
      * @param {Number} orderID Id requested Order
-     * @param {module:api/OrderApi~clientClientOrderOrderGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrderApi~clientClientIDOrderOrderIDGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Order}
      */
-    clientClientOrderOrderGet(orderID, callback) {
+    clientClientIDOrderOrderIDGet(orderID, callback) {
       let postBody = null;
       // verify the required parameter 'orderID' is set
       if (orderID === undefined || orderID === null) {
-        throw new Error("Missing the required parameter 'orderID' when calling clientClientOrderOrderGet");
+        throw new Error("Missing the required parameter 'orderID' when calling clientClientIDOrderOrderIDGet");
       }
 
       let pathParams = {
@@ -155,15 +155,15 @@ export default class OrderApi {
       let accepts = ['application/json'];
       let returnType = Order;
       return this.apiClient.callApi(
-        '/client/{client}/order/{order}', 'GET',
+        '/client/{clientID}/order/{orderID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientOrderOrderPatch operation.
-     * @callback module:api/OrderApi~clientClientOrderOrderPatchCallback
+     * Callback function to receive the result of the clientClientIDOrderOrderIDPatch operation.
+     * @callback module:api/OrderApi~clientClientIDOrderOrderIDPatchCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -174,17 +174,17 @@ export default class OrderApi {
      * 
      * @param {Number} orderID Id requested Order
      * @param {module:model/Order} order Optional description in *Markdown*
-     * @param {module:api/OrderApi~clientClientOrderOrderPatchCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrderApi~clientClientIDOrderOrderIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientOrderOrderPatch(orderID, order, callback) {
+    clientClientIDOrderOrderIDPatch(orderID, order, callback) {
       let postBody = order;
       // verify the required parameter 'orderID' is set
       if (orderID === undefined || orderID === null) {
-        throw new Error("Missing the required parameter 'orderID' when calling clientClientOrderOrderPatch");
+        throw new Error("Missing the required parameter 'orderID' when calling clientClientIDOrderOrderIDPatch");
       }
       // verify the required parameter 'order' is set
       if (order === undefined || order === null) {
-        throw new Error("Missing the required parameter 'order' when calling clientClientOrderOrderPatch");
+        throw new Error("Missing the required parameter 'order' when calling clientClientIDOrderOrderIDPatch");
       }
 
       let pathParams = {
@@ -202,15 +202,15 @@ export default class OrderApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{client}/order/{order}', 'PATCH',
+        '/client/{clientID}/order/{orderID}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientOrderPost operation.
-     * @callback module:api/OrderApi~clientClientOrderPostCallback
+     * Callback function to receive the result of the clientClientIDOrderPost operation.
+     * @callback module:api/OrderApi~clientClientIDOrderPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -220,13 +220,13 @@ export default class OrderApi {
      * Создание заявки на оказание услуг
      * 
      * @param {module:model/Order} order Store *Order* entity
-     * @param {module:api/OrderApi~clientClientOrderPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrderApi~clientClientIDOrderPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientOrderPost(order, callback) {
+    clientClientIDOrderPost(order, callback) {
       let postBody = order;
       // verify the required parameter 'order' is set
       if (order === undefined || order === null) {
-        throw new Error("Missing the required parameter 'order' when calling clientClientOrderPost");
+        throw new Error("Missing the required parameter 'order' when calling clientClientIDOrderPost");
       }
 
       let pathParams = {
@@ -243,7 +243,7 @@ export default class OrderApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{client}/order', 'POST',
+        '/client/{clientID}/order', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
