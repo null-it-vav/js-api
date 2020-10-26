@@ -131,18 +131,22 @@ export default class ClientApi {
      * 
      * 
      * @param {Number} clientID ID салона
-     * @param {module:model/Client} client Optional description in *Markdown*
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.id Уникальный идентификатор Клиента
+     * @param {String} opts.password Пароль клиента
+     * @param {Boolean} opts.type Тип клиента. 0 - частный мастер, 1 - компания
+     * @param {String} opts.name Название Клиента
+     * @param {String} opts.email Электронная почта
+     * @param {File} opts.image Логотип клиента
+     * @param {Object} opts.settings 
      * @param {module:api/ClientApi~clientClientIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDPatch(clientID, client, callback) {
-      let postBody = client;
+    clientClientIDPatch(clientID, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPatch");
-      }
-      // verify the required parameter 'client' is set
-      if (client === undefined || client === null) {
-        throw new Error("Missing the required parameter 'client' when calling clientClientIDPatch");
       }
 
       let pathParams = {
@@ -153,11 +157,18 @@ export default class ClientApi {
       let headerParams = {
       };
       let formParams = {
-        "_method":"PATCH"
+        'id': opts['id'],
+        'password': opts['password'],
+        'type': opts['type'],
+        'name': opts['name'],
+        'email': opts['email'],
+        'image': opts['image'],
+        'settings': opts['settings'],
+        '_method': "PATCH"
       };
 
       let authNames = ['bearerAuthAdmin'];
-      let contentTypes = ['application/json'];
+      let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(

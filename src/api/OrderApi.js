@@ -195,7 +195,6 @@ export default class OrderApi {
       let headerParams = {
       };
       let formParams = {
-          _method: "PATCH"
       };
 
       let authNames = ['bearerAuth'];

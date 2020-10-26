@@ -14,7 +14,6 @@
 
 import ApiClient from "../ApiClient";
 import InlineResponse2001 from '../model/InlineResponse2001';
-import Service from '../model/Service';
 
 /**
 * Service service.
@@ -95,25 +94,19 @@ export default class ServiceApi {
     /**
      * 
      * 
-     * @param {String} name Название Услуги
-     * @param {File} imageUpload Загружаемое изображение услуги
-     * @param {Array.<module:model/Number>} serviceType Тип услуги - для кошек, для собак, для других
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.id 
+     * @param {String} opts.name Название Услуги
+     * @param {File} opts.imageUpload Загружаемое изображение услуги
+     * @param {module:model/Number} opts.serviceType Тип услуги - для кошек, для собак, для других
+     * @param {String} opts.image Изображение услуги
+     * @param {Number} opts.price Цена на услугу
+     * @param {String} opts.text Описание услуги
      * @param {module:api/ServiceApi~clientClientIDServicePostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDServicePost(name, imageUpload, serviceType, callback) {
+    clientClientIDServicePost(opts, callback) {
+      opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'name' is set
-      if (name === undefined || name === null) {
-        throw new Error("Missing the required parameter 'name' when calling clientClientIDServicePost");
-      }
-      // verify the required parameter 'imageUpload' is set
-      if (imageUpload === undefined || imageUpload === null) {
-        throw new Error("Missing the required parameter 'imageUpload' when calling clientClientIDServicePost");
-      }
-      // verify the required parameter 'serviceType' is set
-      if (serviceType === undefined || serviceType === null) {
-        throw new Error("Missing the required parameter 'serviceType' when calling clientClientIDServicePost");
-      }
 
       let pathParams = {
       };
@@ -122,9 +115,13 @@ export default class ServiceApi {
       let headerParams = {
       };
       let formParams = {
-        'name': name,
-        'image_upload': imageUpload,
-        'service_type': this.apiClient.buildCollectionParam(serviceType, 'csv')
+        'id': opts['id'],
+        'name': opts['name'],
+        'image_upload': opts['imageUpload'],
+        'service_type': opts['serviceType'],
+        'image': opts['image'],
+        'price': opts['price'],
+        'text': opts['text']
       };
 
       let authNames = ['bearerAuth'];
@@ -248,11 +245,19 @@ export default class ServiceApi {
      * 
      * @param {Number} clientID ID салона
      * @param {Number} serviceID ID услуги
-     * @param {module:model/Service} service Optional description in *Markdown*
+     * @param {String} name Название Услуги
+     * @param {File} imageUpload Загружаемое изображение услуги
+     * @param {module:model/Number} serviceType Тип услуги - для кошек, для собак, для других
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.id 
+     * @param {String} opts.image Изображение услуги
+     * @param {Number} opts.price Цена на услугу
+     * @param {String} opts.text Описание услуги
      * @param {module:api/ServiceApi~clientClientIDServiceServiceIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDServiceServiceIDPatch(clientID, serviceID, service, callback) {
-      let postBody = service;
+    clientClientIDServiceServiceIDPatch(clientID, serviceID, name, imageUpload, serviceType, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientIDServiceServiceIDPatch");
@@ -261,9 +266,17 @@ export default class ServiceApi {
       if (serviceID === undefined || serviceID === null) {
         throw new Error("Missing the required parameter 'serviceID' when calling clientClientIDServiceServiceIDPatch");
       }
-      // verify the required parameter 'service' is set
-      if (service === undefined || service === null) {
-        throw new Error("Missing the required parameter 'service' when calling clientClientIDServiceServiceIDPatch");
+      // verify the required parameter 'name' is set
+      if (name === undefined || name === null) {
+        throw new Error("Missing the required parameter 'name' when calling clientClientIDServiceServiceIDPatch");
+      }
+      // verify the required parameter 'imageUpload' is set
+      if (imageUpload === undefined || imageUpload === null) {
+        throw new Error("Missing the required parameter 'imageUpload' when calling clientClientIDServiceServiceIDPatch");
+      }
+      // verify the required parameter 'serviceType' is set
+      if (serviceType === undefined || serviceType === null) {
+        throw new Error("Missing the required parameter 'serviceType' when calling clientClientIDServiceServiceIDPatch");
       }
 
       let pathParams = {
@@ -275,11 +288,18 @@ export default class ServiceApi {
       let headerParams = {
       };
       let formParams = {
-        _method: "PATCH"
+        'id': opts['id'],
+        'name': name,
+        'image_upload': imageUpload,
+        'service_type': serviceType,
+        'image': opts['image'],
+        'price': opts['price'],
+        'text': opts['text'],
+        '_method': "PATCH"
       };
 
       let authNames = ['bearerAuth'];
-      let contentTypes = ['application/json'];
+      let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(

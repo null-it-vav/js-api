@@ -14,7 +14,6 @@
 
 import ApiClient from "../ApiClient";
 import InlineResponse200 from '../model/InlineResponse200';
-import Promotion from '../model/Promotion';
 
 /**
 * Promotion service.
@@ -95,15 +94,18 @@ export default class PromotionApi {
     /**
      * 
      * 
-     * @param {module:model/Promotion} promotion Store *Promotion* entity
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.id Уникальный идентификатор Акции
+     * @param {String} opts.title Заголовок Акции
+     * @param {String} opts.fullDescription Текст Акции, поддерживает разметку
+     * @param {String} opts.imageUrl Изображение акции
+     * @param {Number} opts.dateStart Дата начала акции
+     * @param {Number} opts.dateEnd Дата окончания акции
      * @param {module:api/PromotionApi~clientClientIDPromotionPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDPromotionPost(promotion, callback) {
-      let postBody = promotion;
-      // verify the required parameter 'promotion' is set
-      if (promotion === undefined || promotion === null) {
-        throw new Error("Missing the required parameter 'promotion' when calling clientClientIDPromotionPost");
-      }
+    clientClientIDPromotionPost(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
 
       let pathParams = {
       };
@@ -112,10 +114,16 @@ export default class PromotionApi {
       let headerParams = {
       };
       let formParams = {
+        'id': opts['id'],
+        'title': opts['title'],
+        'full_description': opts['fullDescription'],
+        'image_url': opts['imageUrl'],
+        'date_start': opts['dateStart'],
+        'date_end': opts['dateEnd']
       };
 
       let authNames = ['bearerAuth'];
-      let contentTypes = ['application/json'];
+      let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
@@ -235,11 +243,18 @@ export default class PromotionApi {
      * 
      * @param {Number} clientID ID салона
      * @param {Number} promotionID Id requested Promotion
-     * @param {module:model/Promotion} promotion Optional description in *Markdown*
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.id Уникальный идентификатор Акции
+     * @param {String} opts.title Заголовок Акции
+     * @param {String} opts.fullDescription Текст Акции, поддерживает разметку
+     * @param {String} opts.imageUrl Изображение акции
+     * @param {Number} opts.dateStart Дата начала акции
+     * @param {Number} opts.dateEnd Дата окончания акции
      * @param {module:api/PromotionApi~clientClientIDPromotionPromotionIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDPromotionPromotionIDPatch(clientID, promotionID, promotion, callback) {
-      let postBody = promotion;
+    clientClientIDPromotionPromotionIDPatch(clientID, promotionID, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPromotionPromotionIDPatch");
@@ -247,10 +262,6 @@ export default class PromotionApi {
       // verify the required parameter 'promotionID' is set
       if (promotionID === undefined || promotionID === null) {
         throw new Error("Missing the required parameter 'promotionID' when calling clientClientIDPromotionPromotionIDPatch");
-      }
-      // verify the required parameter 'promotion' is set
-      if (promotion === undefined || promotion === null) {
-        throw new Error("Missing the required parameter 'promotion' when calling clientClientIDPromotionPromotionIDPatch");
       }
 
       let pathParams = {
@@ -262,11 +273,17 @@ export default class PromotionApi {
       let headerParams = {
       };
       let formParams = {
-        _method: "PATCH"
+        'id': opts['id'],
+        'title': opts['title'],
+        'full_description': opts['fullDescription'],
+        'image_url': opts['imageUrl'],
+        'date_start': opts['dateStart'],
+        'date_end': opts['dateEnd'],
+        '_method': "PATCH"
       };
 
       let authNames = ['bearerAuth'];
-      let contentTypes = ['application/json'];
+      let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
