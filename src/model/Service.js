@@ -23,12 +23,11 @@ class Service {
      * Constructs a new <code>Service</code>.
      * @alias module:model/Service
      * @param name {String} Название Услуги
-     * @param imageUpload {File} Загружаемое изображение услуги
      * @param serviceType {module:model/Service.ServiceTypeEnum} Тип услуги - для кошек, для собак, для других
      */
-    constructor(name, imageUpload, serviceType) { 
+    constructor(name, serviceType) { 
         
-        Service.initialize(this, name, imageUpload, serviceType);
+        Service.initialize(this, name, serviceType);
     }
 
     /**
@@ -36,9 +35,8 @@ class Service {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, imageUpload, serviceType) { 
+    static initialize(obj, name, serviceType) { 
         obj['name'] = name;
-        obj['image_upload'] = imageUpload;
         obj['service_type'] = serviceType;
     }
 

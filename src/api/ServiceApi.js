@@ -246,16 +246,16 @@ export default class ServiceApi {
      * @param {Number} clientID ID салона
      * @param {Number} serviceID ID услуги
      * @param {String} name Название Услуги
-     * @param {File} imageUpload Загружаемое изображение услуги
      * @param {module:model/Number} serviceType Тип услуги - для кошек, для собак, для других
      * @param {Object} opts Optional parameters
      * @param {Number} opts.id 
+     * @param {File} opts.imageUpload Загружаемое изображение услуги
      * @param {String} opts.image Изображение услуги
      * @param {Number} opts.price Цена на услугу
      * @param {String} opts.text Описание услуги
      * @param {module:api/ServiceApi~clientClientIDServiceServiceIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDServiceServiceIDPatch(clientID, serviceID, name, imageUpload, serviceType, opts, callback) {
+    clientClientIDServiceServiceIDPatch(clientID, serviceID, name, serviceType, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'clientID' is set
@@ -269,10 +269,6 @@ export default class ServiceApi {
       // verify the required parameter 'name' is set
       if (name === undefined || name === null) {
         throw new Error("Missing the required parameter 'name' when calling clientClientIDServiceServiceIDPatch");
-      }
-      // verify the required parameter 'imageUpload' is set
-      if (imageUpload === undefined || imageUpload === null) {
-        throw new Error("Missing the required parameter 'imageUpload' when calling clientClientIDServiceServiceIDPatch");
       }
       // verify the required parameter 'serviceType' is set
       if (serviceType === undefined || serviceType === null) {
@@ -290,7 +286,7 @@ export default class ServiceApi {
       let formParams = {
         'id': opts['id'],
         'name': name,
-        'image_upload': imageUpload,
+        'image_upload': opts['imageUpload'],
         'service_type': serviceType,
         'image': opts['image'],
         'price': opts['price'],
