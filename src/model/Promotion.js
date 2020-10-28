@@ -60,6 +60,9 @@ class Promotion {
             if (data.hasOwnProperty('image_url')) {
                 obj['image_url'] = ApiClient.convertToType(data['image_url'], 'String');
             }
+            if (data.hasOwnProperty('image_upload')) {
+                obj['image_upload'] = ApiClient.convertToType(data['image_upload'], File);
+            }
             if (data.hasOwnProperty('date_start')) {
                 obj['date_start'] = ApiClient.convertToType(data['date_start'], 'Number');
             }
@@ -96,6 +99,11 @@ Promotion.prototype['full_description'] = undefined;
  * @member {String} image_url
  */
 Promotion.prototype['image_url'] = undefined;
+
+/**
+ * @member {File} image_upload
+ */
+Promotion.prototype['image_upload'] = undefined;
 
 /**
  * Дата начала акции

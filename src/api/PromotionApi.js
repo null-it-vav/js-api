@@ -99,6 +99,7 @@ export default class PromotionApi {
      * @param {String} opts.title Заголовок Акции
      * @param {String} opts.fullDescription Текст Акции, поддерживает разметку
      * @param {String} opts.imageUrl Изображение акции
+     * @param {File} opts.imageUpload 
      * @param {Number} opts.dateStart Дата начала акции
      * @param {Number} opts.dateEnd Дата окончания акции
      * @param {module:api/PromotionApi~clientClientIDPromotionPostCallback} callback The callback function, accepting three arguments: error, data, response
@@ -118,6 +119,7 @@ export default class PromotionApi {
         'title': opts['title'],
         'full_description': opts['fullDescription'],
         'image_url': opts['imageUrl'],
+        'image_upload': opts['imageUpload'],
         'date_start': opts['dateStart'],
         'date_end': opts['dateEnd']
       };
@@ -248,6 +250,7 @@ export default class PromotionApi {
      * @param {String} opts.title Заголовок Акции
      * @param {String} opts.fullDescription Текст Акции, поддерживает разметку
      * @param {String} opts.imageUrl Изображение акции
+     * @param {File} opts.imageUpload 
      * @param {Number} opts.dateStart Дата начала акции
      * @param {Number} opts.dateEnd Дата окончания акции
      * @param {module:api/PromotionApi~clientClientIDPromotionPromotionIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
@@ -277,6 +280,7 @@ export default class PromotionApi {
         'title': opts['title'],
         'full_description': opts['fullDescription'],
         'image_url': opts['imageUrl'],
+        'image_upload': opts['imageUpload'],
         'date_start': opts['dateStart'],
         'date_end': opts['dateEnd'],
         '_method': "PATCH"
