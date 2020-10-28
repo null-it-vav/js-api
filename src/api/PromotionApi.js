@@ -94,6 +94,7 @@ export default class PromotionApi {
     /**
      * 
      * 
+     * @param {Number} clientID ID салона
      * @param {Object} opts Optional parameters
      * @param {Number} opts.id Уникальный идентификатор Акции
      * @param {String} opts.title Заголовок Акции
@@ -104,11 +105,16 @@ export default class PromotionApi {
      * @param {Number} opts.dateEnd Дата окончания акции
      * @param {module:api/PromotionApi~clientClientIDPromotionPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDPromotionPost(opts, callback) {
+    clientClientIDPromotionPost(clientID, opts, callback) {
       opts = opts || {};
       let postBody = null;
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPromotionPost");
+      }
 
       let pathParams = {
+        'clientID': clientID
       };
       let queryParams = {
       };
