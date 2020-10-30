@@ -269,19 +269,27 @@ export default class ApplicationApi {
   /**
    * Создание заявки на оказание услуг
    * 
+   * @param {Number} clientID ID салона
    * @param {module:model/Order} order Store *Order* entity
    * @param {module:api/ApplicationApi~clientClientIDOrderPostCallback} callback The callback function, accepting three arguments: error, data, response
    */
 
 
-  clientClientIDOrderPost(order, callback) {
-    let postBody = order; // verify the required parameter 'order' is set
+  clientClientIDOrderPost(clientID, order, callback) {
+    let postBody = order; // verify the required parameter 'clientID' is set
+
+    if (clientID === undefined || clientID === null) {
+      throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderPost");
+    } // verify the required parameter 'order' is set
+
 
     if (order === undefined || order === null) {
       throw new Error("Missing the required parameter 'order' when calling clientClientIDOrderPost");
     }
 
-    let pathParams = {};
+    let pathParams = {
+      'clientID': clientID
+    };
     let queryParams = {};
     let headerParams = {};
     let formParams = {};

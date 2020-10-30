@@ -265,7 +265,7 @@ export default class WorkingDiapasonApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {
-      "_method": "POST"
+      _method: "PATCH"
     };
     let authNames = ['bearerAuthMaster'];
     let contentTypes = ['application/json'];

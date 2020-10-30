@@ -40,6 +40,7 @@ export default class OrderApi {
   /**
    * 
    * Store *Order* entity
+   * @param {Number} clientID ID салона
    * @param {Object} opts Optional parameters
    * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
    * @param {Number} opts.offset Смещение от первого (default to 0)
@@ -47,10 +48,17 @@ export default class OrderApi {
    */
 
 
-  clientClientIDOrderGet(opts, callback) {
+  clientClientIDOrderGet(clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null;
-    let pathParams = {};
+    let postBody = null; // verify the required parameter 'clientID' is set
+
+    if (clientID === undefined || clientID === null) {
+      throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderGet");
+    }
+
+    let pathParams = {
+      'clientID': clientID
+    };
     let queryParams = {
       'limit': opts['limit'],
       'offset': opts['offset']
@@ -75,19 +83,26 @@ export default class OrderApi {
    * 
    * 
    * @param {Number} orderID Id requested Order
+   * @param {Number} clientID ID салона
    * @param {module:api/OrderApi~clientClientIDOrderOrderIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
    */
 
 
-  clientClientIDOrderOrderIDDelete(orderID, callback) {
+  clientClientIDOrderOrderIDDelete(orderID, clientID, callback) {
     let postBody = null; // verify the required parameter 'orderID' is set
 
     if (orderID === undefined || orderID === null) {
       throw new Error("Missing the required parameter 'orderID' when calling clientClientIDOrderOrderIDDelete");
+    } // verify the required parameter 'clientID' is set
+
+
+    if (clientID === undefined || clientID === null) {
+      throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderOrderIDDelete");
     }
 
     let pathParams = {
-      'orderID': orderID
+      'orderID': orderID,
+      'clientID': clientID
     };
     let queryParams = {};
     let headerParams = {};
@@ -110,20 +125,27 @@ export default class OrderApi {
    * 
    * 
    * @param {Number} orderID Id requested Order
+   * @param {Number} clientID ID салона
    * @param {module:api/OrderApi~clientClientIDOrderOrderIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/Order}
    */
 
 
-  clientClientIDOrderOrderIDGet(orderID, callback) {
+  clientClientIDOrderOrderIDGet(orderID, clientID, callback) {
     let postBody = null; // verify the required parameter 'orderID' is set
 
     if (orderID === undefined || orderID === null) {
       throw new Error("Missing the required parameter 'orderID' when calling clientClientIDOrderOrderIDGet");
+    } // verify the required parameter 'clientID' is set
+
+
+    if (clientID === undefined || clientID === null) {
+      throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderOrderIDGet");
     }
 
     let pathParams = {
-      'orderID': orderID
+      'orderID': orderID,
+      'clientID': clientID
     };
     let queryParams = {};
     let headerParams = {};
@@ -146,16 +168,22 @@ export default class OrderApi {
    * 
    * 
    * @param {Number} orderID Id requested Order
+   * @param {Number} clientID ID салона
    * @param {module:model/Order} order Optional description in *Markdown*
    * @param {module:api/OrderApi~clientClientIDOrderOrderIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
    */
 
 
-  clientClientIDOrderOrderIDPatch(orderID, order, callback) {
+  clientClientIDOrderOrderIDPatch(orderID, clientID, order, callback) {
     let postBody = order; // verify the required parameter 'orderID' is set
 
     if (orderID === undefined || orderID === null) {
       throw new Error("Missing the required parameter 'orderID' when calling clientClientIDOrderOrderIDPatch");
+    } // verify the required parameter 'clientID' is set
+
+
+    if (clientID === undefined || clientID === null) {
+      throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderOrderIDPatch");
     } // verify the required parameter 'order' is set
 
 
@@ -164,11 +192,14 @@ export default class OrderApi {
     }
 
     let pathParams = {
-      'orderID': orderID
+      'orderID': orderID,
+      'clientID': clientID
     };
     let queryParams = {};
     let headerParams = {};
-    let formParams = {};
+    let formParams = {
+      _method: "PATCH"
+    };
     let authNames = ['bearerAuth'];
     let contentTypes = ['application/json'];
     let accepts = ['application/json'];
@@ -186,19 +217,27 @@ export default class OrderApi {
   /**
    * Создание заявки на оказание услуг
    * 
+   * @param {Number} clientID ID салона
    * @param {module:model/Order} order Store *Order* entity
    * @param {module:api/OrderApi~clientClientIDOrderPostCallback} callback The callback function, accepting three arguments: error, data, response
    */
 
 
-  clientClientIDOrderPost(order, callback) {
-    let postBody = order; // verify the required parameter 'order' is set
+  clientClientIDOrderPost(clientID, order, callback) {
+    let postBody = order; // verify the required parameter 'clientID' is set
+
+    if (clientID === undefined || clientID === null) {
+      throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderPost");
+    } // verify the required parameter 'order' is set
+
 
     if (order === undefined || order === null) {
       throw new Error("Missing the required parameter 'order' when calling clientClientIDOrderPost");
     }
 
-    let pathParams = {};
+    let pathParams = {
+      'clientID': clientID
+    };
     let queryParams = {};
     let headerParams = {};
     let formParams = {};

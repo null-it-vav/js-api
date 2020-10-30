@@ -290,7 +290,7 @@ export default class WorkingDiapasonApi {
       let headerParams = {
       };
       let formParams = {
-        "_method": "POST"
+        _method: "PATCH"
       };
 
       let authNames = ['bearerAuthMaster'];
