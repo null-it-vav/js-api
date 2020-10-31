@@ -83,6 +83,7 @@ export default class ServiceApi {
   /**
    * 
    * 
+   * @param {Number} clientID ID салона
    * @param {Object} opts Optional parameters
    * @param {Number} opts.id 
    * @param {String} opts.name Название Услуги
@@ -95,10 +96,17 @@ export default class ServiceApi {
    */
 
 
-  clientClientIDServicePost(opts, callback) {
+  clientClientIDServicePost(clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null;
-    let pathParams = {};
+    let postBody = null; // verify the required parameter 'clientID' is set
+
+    if (clientID === undefined || clientID === null) {
+      throw new Error("Missing the required parameter 'clientID' when calling clientClientIDServicePost");
+    }
+
+    let pathParams = {
+      'clientID': clientID
+    };
     let queryParams = {};
     let headerParams = {};
     let formParams = {

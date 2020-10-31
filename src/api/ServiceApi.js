@@ -94,6 +94,7 @@ export default class ServiceApi {
     /**
      * 
      * 
+     * @param {Number} clientID ID салона
      * @param {Object} opts Optional parameters
      * @param {Number} opts.id 
      * @param {String} opts.name Название Услуги
@@ -104,11 +105,16 @@ export default class ServiceApi {
      * @param {String} opts.text Описание услуги
      * @param {module:api/ServiceApi~clientClientIDServicePostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDServicePost(opts, callback) {
+    clientClientIDServicePost(clientID, opts, callback) {
       opts = opts || {};
       let postBody = null;
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDServicePost");
+      }
 
       let pathParams = {
+        'clientID': clientID
       };
       let queryParams = {
       };
