@@ -1,7 +1,7 @@
 {
-  "name": "groomer_service",
+  "name": "groomer-js-api",
   "version": "1.2.1",
-  "description": "API___GroomCRM___________________________________________TODO1_________2____3_______API_Changelogv1_2_1_________v1_2_0__________v1_1_4___WorkingDiapasonv1_1_3_____v1_1_2_______v1_1_1_______OneSignal__FCM__APNsv1_1_0____APIv1_0_4_______________push_device_id______",
+  "description": "without description",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
