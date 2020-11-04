@@ -1,6 +1,6 @@
 /**
  * Groomer Service
- * API для будущей GroomCRM или назовите ее уже как-нибудь. На этой странице расписаны основные эндпоинты, по которым можно получить данные из базы данных (или положить их туда, если будет такая возможность). Также здесь можно будет протестировать эти самые эндпоинты, посмотреть ответы и всякое такое.  TODO: 1. Обновить структуру описания в соответствии со структурой БД 2. Подготовить возможность тестирования 3. Добавить тест-кейсы для всего API  ### Changelog  **v1.2.1**: Добавил эндпоинт для получения информации об авторизованном Клиенте/Мастере  **v1.2.0**: Обновлены пути, респонсы, эндпоинты для приложений вынесены в отдельный стек  **v1.1.4**: Обновил структуру WorkingDiapason  **v1.1.3**: Добавил описания возвращаемых кодов.  **v1.1.2**: Удалил упоминания Питомцев и Пушей из АПИ  **v1.1.1**: Добавил параметр \"платформа\" для заказа, заменил OneSignal на FCM + APNs  **v1.1.0**: Убрал пуши из API  **v1.0.4**: добавлены фильтры по датам, добавлено поле телефона для мастеров (для смс-оповещений), добавлено поле push_device_id для отправки пушей на телефон. 
+ * API для будущей GroomCRM или назовите ее уже как-нибудь. На этой странице расписаны основные эндпоинты, по которым можно получить данные из базы данных (или положить их туда, если будет такая возможность). Также здесь можно будет протестировать эти самые эндпоинты, посмотреть ответы и всякое такое.  ### Changelog  **v1.2.2**: Добавлена сущность Салонов - географических расположений точек обслуживания клиентов, к которым привязываются мастера. Для получения списка мастеров салона добавлен фильтр salon_id  **v1.2.1**: Добавил эндпоинт для получения информации об авторизованном Клиенте/Мастере  **v1.2.0**: Обновлены пути, респонсы, эндпоинты для приложений вынесены в отдельный стек  **v1.1.4**: Обновил структуру WorkingDiapason  **v1.1.3**: Добавил описания возвращаемых кодов.  **v1.1.2**: Удалил упоминания Питомцев и Пушей из АПИ  **v1.1.1**: Добавил параметр \"платформа\" для заказа, заменил OneSignal на FCM + APNs  **v1.1.0**: Убрал пуши из API  **v1.0.4**: добавлены фильтры по датам, добавлено поле телефона для мастеров (для смс-оповещений), добавлено поле push_device_id для отправки пушей на телефон. 
  *
  * The version of the OpenAPI document: 1.2.1
  * Contact: kosolapus@gmail.com
@@ -16,10 +16,12 @@ import Client from './model/Client';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import InlineResponse2002 from './model/InlineResponse2002';
+import InlineResponse2003 from './model/InlineResponse2003';
 import Master from './model/Master';
 import OneOfMasterClient from './model/OneOfMasterClient';
 import Order from './model/Order';
 import Promotion from './model/Promotion';
+import Salon from './model/Salon';
 import Service from './model/Service';
 import WorkingDiapason from './model/WorkingDiapason';
 import ApplicationApi from './api/ApplicationApi';
@@ -28,10 +30,11 @@ import MasterApi from './api/MasterApi';
 import OAuthApi from './api/OAuthApi';
 import OrderApi from './api/OrderApi';
 import PromotionApi from './api/PromotionApi';
+import SalonApi from './api/SalonApi';
 import ServiceApi from './api/ServiceApi';
 import WorkingDiapasonApi from './api/WorkingDiapasonApi';
 /**
-* API___GroomCRM___________________________________________TODO1_________2____3_______API_Changelogv1_2_1_________v1_2_0__________v1_1_4___WorkingDiapasonv1_1_3_____v1_1_2_______v1_1_1_______OneSignal__FCM__APNsv1_1_0____APIv1_0_4_______________push_device_id______.<br>
+* API___GroomCRM____________________________________________Changelogv1_2_2______________________salon_idv1_2_1_________v1_2_0__________v1_1_4___WorkingDiapasonv1_1_3_____v1_1_2_______v1_1_1_______OneSignal__FCM__APNsv1_1_0____APIv1_0_4_______________push_device_id______.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
@@ -94,6 +97,11 @@ ApiClient
  */
 , InlineResponse2002
 /**
+ * The InlineResponse2003 model constructor.
+ * @property {module:model/InlineResponse2003}
+ */
+, InlineResponse2003
+/**
  * The Master model constructor.
  * @property {module:model/Master}
  */
@@ -113,6 +121,11 @@ ApiClient
  * @property {module:model/Promotion}
  */
 , Promotion
+/**
+ * The Salon model constructor.
+ * @property {module:model/Salon}
+ */
+, Salon
 /**
  * The Service model constructor.
  * @property {module:model/Service}
@@ -153,6 +166,11 @@ ApiClient
 * @property {module:api/PromotionApi}
 */
 , PromotionApi
+/**
+* The SalonApi service constructor.
+* @property {module:api/SalonApi}
+*/
+, SalonApi
 /**
 * The ServiceApi service constructor.
 * @property {module:api/ServiceApi}

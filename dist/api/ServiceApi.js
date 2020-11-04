@@ -1,6 +1,6 @@
 /**
  * Groomer Service
- * API для будущей GroomCRM или назовите ее уже как-нибудь. На этой странице расписаны основные эндпоинты, по которым можно получить данные из базы данных (или положить их туда, если будет такая возможность). Также здесь можно будет протестировать эти самые эндпоинты, посмотреть ответы и всякое такое.  TODO: 1. Обновить структуру описания в соответствии со структурой БД 2. Подготовить возможность тестирования 3. Добавить тест-кейсы для всего API  ### Changelog  **v1.2.1**: Добавил эндпоинт для получения информации об авторизованном Клиенте/Мастере  **v1.2.0**: Обновлены пути, респонсы, эндпоинты для приложений вынесены в отдельный стек  **v1.1.4**: Обновил структуру WorkingDiapason  **v1.1.3**: Добавил описания возвращаемых кодов.  **v1.1.2**: Удалил упоминания Питомцев и Пушей из АПИ  **v1.1.1**: Добавил параметр \"платформа\" для заказа, заменил OneSignal на FCM + APNs  **v1.1.0**: Убрал пуши из API  **v1.0.4**: добавлены фильтры по датам, добавлено поле телефона для мастеров (для смс-оповещений), добавлено поле push_device_id для отправки пушей на телефон. 
+ * API для будущей GroomCRM или назовите ее уже как-нибудь. На этой странице расписаны основные эндпоинты, по которым можно получить данные из базы данных (или положить их туда, если будет такая возможность). Также здесь можно будет протестировать эти самые эндпоинты, посмотреть ответы и всякое такое.  ### Changelog  **v1.2.2**: Добавлена сущность Салонов - географических расположений точек обслуживания клиентов, к которым привязываются мастера. Для получения списка мастеров салона добавлен фильтр salon_id  **v1.2.1**: Добавил эндпоинт для получения информации об авторизованном Клиенте/Мастере  **v1.2.0**: Обновлены пути, респонсы, эндпоинты для приложений вынесены в отдельный стек  **v1.1.4**: Обновил структуру WorkingDiapason  **v1.1.3**: Добавил описания возвращаемых кодов.  **v1.1.2**: Удалил упоминания Питомцев и Пушей из АПИ  **v1.1.1**: Добавил параметр \"платформа\" для заказа, заменил OneSignal на FCM + APNs  **v1.1.0**: Убрал пуши из API  **v1.0.4**: добавлены фильтры по датам, добавлено поле телефона для мастеров (для смс-оповещений), добавлено поле push_device_id для отправки пушей на телефон. 
  *
  * The version of the OpenAPI document: 1.2.1
  * Contact: kosolapus@gmail.com
@@ -11,7 +11,7 @@
  *
  */
 import ApiClient from "../ApiClient";
-import InlineResponse2001 from '../model/InlineResponse2001';
+import InlineResponse2002 from '../model/InlineResponse2002';
 /**
 * Service service.
 * @module api/ServiceApi
@@ -33,19 +33,19 @@ export default class ServiceApi {
    * Callback function to receive the result of the clientClientIDServiceGet operation.
    * @callback module:api/ServiceApi~clientClientIDServiceGetCallback
    * @param {String} error Error message, if any.
-   * @param {module:model/InlineResponse2001} data The data returned by the service call.
+   * @param {module:model/InlineResponse2002} data The data returned by the service call.
    * @param {String} response The complete HTTP response.
    */
 
   /**
    * Получение списка Услуг, которые оказывает салон
    * Store *Service* entity
-   * @param {Number} clientID ID салона
+   * @param {Number} clientID ID аккаунта
    * @param {Object} opts Optional parameters
    * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
    * @param {Number} opts.offset Смещение от первого (default to 0)
    * @param {module:api/ServiceApi~clientClientIDServiceGetCallback} callback The callback function, accepting three arguments: error, data, response
-   * data is of type: {@link module:model/InlineResponse2001}
+   * data is of type: {@link module:model/InlineResponse2002}
    */
 
 
@@ -69,7 +69,7 @@ export default class ServiceApi {
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
-    let returnType = InlineResponse2001;
+    let returnType = InlineResponse2002;
     return this.apiClient.callApi('/client/{clientID}/service', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
   /**
@@ -83,7 +83,7 @@ export default class ServiceApi {
   /**
    * 
    * 
-   * @param {Number} clientID ID салона
+   * @param {Number} clientID ID аккаунта
    * @param {Object} opts Optional parameters
    * @param {Number} opts.id 
    * @param {String} opts.name Название Услуги
@@ -135,7 +135,7 @@ export default class ServiceApi {
   /**
    * 
    * 
-   * @param {Number} clientID ID салона
+   * @param {Number} clientID ID аккаунта
    * @param {Number} serviceID ID услуги
    * @param {module:api/ServiceApi~clientClientIDServiceServiceIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
    */
@@ -177,7 +177,7 @@ export default class ServiceApi {
   /**
    * Получение детальной информации услуги
    * 
-   * @param {Number} clientID ID салона
+   * @param {Number} clientID ID аккаунта
    * @param {Number} serviceID ID услуги
    * @param {module:api/ServiceApi~clientClientIDServiceServiceIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
@@ -220,7 +220,7 @@ export default class ServiceApi {
   /**
    * 
    * 
-   * @param {Number} clientID ID салона
+   * @param {Number} clientID ID аккаунта
    * @param {Number} serviceID ID услуги
    * @param {String} name Название Услуги
    * @param {module:model/Number} serviceType Тип услуги - для кошек, для собак, для других
