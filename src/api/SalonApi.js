@@ -15,7 +15,6 @@
 import ApiClient from "../ApiClient";
 import InlineResponse200 from '../model/InlineResponse200';
 import Salon from '../model/Salon';
-import UNKNOWN_BASE_TYPE from '../model/UNKNOWN_BASE_TYPE';
 
 /**
 * Salon service.
@@ -91,18 +90,18 @@ export default class SalonApi {
      * 
      * 
      * @param {Number} clientID ID аккаунта
-     * @param {module:model/UNKNOWN_BASE_TYPE} UNKNOWN_BASE_TYPE Store *Salon* entity
+     * @param {module:model/Salon} salon Store *Salon* entity
      * @param {module:api/SalonApi~clientClientIDSalonPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDSalonPost(clientID, UNKNOWN_BASE_TYPE, callback) {
-      let postBody = UNKNOWN_BASE_TYPE;
+    clientClientIDSalonPost(clientID, salon, callback) {
+      let postBody = salon;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonPost");
       }
-      // verify the required parameter 'UNKNOWN_BASE_TYPE' is set
-      if (UNKNOWN_BASE_TYPE === undefined || UNKNOWN_BASE_TYPE === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_BASE_TYPE' when calling clientClientIDSalonPost");
+      // verify the required parameter 'salon' is set
+      if (salon === undefined || salon === null) {
+        throw new Error("Missing the required parameter 'salon' when calling clientClientIDSalonPost");
       }
 
       let pathParams = {
