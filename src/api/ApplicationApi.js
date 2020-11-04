@@ -1,6 +1,6 @@
 /**
  * Groomer Service
- * API для будущей GroomCRM или назовите ее уже как-нибудь. На этой странице расписаны основные эндпоинты, по которым можно получить данные из базы данных (или положить их туда, если будет такая возможность). Также здесь можно будет протестировать эти самые эндпоинты, посмотреть ответы и всякое такое.  TODO: 1. Обновить структуру описания в соответствии со структурой БД 2. Подготовить возможность тестирования 3. Добавить тест-кейсы для всего API  ### Changelog  **v1.2.1**: Добавил эндпоинт для получения информации об авторизованном Клиенте/Мастере  **v1.2.0**: Обновлены пути, респонсы, эндпоинты для приложений вынесены в отдельный стек  **v1.1.4**: Обновил структуру WorkingDiapason  **v1.1.3**: Добавил описания возвращаемых кодов.  **v1.1.2**: Удалил упоминания Питомцев и Пушей из АПИ  **v1.1.1**: Добавил параметр \"платформа\" для заказа, заменил OneSignal на FCM + APNs  **v1.1.0**: Убрал пуши из API  **v1.0.4**: добавлены фильтры по датам, добавлено поле телефона для мастеров (для смс-оповещений), добавлено поле push_device_id для отправки пушей на телефон. 
+ * API для будущей GroomCRM или назовите ее уже как-нибудь. На этой странице расписаны основные эндпоинты, по которым можно получить данные из базы данных (или положить их туда, если будет такая возможность). Также здесь можно будет протестировать эти самые эндпоинты, посмотреть ответы и всякое такое.  ### Changelog  **v1.2.2**: Добавлена сущность Салонов - географических расположений точек обслуживания клиентов, к которым привязываются мастера. Для получения списка мастеров салона добавлен фильтр salon_id  **v1.2.1**: Добавил эндпоинт для получения информации об авторизованном Клиенте/Мастере  **v1.2.0**: Обновлены пути, респонсы, эндпоинты для приложений вынесены в отдельный стек  **v1.1.4**: Обновил структуру WorkingDiapason  **v1.1.3**: Добавил описания возвращаемых кодов.  **v1.1.2**: Удалил упоминания Питомцев и Пушей из АПИ  **v1.1.1**: Добавил параметр \"платформа\" для заказа, заменил OneSignal на FCM + APNs  **v1.1.0**: Убрал пуши из API  **v1.0.4**: добавлены фильтры по датам, добавлено поле телефона для мастеров (для смс-оповещений), добавлено поле push_device_id для отправки пушей на телефон. 
  *
  * The version of the OpenAPI document: 1.2.1
  * Contact: kosolapus@gmail.com
@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse200 from '../model/InlineResponse200';
 import InlineResponse2001 from '../model/InlineResponse2001';
 import InlineResponse2002 from '../model/InlineResponse2002';
+import InlineResponse2003 from '../model/InlineResponse2003';
 import Order from '../model/Order';
 
 /**
@@ -48,7 +48,7 @@ export default class ApplicationApi {
     /**
      * Получение данных салона - адреса, телефоны, социалки и т.п.
      * Получение данных для салона
-     * @param {Number} clientID ID салона
+     * @param {Number} clientID ID аккаунта
      * @param {module:api/ApplicationApi~clientClientIDGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
@@ -91,19 +91,24 @@ export default class ApplicationApi {
     /**
      * Получение списка мастеров конкретного салона
      * 
-     * @param {Number} clientID ID салона
+     * @param {Number} clientID ID аккаунта
+     * @param {Number} salonID ID салона
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
      * @param {module:api/ApplicationApi~clientClientIDMasterGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    clientClientIDMasterGet(clientID, opts, callback) {
+    clientClientIDMasterGet(clientID, salonID, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
         throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterGet");
+      }
+      // verify the required parameter 'salonID' is set
+      if (salonID === undefined || salonID === null) {
+        throw new Error("Missing the required parameter 'salonID' when calling clientClientIDMasterGet");
       }
 
       let pathParams = {
@@ -111,7 +116,8 @@ export default class ApplicationApi {
       };
       let queryParams = {
         'limit': opts['limit'],
-        'offset': opts['offset']
+        'offset': opts['offset'],
+        'salonID': salonID
       };
       let headerParams = {
       };
@@ -140,7 +146,7 @@ export default class ApplicationApi {
     /**
      * Получение информации по конкретному мастеру
      * 
-     * @param {Number} clientID ID салона
+     * @param {Number} clientID ID аккаунта
      * @param {Number} masterID Id мастера
      * @param {module:api/ApplicationApi~clientClientIDMasterMasterIDGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
@@ -182,7 +188,7 @@ export default class ApplicationApi {
      * Callback function to receive the result of the clientClientIDMasterMasterIDWorkingDiapasonGet operation.
      * @callback module:api/ApplicationApi~clientClientIDMasterMasterIDWorkingDiapasonGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2002} data The data returned by the service call.
+     * @param {module:model/InlineResponse2003} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -190,14 +196,14 @@ export default class ApplicationApi {
      * Получение расписания мастера
      * Store *WorkingDiapason* entity
      * @param {Number} masterID Id мастера
-     * @param {Number} clientID ID салона
+     * @param {Number} clientID ID аккаунта
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
      * @param {String} opts.dateStart Начало периода
      * @param {String} opts.dateEnd Конец периода
      * @param {module:api/ApplicationApi~clientClientIDMasterMasterIDWorkingDiapasonGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2002}
+     * data is of type: {@link module:model/InlineResponse2003}
      */
     clientClientIDMasterMasterIDWorkingDiapasonGet(masterID, clientID, opts, callback) {
       opts = opts || {};
@@ -229,7 +235,7 @@ export default class ApplicationApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2002;
+      let returnType = InlineResponse2003;
       return this.apiClient.callApi(
         '/client/{clientID}/master/{masterID}/working-diapason', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -249,7 +255,7 @@ export default class ApplicationApi {
      * Получение деталей временного отрезка
      * 
      * @param {Number} masterID Id мастера
-     * @param {Number} clientID ID салона
+     * @param {Number} clientID ID аккаунта
      * @param {Number} workingDiapasonID Id requested WorkingDiapason
      * @param {module:api/ApplicationApi~clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
@@ -303,7 +309,7 @@ export default class ApplicationApi {
     /**
      * Создание заявки на оказание услуг
      * 
-     * @param {Number} clientID ID салона
+     * @param {Number} clientID ID аккаунта
      * @param {module:model/Order} order Store *Order* entity
      * @param {module:api/ApplicationApi~clientClientIDOrderPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -343,19 +349,19 @@ export default class ApplicationApi {
      * Callback function to receive the result of the clientClientIDPromotionGet operation.
      * @callback module:api/ApplicationApi~clientClientIDPromotionGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {module:model/InlineResponse2001} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Получение списка акций для салона
      * 
-     * @param {Number} clientID ID салона
+     * @param {Number} clientID ID аккаунта
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
      * @param {module:api/ApplicationApi~clientClientIDPromotionGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * data is of type: {@link module:model/InlineResponse2001}
      */
     clientClientIDPromotionGet(clientID, opts, callback) {
       opts = opts || {};
@@ -380,7 +386,7 @@ export default class ApplicationApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse200;
+      let returnType = InlineResponse2001;
       return this.apiClient.callApi(
         '/client/{clientID}/promotion', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -399,7 +405,7 @@ export default class ApplicationApi {
     /**
      * Получение детальной информации по акции
      * 
-     * @param {Number} clientID ID салона
+     * @param {Number} clientID ID аккаунта
      * @param {Number} promotionID Id requested Promotion
      * @param {module:api/ApplicationApi~clientClientIDPromotionPromotionIDGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
@@ -441,19 +447,19 @@ export default class ApplicationApi {
      * Callback function to receive the result of the clientClientIDServiceGet operation.
      * @callback module:api/ApplicationApi~clientClientIDServiceGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/InlineResponse2002} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Получение списка Услуг, которые оказывает салон
      * Store *Service* entity
-     * @param {Number} clientID ID салона
+     * @param {Number} clientID ID аккаунта
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
      * @param {Number} opts.offset Смещение от первого (default to 0)
      * @param {module:api/ApplicationApi~clientClientIDServiceGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/InlineResponse2002}
      */
     clientClientIDServiceGet(clientID, opts, callback) {
       opts = opts || {};
@@ -478,7 +484,7 @@ export default class ApplicationApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2002;
       return this.apiClient.callApi(
         '/client/{clientID}/service', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -497,7 +503,7 @@ export default class ApplicationApi {
     /**
      * Получение детальной информации услуги
      * 
-     * @param {Number} clientID ID салона
+     * @param {Number} clientID ID аккаунта
      * @param {Number} serviceID ID услуги
      * @param {module:api/ApplicationApi~clientClientIDServiceServiceIDGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}

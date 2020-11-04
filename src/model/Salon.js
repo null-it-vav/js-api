@@ -14,19 +14,19 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The Master model module.
- * @module model/Master
+ * The Salon model module.
+ * @module model/Salon
  * @version 1.2.1
  */
-class Master {
+class Salon {
     /**
-     * Constructs a new <code>Master</code>.
-     * Мастер - это непосредственный исполнитель услуги. Разные мастера могут предоставлять одну или несколько услуг из общего списка Клиента У мастера есть расписание. 
-     * @alias module:model/Master
+     * Constructs a new <code>Salon</code>.
+     * Салоны 
+     * @alias module:model/Salon
      */
     constructor() { 
         
-        Master.initialize(this);
+        Salon.initialize(this);
     }
 
     /**
@@ -38,39 +38,27 @@ class Master {
     }
 
     /**
-     * Constructs a <code>Master</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Salon</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Master} obj Optional instance to populate.
-     * @return {module:model/Master} The populated <code>Master</code> instance.
+     * @param {module:model/Salon} obj Optional instance to populate.
+     * @return {module:model/Salon} The populated <code>Salon</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Master();
+            obj = obj || new Salon();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('image')) {
-                obj['image'] = ApiClient.convertToType(data['image'], 'String');
+            if (data.hasOwnProperty('address')) {
+                obj['address'] = ApiClient.convertToType(data['address'], 'String');
             }
-            if (data.hasOwnProperty('image_upload')) {
-                obj['image_upload'] = ApiClient.convertToType(data['image_upload'], File);
+            if (data.hasOwnProperty('long')) {
+                obj['long'] = ApiClient.convertToType(data['long'], 'Number');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('phone')) {
-                obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
-            }
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
-            }
-            if (data.hasOwnProperty('email')) {
-                obj['email'] = ApiClient.convertToType(data['email'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            if (data.hasOwnProperty('lat')) {
+                obj['lat'] = ApiClient.convertToType(data['lat'], 'Number');
             }
         }
         return obj;
@@ -82,47 +70,30 @@ class Master {
 /**
  * @member {Number} id
  */
-Master.prototype['id'] = undefined;
+Salon.prototype['id'] = undefined;
 
 /**
- * @member {String} image
+ * Адрес салона
+ * @member {String} address
  */
-Master.prototype['image'] = undefined;
+Salon.prototype['address'] = undefined;
 
 /**
- * @member {File} image_upload
+ * География - долгота
+ * @member {Number} long
  */
-Master.prototype['image_upload'] = undefined;
+Salon.prototype['long'] = undefined;
 
 /**
- * @member {String} name
+ * География - широта
+ * @member {Number} lat
  */
-Master.prototype['name'] = undefined;
-
-/**
- * @member {String} phone
- */
-Master.prototype['phone'] = undefined;
-
-/**
- * @member {String} description
- */
-Master.prototype['description'] = undefined;
-
-/**
- * @member {String} email
- */
-Master.prototype['email'] = undefined;
-
-/**
- * @member {String} password
- */
-Master.prototype['password'] = undefined;
+Salon.prototype['lat'] = undefined;
 
 
 
 
 
 
-export default Master;
+export default Salon;
 

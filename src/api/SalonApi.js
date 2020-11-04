@@ -13,18 +13,20 @@
 
 
 import ApiClient from "../ApiClient";
-import Order from '../model/Order';
+import InlineResponse200 from '../model/InlineResponse200';
+import Salon from '../model/Salon';
+import UNKNOWN_BASE_TYPE from '../model/UNKNOWN_BASE_TYPE';
 
 /**
-* Order service.
-* @module api/OrderApi
+* Salon service.
+* @module api/SalonApi
 * @version 1.2.1
 */
-export default class OrderApi {
+export default class SalonApi {
 
     /**
-    * Constructs a new OrderApi. 
-    * @alias module:api/OrderApi
+    * Constructs a new SalonApi. 
+    * @alias module:api/SalonApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -35,8 +37,51 @@ export default class OrderApi {
 
 
     /**
-     * Callback function to receive the result of the clientClientIDOrderGet operation.
-     * @callback module:api/OrderApi~clientClientIDOrderGetCallback
+     * Callback function to receive the result of the clientClientIDSalonGet operation.
+     * @callback module:api/SalonApi~clientClientIDSalonGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Получение списка точек одного владельца
+     * Store *Salon* entity
+     * @param {Number} clientID ID аккаунта
+     * @param {module:api/SalonApi~clientClientIDSalonGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse200}
+     */
+    clientClientIDSalonGet(clientID, callback) {
+      let postBody = null;
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonGet");
+      }
+
+      let pathParams = {
+        'clientID': clientID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['bearerAuth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+      return this.apiClient.callApi(
+        '/client/{clientID}/salon', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the clientClientIDSalonPost operation.
+     * @callback module:api/SalonApi~clientClientIDSalonPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -44,27 +89,74 @@ export default class OrderApi {
 
     /**
      * 
-     * Store *Order* entity
+     * 
      * @param {Number} clientID ID аккаунта
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Как много элементов должно возвращаться за один запрос (default to 25)
-     * @param {Number} opts.offset Смещение от первого (default to 0)
-     * @param {module:api/OrderApi~clientClientIDOrderGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:model/UNKNOWN_BASE_TYPE} UNKNOWN_BASE_TYPE Store *Salon* entity
+     * @param {module:api/SalonApi~clientClientIDSalonPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDOrderGet(clientID, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
+    clientClientIDSalonPost(clientID, UNKNOWN_BASE_TYPE, callback) {
+      let postBody = UNKNOWN_BASE_TYPE;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderGet");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonPost");
+      }
+      // verify the required parameter 'UNKNOWN_BASE_TYPE' is set
+      if (UNKNOWN_BASE_TYPE === undefined || UNKNOWN_BASE_TYPE === null) {
+        throw new Error("Missing the required parameter 'UNKNOWN_BASE_TYPE' when calling clientClientIDSalonPost");
       }
 
       let pathParams = {
         'clientID': clientID
       };
       let queryParams = {
-        'limit': opts['limit'],
-        'offset': opts['offset']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['bearerAuth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/client/{clientID}/salon', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the clientClientIDSalonSalonIDDelete operation.
+     * @callback module:api/SalonApi~clientClientIDSalonSalonIDDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * 
+     * @param {Number} clientID ID аккаунта
+     * @param {Number} salonID ID салона
+     * @param {module:api/SalonApi~clientClientIDSalonSalonIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    clientClientIDSalonSalonIDDelete(clientID, salonID, callback) {
+      let postBody = null;
+      // verify the required parameter 'clientID' is set
+      if (clientID === undefined || clientID === null) {
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonSalonIDDelete");
+      }
+      // verify the required parameter 'salonID' is set
+      if (salonID === undefined || salonID === null) {
+        throw new Error("Missing the required parameter 'salonID' when calling clientClientIDSalonSalonIDDelete");
+      }
+
+      let pathParams = {
+        'clientID': clientID,
+        'salonID': salonID
+      };
+      let queryParams = {
       };
       let headerParams = {
       };
@@ -76,41 +168,42 @@ export default class OrderApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{clientID}/order', 'GET',
+        '/client/{clientID}/salon/{salonID}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientIDOrderOrderIDDelete operation.
-     * @callback module:api/OrderApi~clientClientIDOrderOrderIDDeleteCallback
+     * Callback function to receive the result of the clientClientIDSalonSalonIDGet operation.
+     * @callback module:api/SalonApi~clientClientIDSalonSalonIDGetCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
+     * Получение детальной информации салона
      * 
-     * 
-     * @param {Number} orderID Id requested Order
      * @param {Number} clientID ID аккаунта
-     * @param {module:api/OrderApi~clientClientIDOrderOrderIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {Number} salonID ID салона
+     * @param {module:api/SalonApi~clientClientIDSalonSalonIDGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
      */
-    clientClientIDOrderOrderIDDelete(orderID, clientID, callback) {
+    clientClientIDSalonSalonIDGet(clientID, salonID, callback) {
       let postBody = null;
-      // verify the required parameter 'orderID' is set
-      if (orderID === undefined || orderID === null) {
-        throw new Error("Missing the required parameter 'orderID' when calling clientClientIDOrderOrderIDDelete");
-      }
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderOrderIDDelete");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonSalonIDGet");
+      }
+      // verify the required parameter 'salonID' is set
+      if (salonID === undefined || salonID === null) {
+        throw new Error("Missing the required parameter 'salonID' when calling clientClientIDSalonSalonIDGet");
       }
 
       let pathParams = {
-        'orderID': orderID,
-        'clientID': clientID
+        'clientID': clientID,
+        'salonID': salonID
       };
       let queryParams = {
       };
@@ -122,66 +215,17 @@ export default class OrderApi {
       let authNames = ['bearerAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = null;
+      let returnType = Object;
       return this.apiClient.callApi(
-        '/client/{clientID}/order/{orderID}', 'DELETE',
+        '/client/{clientID}/salon/{salonID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the clientClientIDOrderOrderIDGet operation.
-     * @callback module:api/OrderApi~clientClientIDOrderOrderIDGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Order} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * 
-     * 
-     * @param {Number} orderID Id requested Order
-     * @param {Number} clientID ID аккаунта
-     * @param {module:api/OrderApi~clientClientIDOrderOrderIDGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Order}
-     */
-    clientClientIDOrderOrderIDGet(orderID, clientID, callback) {
-      let postBody = null;
-      // verify the required parameter 'orderID' is set
-      if (orderID === undefined || orderID === null) {
-        throw new Error("Missing the required parameter 'orderID' when calling clientClientIDOrderOrderIDGet");
-      }
-      // verify the required parameter 'clientID' is set
-      if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderOrderIDGet");
-      }
-
-      let pathParams = {
-        'orderID': orderID,
-        'clientID': clientID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['bearerAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Order;
-      return this.apiClient.callApi(
-        '/client/{clientID}/order/{orderID}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the clientClientIDOrderOrderIDPatch operation.
-     * @callback module:api/OrderApi~clientClientIDOrderOrderIDPatchCallback
+     * Callback function to receive the result of the clientClientIDSalonSalonIDPatch operation.
+     * @callback module:api/SalonApi~clientClientIDSalonSalonIDPatchCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -190,29 +234,29 @@ export default class OrderApi {
     /**
      * 
      * 
-     * @param {Number} orderID Id requested Order
      * @param {Number} clientID ID аккаунта
-     * @param {module:model/Order} order Optional description in *Markdown*
-     * @param {module:api/OrderApi~clientClientIDOrderOrderIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {Number} salonID ID салона
+     * @param {module:model/Salon} salon Optional description in *Markdown*
+     * @param {module:api/SalonApi~clientClientIDSalonSalonIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    clientClientIDOrderOrderIDPatch(orderID, clientID, order, callback) {
-      let postBody = order;
-      // verify the required parameter 'orderID' is set
-      if (orderID === undefined || orderID === null) {
-        throw new Error("Missing the required parameter 'orderID' when calling clientClientIDOrderOrderIDPatch");
-      }
+    clientClientIDSalonSalonIDPatch(clientID, salonID, salon, callback) {
+      let postBody = salon;
       // verify the required parameter 'clientID' is set
       if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderOrderIDPatch");
+        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonSalonIDPatch");
       }
-      // verify the required parameter 'order' is set
-      if (order === undefined || order === null) {
-        throw new Error("Missing the required parameter 'order' when calling clientClientIDOrderOrderIDPatch");
+      // verify the required parameter 'salonID' is set
+      if (salonID === undefined || salonID === null) {
+        throw new Error("Missing the required parameter 'salonID' when calling clientClientIDSalonSalonIDPatch");
+      }
+      // verify the required parameter 'salon' is set
+      if (salon === undefined || salon === null) {
+        throw new Error("Missing the required parameter 'salon' when calling clientClientIDSalonSalonIDPatch");
       }
 
       let pathParams = {
-        'orderID': orderID,
-        'clientID': clientID
+        'clientID': clientID,
+        'salonID': salonID
       };
       let queryParams = {
       };
@@ -227,54 +271,7 @@ export default class OrderApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/client/{clientID}/order/{orderID}', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the clientClientIDOrderPost operation.
-     * @callback module:api/OrderApi~clientClientIDOrderPostCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Создание заявки на оказание услуг
-     * 
-     * @param {Number} clientID ID аккаунта
-     * @param {module:model/Order} order Store *Order* entity
-     * @param {module:api/OrderApi~clientClientIDOrderPostCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    clientClientIDOrderPost(clientID, order, callback) {
-      let postBody = order;
-      // verify the required parameter 'clientID' is set
-      if (clientID === undefined || clientID === null) {
-        throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderPost");
-      }
-      // verify the required parameter 'order' is set
-      if (order === undefined || order === null) {
-        throw new Error("Missing the required parameter 'order' when calling clientClientIDOrderPost");
-      }
-
-      let pathParams = {
-        'clientID': clientID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/client/{clientID}/order', 'POST',
+        '/client/{clientID}/salon/{salonID}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
