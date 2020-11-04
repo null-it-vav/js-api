@@ -201,6 +201,7 @@ export default class MasterApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.id 
      * @param {String} opts.image 
+     * @param {Number} opts.salonId 
      * @param {File} opts.imageUpload 
      * @param {String} opts.name 
      * @param {String} opts.phone 
@@ -232,6 +233,7 @@ export default class MasterApi {
       let formParams = {
         'id': opts['id'],
         'image': opts['image'],
+        'salon_id': opts['salonId'],
         'image_upload': opts['imageUpload'],
         'name': opts['name'],
         'phone': opts['phone'],
@@ -267,6 +269,7 @@ export default class MasterApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.id 
      * @param {String} opts.image 
+     * @param {Number} opts.salonId 
      * @param {File} opts.imageUpload 
      * @param {String} opts.name 
      * @param {String} opts.phone 
@@ -294,6 +297,7 @@ export default class MasterApi {
       let formParams = {
         'id': opts['id'],
         'image': opts['image'],
+        'salon_id': opts['salonId'],
         'image_upload': opts['imageUpload'],
         'name': opts['name'],
         'phone': opts['phone'],
