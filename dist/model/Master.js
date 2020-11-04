@@ -55,6 +55,10 @@ class Master {
         obj['image'] = ApiClient.convertToType(data['image'], 'String');
       }
 
+      if (data.hasOwnProperty('salon_id')) {
+        obj['salon_id'] = ApiClient.convertToType(data['salon_id'], 'Number');
+      }
+
       if (data.hasOwnProperty('image_upload')) {
         obj['image_upload'] = ApiClient.convertToType(data['image_upload'], File);
       }
@@ -95,6 +99,11 @@ Master.prototype['id'] = undefined;
  */
 
 Master.prototype['image'] = undefined;
+/**
+ * @member {Number} salon_id
+ */
+
+Master.prototype['salon_id'] = undefined;
 /**
  * @member {File} image_upload
  */
