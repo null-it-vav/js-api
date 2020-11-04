@@ -10,16 +10,18 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from "../ApiClient";
 import Client from '../model/Client';
 import Salon from '../model/Salon';
+
 /**
 * Client service.
 * @module api/ClientApi
 * @version 1.2.1
 */
-
 export default class ClientApi {
+
   /**
   * Constructs a new ClientApi. 
   * @alias module:api/ClientApi
@@ -30,6 +32,7 @@ export default class ClientApi {
   constructor(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
   }
+
   /**
    * Callback function to receive the result of the clientClientIDDelete operation.
    * @callback module:api/ClientApi~clientClientIDDeleteCallback
@@ -44,11 +47,9 @@ export default class ClientApi {
    * @param {Number} clientID ID аккаунта
    * @param {module:api/ClientApi~clientClientIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDDelete(clientID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDDelete");
     }
@@ -59,12 +60,14 @@ export default class ClientApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuthAdmin'];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDGet operation.
    * @callback module:api/ClientApi~clientClientIDGetCallback
@@ -80,11 +83,9 @@ export default class ClientApi {
    * @param {module:api/ClientApi~clientClientIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDGet(clientID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDGet");
     }
@@ -95,12 +96,14 @@ export default class ClientApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = Object;
     return this.apiClient.callApi('/client/{clientID}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDPatch operation.
    * @callback module:api/ClientApi~clientClientIDPatchCallback
@@ -124,12 +127,10 @@ export default class ClientApi {
    * @param {Object} opts.settings 
    * @param {module:api/ClientApi~clientClientIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDPatch(clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPatch");
     }
@@ -149,12 +150,14 @@ export default class ClientApi {
       'image': opts['image'],
       'settings': opts['settings']
     };
+
     let authNames = ['bearerAuthAdmin'];
     let contentTypes = ['multipart/form-data'];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientGet operation.
    * @callback module:api/ClientApi~clientGetCallback
@@ -172,11 +175,10 @@ export default class ClientApi {
    * @param {module:api/ClientApi~clientGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Array.<module:model/Client>}
    */
-
-
   clientGet(opts, callback) {
     opts = opts || {};
     let postBody = null;
+
     let pathParams = {};
     let queryParams = {
       'limit': opts['limit'],
@@ -184,12 +186,14 @@ export default class ClientApi {
     };
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuthAdmin'];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = [Client];
     return this.apiClient.callApi('/client', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientPost operation.
    * @callback module:api/ClientApi~clientPostCallback
@@ -212,11 +216,10 @@ export default class ClientApi {
    * @param {Object} opts.settings 
    * @param {module:api/ClientApi~clientPostCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientPost(opts, callback) {
     opts = opts || {};
     let postBody = null;
+
     let pathParams = {};
     let queryParams = {};
     let headerParams = {};
@@ -230,6 +233,7 @@ export default class ClientApi {
       'image': opts['image'],
       'settings': opts['settings']
     };
+
     let authNames = ['bearerAuthAdmin'];
     let contentTypes = ['multipart/formdata'];
     let accepts = ['application/json'];

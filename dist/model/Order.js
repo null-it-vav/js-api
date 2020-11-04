@@ -10,13 +10,14 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from '../ApiClient';
+
 /**
  * The Order model module.
  * @module model/Order
  * @version 1.2.1
  */
-
 class Order {
   /**
    * Constructs a new <code>Order</code>.
@@ -24,16 +25,17 @@ class Order {
    * @alias module:model/Order
    */
   constructor() {
+
     Order.initialize(this);
   }
+
   /**
    * Initializes the fields of this object.
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-
-
   static initialize(obj) {}
+
   /**
    * Constructs a <code>Order</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -41,8 +43,6 @@ class Order {
    * @param {module:model/Order} obj Optional instance to populate.
    * @return {module:model/Order} The populated <code>Order</code> instance.
    */
-
-
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Order();
@@ -50,116 +50,106 @@ class Order {
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-
       if (data.hasOwnProperty('working_diapason_start_id')) {
         obj['working_diapason_start_id'] = ApiClient.convertToType(data['working_diapason_start_id'], 'Number');
       }
-
       if (data.hasOwnProperty('phone')) {
         obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
       }
-
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
-
       if (data.hasOwnProperty('pet_name')) {
         obj['pet_name'] = ApiClient.convertToType(data['pet_name'], 'String');
       }
-
       if (data.hasOwnProperty('owner_name')) {
         obj['owner_name'] = ApiClient.convertToType(data['owner_name'], 'String');
       }
-
       if (data.hasOwnProperty('comment')) {
         obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
       }
-
       if (data.hasOwnProperty('platform')) {
         obj['platform'] = ApiClient.convertToType(data['platform'], 'String');
       }
-
       if (data.hasOwnProperty('services')) {
         obj['services'] = ApiClient.convertToType(data['services'], ['Number']);
       }
-
       if (data.hasOwnProperty('push_device_id')) {
         obj['push_device_id'] = ApiClient.convertToType(data['push_device_id'], 'String');
       }
     }
-
     return obj;
   }
 
 }
+
 /**
  * Уникальный идентификатор Заказа
  * @member {Number} id
  */
-
-
 Order.prototype['id'] = undefined;
+
 /**
  * Ссылка на время начала процедуры
  * @member {Number} working_diapason_start_id
  */
-
 Order.prototype['working_diapason_start_id'] = undefined;
+
 /**
  * Телефон для связи
  * @member {String} phone
  */
-
 Order.prototype['phone'] = undefined;
+
 /**
  * Email для связи
  * @member {String} email
  */
-
 Order.prototype['email'] = undefined;
+
 /**
  * Имя питомца
  * @member {String} pet_name
  */
-
 Order.prototype['pet_name'] = undefined;
+
 /**
  * Позывной владельца лохматой твари
  * @member {String} owner_name
  */
-
 Order.prototype['owner_name'] = undefined;
+
 /**
  * Поле комментария в форме заказа
  * @member {String} comment
  */
-
 Order.prototype['comment'] = undefined;
+
 /**
  * Платформа
  * @member {module:model/Order.PlatformEnum} platform
  */
-
 Order.prototype['platform'] = undefined;
+
 /**
  * Идентификаторы услуг для заказа
  * @member {Array.<Number>} services
  */
-
 Order.prototype['services'] = undefined;
+
 /**
  * Push идентификатор устройства
  * @member {String} push_device_id
  */
-
 Order.prototype['push_device_id'] = undefined;
+
 /**
  * Allowed values for the <code>platform</code> property.
  * @enum {String}
  * @readonly
  */
-
 Order['PlatformEnum'] = {
+
   /**
    * value: "android"
    * @const
@@ -172,4 +162,5 @@ Order['PlatformEnum'] = {
    */
   "ios": "ios"
 };
+
 export default Order;

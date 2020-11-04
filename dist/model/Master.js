@@ -10,13 +10,14 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from '../ApiClient';
+
 /**
  * The Master model module.
  * @module model/Master
  * @version 1.2.1
  */
-
 class Master {
   /**
    * Constructs a new <code>Master</code>.
@@ -24,16 +25,17 @@ class Master {
    * @alias module:model/Master
    */
   constructor() {
+
     Master.initialize(this);
   }
+
   /**
    * Initializes the fields of this object.
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-
-
   static initialize(obj) {}
+
   /**
    * Constructs a <code>Master</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -41,8 +43,6 @@ class Master {
    * @param {module:model/Master} obj Optional instance to populate.
    * @return {module:model/Master} The populated <code>Master</code> instance.
    */
-
-
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Master();
@@ -50,88 +50,79 @@ class Master {
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-
       if (data.hasOwnProperty('image')) {
         obj['image'] = ApiClient.convertToType(data['image'], 'String');
       }
-
       if (data.hasOwnProperty('salon_id')) {
         obj['salon_id'] = ApiClient.convertToType(data['salon_id'], 'Number');
       }
-
       if (data.hasOwnProperty('image_upload')) {
         obj['image_upload'] = ApiClient.convertToType(data['image_upload'], File);
       }
-
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-
       if (data.hasOwnProperty('phone')) {
         obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
       }
-
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
-
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
-
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
       }
     }
-
     return obj;
   }
 
 }
+
 /**
  * @member {Number} id
  */
-
-
 Master.prototype['id'] = undefined;
+
 /**
  * @member {String} image
  */
-
 Master.prototype['image'] = undefined;
+
 /**
  * @member {Number} salon_id
  */
-
 Master.prototype['salon_id'] = undefined;
+
 /**
  * @member {File} image_upload
  */
-
 Master.prototype['image_upload'] = undefined;
+
 /**
  * @member {String} name
  */
-
 Master.prototype['name'] = undefined;
+
 /**
  * @member {String} phone
  */
-
 Master.prototype['phone'] = undefined;
+
 /**
  * @member {String} description
  */
-
 Master.prototype['description'] = undefined;
+
 /**
  * @member {String} email
  */
-
 Master.prototype['email'] = undefined;
+
 /**
  * @member {String} password
  */
-
 Master.prototype['password'] = undefined;
+
 export default Master;

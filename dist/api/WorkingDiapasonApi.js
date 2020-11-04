@@ -10,16 +10,18 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from "../ApiClient";
 import InlineResponse2003 from '../model/InlineResponse2003';
 import WorkingDiapason from '../model/WorkingDiapason';
+
 /**
 * WorkingDiapason service.
 * @module api/WorkingDiapasonApi
 * @version 1.2.1
 */
-
 export default class WorkingDiapasonApi {
+
   /**
   * Constructs a new WorkingDiapasonApi. 
   * @alias module:api/WorkingDiapasonApi
@@ -30,6 +32,7 @@ export default class WorkingDiapasonApi {
   constructor(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
   }
+
   /**
    * Callback function to receive the result of the clientClientIDMasterMasterIDWorkingDiapasonGet operation.
    * @callback module:api/WorkingDiapasonApi~clientClientIDMasterMasterIDWorkingDiapasonGetCallback
@@ -51,17 +54,14 @@ export default class WorkingDiapasonApi {
    * @param {module:api/WorkingDiapasonApi~clientClientIDMasterMasterIDWorkingDiapasonGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/InlineResponse2003}
    */
-
-
   clientClientIDMasterMasterIDWorkingDiapasonGet(masterID, clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'masterID' is set
-
+    let postBody = null;
+    // verify the required parameter 'masterID' is set
     if (masterID === undefined || masterID === null) {
       throw new Error("Missing the required parameter 'masterID' when calling clientClientIDMasterMasterIDWorkingDiapasonGet");
-    } // verify the required parameter 'clientID' is set
-
-
+    }
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterMasterIDWorkingDiapasonGet");
     }
@@ -78,12 +78,14 @@ export default class WorkingDiapasonApi {
     };
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = InlineResponse2003;
     return this.apiClient.callApi('/client/{clientID}/master/{masterID}/working-diapason', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDMasterMasterIDWorkingDiapasonPost operation.
    * @callback module:api/WorkingDiapasonApi~clientClientIDMasterMasterIDWorkingDiapasonPostCallback
@@ -98,11 +100,9 @@ export default class WorkingDiapasonApi {
    * @param {module:model/WorkingDiapason} workingDiapason Store *WorkingDiapason* entity
    * @param {module:api/WorkingDiapasonApi~clientClientIDMasterMasterIDWorkingDiapasonPostCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDMasterMasterIDWorkingDiapasonPost(workingDiapason, callback) {
-    let postBody = workingDiapason; // verify the required parameter 'workingDiapason' is set
-
+    let postBody = workingDiapason;
+    // verify the required parameter 'workingDiapason' is set
     if (workingDiapason === undefined || workingDiapason === null) {
       throw new Error("Missing the required parameter 'workingDiapason' when calling clientClientIDMasterMasterIDWorkingDiapasonPost");
     }
@@ -111,12 +111,14 @@ export default class WorkingDiapasonApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuthMaster'];
     let contentTypes = ['application/json'];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}/master/{masterID}/working-diapason', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDDelete operation.
    * @callback module:api/WorkingDiapasonApi~clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDDeleteCallback
@@ -133,21 +135,17 @@ export default class WorkingDiapasonApi {
    * @param {Number} workingDiapasonID Id requested WorkingDiapason
    * @param {module:api/WorkingDiapasonApi~clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDDelete(masterID, clientID, workingDiapasonID, callback) {
-    let postBody = null; // verify the required parameter 'masterID' is set
-
+    let postBody = null;
+    // verify the required parameter 'masterID' is set
     if (masterID === undefined || masterID === null) {
       throw new Error("Missing the required parameter 'masterID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDDelete");
-    } // verify the required parameter 'clientID' is set
-
-
+    }
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDDelete");
-    } // verify the required parameter 'workingDiapasonID' is set
-
-
+    }
+    // verify the required parameter 'workingDiapasonID' is set
     if (workingDiapasonID === undefined || workingDiapasonID === null) {
       throw new Error("Missing the required parameter 'workingDiapasonID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDDelete");
     }
@@ -160,12 +158,14 @@ export default class WorkingDiapasonApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuthMaster'];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}/master/{masterID}/working-diapason/{workingDiapasonID}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGet operation.
    * @callback module:api/WorkingDiapasonApi~clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGetCallback
@@ -183,21 +183,17 @@ export default class WorkingDiapasonApi {
    * @param {module:api/WorkingDiapasonApi~clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGet(masterID, clientID, workingDiapasonID, callback) {
-    let postBody = null; // verify the required parameter 'masterID' is set
-
+    let postBody = null;
+    // verify the required parameter 'masterID' is set
     if (masterID === undefined || masterID === null) {
       throw new Error("Missing the required parameter 'masterID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGet");
-    } // verify the required parameter 'clientID' is set
-
-
+    }
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGet");
-    } // verify the required parameter 'workingDiapasonID' is set
-
-
+    }
+    // verify the required parameter 'workingDiapasonID' is set
     if (workingDiapasonID === undefined || workingDiapasonID === null) {
       throw new Error("Missing the required parameter 'workingDiapasonID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGet");
     }
@@ -210,12 +206,14 @@ export default class WorkingDiapasonApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = Object;
     return this.apiClient.callApi('/client/{clientID}/master/{masterID}/working-diapason/{workingDiapasonID}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDPatch operation.
    * @callback module:api/WorkingDiapasonApi~clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDPatchCallback
@@ -233,26 +231,21 @@ export default class WorkingDiapasonApi {
    * @param {module:model/WorkingDiapason} workingDiapason Optional description in *Markdown*
    * @param {module:api/WorkingDiapasonApi~clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDPatch(masterID, clientID, workingDiapasonID, workingDiapason, callback) {
-    let postBody = workingDiapason; // verify the required parameter 'masterID' is set
-
+    let postBody = workingDiapason;
+    // verify the required parameter 'masterID' is set
     if (masterID === undefined || masterID === null) {
       throw new Error("Missing the required parameter 'masterID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDPatch");
-    } // verify the required parameter 'clientID' is set
-
-
+    }
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDPatch");
-    } // verify the required parameter 'workingDiapasonID' is set
-
-
+    }
+    // verify the required parameter 'workingDiapasonID' is set
     if (workingDiapasonID === undefined || workingDiapasonID === null) {
       throw new Error("Missing the required parameter 'workingDiapasonID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDPatch");
-    } // verify the required parameter 'workingDiapason' is set
-
-
+    }
+    // verify the required parameter 'workingDiapason' is set
     if (workingDiapason === undefined || workingDiapason === null) {
       throw new Error("Missing the required parameter 'workingDiapason' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDPatch");
     }
@@ -267,6 +260,7 @@ export default class WorkingDiapasonApi {
     let formParams = {
       _method: "PATCH"
     };
+
     let authNames = ['bearerAuthMaster'];
     let contentTypes = ['application/json'];
     let accepts = ['application/json'];

@@ -10,14 +10,15 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from '../ApiClient';
 import Salon from './Salon';
+
 /**
  * The Client model module.
  * @module model/Client
  * @version 1.2.1
  */
-
 class Client {
   /**
    * Constructs a new <code>Client</code>.
@@ -25,16 +26,17 @@ class Client {
    * @alias module:model/Client
    */
   constructor() {
+
     Client.initialize(this);
   }
+
   /**
    * Initializes the fields of this object.
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-
-
   static initialize(obj) {}
+
   /**
    * Constructs a <code>Client</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -42,8 +44,6 @@ class Client {
    * @param {module:model/Client} obj Optional instance to populate.
    * @return {module:model/Client} The populated <code>Client</code> instance.
    */
-
-
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Client();
@@ -51,85 +51,77 @@ class Client {
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
       }
-
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'Boolean');
       }
-
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
-
       if (data.hasOwnProperty('salons')) {
         obj['salons'] = ApiClient.convertToType(data['salons'], [Salon]);
       }
-
       if (data.hasOwnProperty('image')) {
         obj['image'] = ApiClient.convertToType(data['image'], File);
       }
-
       if (data.hasOwnProperty('settings')) {
         obj['settings'] = ApiClient.convertToType(data['settings'], Object);
       }
     }
-
     return obj;
   }
 
 }
+
 /**
  * Уникальный идентификатор Клиента
  * @member {Number} id
  */
-
-
 Client.prototype['id'] = undefined;
+
 /**
  * Пароль клиента
  * @member {String} password
  */
-
 Client.prototype['password'] = undefined;
+
 /**
  * Тип клиента. 0 - частный мастер, 1 - компания
  * @member {Boolean} type
  */
-
 Client.prototype['type'] = undefined;
+
 /**
  * Название Клиента
  * @member {String} name
  */
-
 Client.prototype['name'] = undefined;
+
 /**
  * Электронная почта
  * @member {String} email
  */
-
 Client.prototype['email'] = undefined;
+
 /**
  * @member {Array.<module:model/Salon>} salons
  */
-
 Client.prototype['salons'] = undefined;
+
 /**
  * Логотип клиента
  * @member {File} image
  */
-
 Client.prototype['image'] = undefined;
+
 /**
  * @member {Object} settings
  */
-
 Client.prototype['settings'] = undefined;
+
 export default Client;

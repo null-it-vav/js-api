@@ -10,13 +10,14 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from '../ApiClient';
+
 /**
  * The Bearer model module.
  * @module model/Bearer
  * @version 1.2.1
  */
-
 class Bearer {
   /**
    * Constructs a new <code>Bearer</code>.
@@ -24,16 +25,17 @@ class Bearer {
    * @alias module:model/Bearer
    */
   constructor() {
+
     Bearer.initialize(this);
   }
+
   /**
    * Initializes the fields of this object.
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-
-
   static initialize(obj) {}
+
   /**
    * Constructs a <code>Bearer</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -41,8 +43,6 @@ class Bearer {
    * @param {module:model/Bearer} obj Optional instance to populate.
    * @return {module:model/Bearer} The populated <code>Bearer</code> instance.
    */
-
-
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Bearer();
@@ -50,47 +50,43 @@ class Bearer {
       if (data.hasOwnProperty('token_type')) {
         obj['token_type'] = ApiClient.convertToType(data['token_type'], 'String');
       }
-
       if (data.hasOwnProperty('access_token')) {
         obj['access_token'] = ApiClient.convertToType(data['access_token'], 'String');
       }
-
       if (data.hasOwnProperty('refresh_token')) {
         obj['refresh_token'] = ApiClient.convertToType(data['refresh_token'], 'String');
       }
-
       if (data.hasOwnProperty('expires_in')) {
         obj['expires_in'] = ApiClient.convertToType(data['expires_in'], 'Number');
       }
     }
-
     return obj;
   }
 
 }
+
 /**
  * Уникальный идентификатор Клиента
  * @member {String} token_type
  */
-
-
 Bearer.prototype['token_type'] = undefined;
+
 /**
  * Уникальный идентификатор Клиента
  * @member {String} access_token
  */
-
 Bearer.prototype['access_token'] = undefined;
+
 /**
  * Уникальный идентификатор Клиента
  * @member {String} refresh_token
  */
-
 Bearer.prototype['refresh_token'] = undefined;
+
 /**
  * Уникальный идентификатор Клиента
  * @member {Number} expires_in
  */
-
 Bearer.prototype['expires_in'] = undefined;
+
 export default Bearer;

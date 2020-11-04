@@ -10,15 +10,17 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from "../ApiClient";
 import InlineResponse2002 from '../model/InlineResponse2002';
+
 /**
 * Service service.
 * @module api/ServiceApi
 * @version 1.2.1
 */
-
 export default class ServiceApi {
+
   /**
   * Constructs a new ServiceApi. 
   * @alias module:api/ServiceApi
@@ -29,6 +31,7 @@ export default class ServiceApi {
   constructor(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
   }
+
   /**
    * Callback function to receive the result of the clientClientIDServiceGet operation.
    * @callback module:api/ServiceApi~clientClientIDServiceGetCallback
@@ -47,12 +50,10 @@ export default class ServiceApi {
    * @param {module:api/ServiceApi~clientClientIDServiceGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/InlineResponse2002}
    */
-
-
   clientClientIDServiceGet(clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDServiceGet");
     }
@@ -66,12 +67,14 @@ export default class ServiceApi {
     };
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = InlineResponse2002;
     return this.apiClient.callApi('/client/{clientID}/service', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDServicePost operation.
    * @callback module:api/ServiceApi~clientClientIDServicePostCallback
@@ -94,12 +97,10 @@ export default class ServiceApi {
    * @param {String} opts.text Описание услуги
    * @param {module:api/ServiceApi~clientClientIDServicePostCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDServicePost(clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDServicePost");
     }
@@ -118,12 +119,14 @@ export default class ServiceApi {
       'price': opts['price'],
       'text': opts['text']
     };
+
     let authNames = ['bearerAuth'];
     let contentTypes = ['multipart/form-data'];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}/service', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDServiceServiceIDDelete operation.
    * @callback module:api/ServiceApi~clientClientIDServiceServiceIDDeleteCallback
@@ -139,16 +142,13 @@ export default class ServiceApi {
    * @param {Number} serviceID ID услуги
    * @param {module:api/ServiceApi~clientClientIDServiceServiceIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDServiceServiceIDDelete(clientID, serviceID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDServiceServiceIDDelete");
-    } // verify the required parameter 'serviceID' is set
-
-
+    }
+    // verify the required parameter 'serviceID' is set
     if (serviceID === undefined || serviceID === null) {
       throw new Error("Missing the required parameter 'serviceID' when calling clientClientIDServiceServiceIDDelete");
     }
@@ -160,12 +160,14 @@ export default class ServiceApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuth'];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}/service/{serviceID}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDServiceServiceIDGet operation.
    * @callback module:api/ServiceApi~clientClientIDServiceServiceIDGetCallback
@@ -182,16 +184,13 @@ export default class ServiceApi {
    * @param {module:api/ServiceApi~clientClientIDServiceServiceIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDServiceServiceIDGet(clientID, serviceID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDServiceServiceIDGet");
-    } // verify the required parameter 'serviceID' is set
-
-
+    }
+    // verify the required parameter 'serviceID' is set
     if (serviceID === undefined || serviceID === null) {
       throw new Error("Missing the required parameter 'serviceID' when calling clientClientIDServiceServiceIDGet");
     }
@@ -203,12 +202,14 @@ export default class ServiceApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = Object;
     return this.apiClient.callApi('/client/{clientID}/service/{serviceID}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDServiceServiceIDPatch operation.
    * @callback module:api/ServiceApi~clientClientIDServiceServiceIDPatchCallback
@@ -232,27 +233,22 @@ export default class ServiceApi {
    * @param {String} opts.text Описание услуги
    * @param {module:api/ServiceApi~clientClientIDServiceServiceIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDServiceServiceIDPatch(clientID, serviceID, name, serviceType, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDServiceServiceIDPatch");
-    } // verify the required parameter 'serviceID' is set
-
-
+    }
+    // verify the required parameter 'serviceID' is set
     if (serviceID === undefined || serviceID === null) {
       throw new Error("Missing the required parameter 'serviceID' when calling clientClientIDServiceServiceIDPatch");
-    } // verify the required parameter 'name' is set
-
-
+    }
+    // verify the required parameter 'name' is set
     if (name === undefined || name === null) {
       throw new Error("Missing the required parameter 'name' when calling clientClientIDServiceServiceIDPatch");
-    } // verify the required parameter 'serviceType' is set
-
-
+    }
+    // verify the required parameter 'serviceType' is set
     if (serviceType === undefined || serviceType === null) {
       throw new Error("Missing the required parameter 'serviceType' when calling clientClientIDServiceServiceIDPatch");
     }
@@ -273,6 +269,7 @@ export default class ServiceApi {
       'text': opts['text'],
       '_method': "PATCH"
     };
+
     let authNames = ['bearerAuth'];
     let contentTypes = ['multipart/form-data'];
     let accepts = ['application/json'];

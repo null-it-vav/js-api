@@ -10,29 +10,31 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from '../ApiClient';
+
 /**
  * The OneOfMasterClient model module.
  * @module model/OneOfMasterClient
  * @version 1.2.1
  */
-
 class OneOfMasterClient {
   /**
    * Constructs a new <code>OneOfMasterClient</code>.
    * @alias module:model/OneOfMasterClient
    */
   constructor() {
+
     OneOfMasterClient.initialize(this);
   }
+
   /**
    * Initializes the fields of this object.
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-
-
   static initialize(obj) {}
+
   /**
    * Constructs a <code>OneOfMasterClient</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -40,8 +42,6 @@ class OneOfMasterClient {
    * @param {module:model/OneOfMasterClient} obj Optional instance to populate.
    * @return {module:model/OneOfMasterClient} The populated <code>OneOfMasterClient</code> instance.
    */
-
-
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new OneOfMasterClient();
@@ -50,15 +50,14 @@ class OneOfMasterClient {
         obj['response'] = ApiClient.convertToType(data['response'], OneOfMasterClient);
       }
     }
-
     return obj;
   }
 
 }
+
 /**
  * @member {module:model/OneOfMasterClient} response
  */
-
-
 OneOfMasterClient.prototype['response'] = undefined;
+
 export default OneOfMasterClient;

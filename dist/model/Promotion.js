@@ -10,13 +10,14 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from '../ApiClient';
+
 /**
  * The Promotion model module.
  * @module model/Promotion
  * @version 1.2.1
  */
-
 class Promotion {
   /**
    * Constructs a new <code>Promotion</code>.
@@ -24,16 +25,17 @@ class Promotion {
    * @alias module:model/Promotion
    */
   constructor() {
+
     Promotion.initialize(this);
   }
+
   /**
    * Initializes the fields of this object.
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-
-
   static initialize(obj) {}
+
   /**
    * Constructs a <code>Promotion</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -41,8 +43,6 @@ class Promotion {
    * @param {module:model/Promotion} obj Optional instance to populate.
    * @return {module:model/Promotion} The populated <code>Promotion</code> instance.
    */
-
-
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Promotion();
@@ -50,76 +50,69 @@ class Promotion {
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-
       if (data.hasOwnProperty('title')) {
         obj['title'] = ApiClient.convertToType(data['title'], 'String');
       }
-
       if (data.hasOwnProperty('full_description')) {
         obj['full_description'] = ApiClient.convertToType(data['full_description'], 'String');
       }
-
       if (data.hasOwnProperty('image_url')) {
         obj['image_url'] = ApiClient.convertToType(data['image_url'], 'String');
       }
-
       if (data.hasOwnProperty('image_upload')) {
         obj['image_upload'] = ApiClient.convertToType(data['image_upload'], File);
       }
-
       if (data.hasOwnProperty('date_start')) {
         obj['date_start'] = ApiClient.convertToType(data['date_start'], 'Number');
       }
-
       if (data.hasOwnProperty('date_end')) {
         obj['date_end'] = ApiClient.convertToType(data['date_end'], 'Number');
       }
     }
-
     return obj;
   }
 
 }
+
 /**
  * Уникальный идентификатор Акции
  * @member {Number} id
  */
-
-
 Promotion.prototype['id'] = undefined;
+
 /**
  * Заголовок Акции
  * @member {String} title
  */
-
 Promotion.prototype['title'] = undefined;
+
 /**
  * Текст Акции, поддерживает разметку
  * @member {String} full_description
  */
-
 Promotion.prototype['full_description'] = undefined;
+
 /**
  * Изображение акции
  * @member {String} image_url
  */
-
 Promotion.prototype['image_url'] = undefined;
+
 /**
  * @member {File} image_upload
  */
-
 Promotion.prototype['image_upload'] = undefined;
+
 /**
  * Дата начала акции
  * @member {Number} date_start
  */
-
 Promotion.prototype['date_start'] = undefined;
+
 /**
  * Дата окончания акции
  * @member {Number} date_end
  */
-
 Promotion.prototype['date_end'] = undefined;
+
 export default Promotion;

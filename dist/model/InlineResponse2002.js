@@ -10,30 +10,32 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from '../ApiClient';
 import Service from './Service';
+
 /**
  * The InlineResponse2002 model module.
  * @module model/InlineResponse2002
  * @version 1.2.1
  */
-
 class InlineResponse2002 {
   /**
    * Constructs a new <code>InlineResponse2002</code>.
    * @alias module:model/InlineResponse2002
    */
   constructor() {
+
     InlineResponse2002.initialize(this);
   }
+
   /**
    * Initializes the fields of this object.
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-
-
   static initialize(obj) {}
+
   /**
    * Constructs a <code>InlineResponse2002</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -41,8 +43,6 @@ class InlineResponse2002 {
    * @param {module:model/InlineResponse2002} obj Optional instance to populate.
    * @return {module:model/InlineResponse2002} The populated <code>InlineResponse2002</code> instance.
    */
-
-
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new InlineResponse2002();
@@ -51,15 +51,14 @@ class InlineResponse2002 {
         obj['response'] = ApiClient.convertToType(data['response'], [Service]);
       }
     }
-
     return obj;
   }
 
 }
+
 /**
  * @member {Array.<module:model/Service>} response
  */
-
-
 InlineResponse2002.prototype['response'] = undefined;
+
 export default InlineResponse2002;

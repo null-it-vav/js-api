@@ -10,15 +10,17 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from "../ApiClient";
 import InlineResponse2001 from '../model/InlineResponse2001';
+
 /**
 * Promotion service.
 * @module api/PromotionApi
 * @version 1.2.1
 */
-
 export default class PromotionApi {
+
   /**
   * Constructs a new PromotionApi. 
   * @alias module:api/PromotionApi
@@ -29,6 +31,7 @@ export default class PromotionApi {
   constructor(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
   }
+
   /**
    * Callback function to receive the result of the clientClientIDPromotionGet operation.
    * @callback module:api/PromotionApi~clientClientIDPromotionGetCallback
@@ -47,12 +50,10 @@ export default class PromotionApi {
    * @param {module:api/PromotionApi~clientClientIDPromotionGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/InlineResponse2001}
    */
-
-
   clientClientIDPromotionGet(clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPromotionGet");
     }
@@ -66,12 +67,14 @@ export default class PromotionApi {
     };
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = InlineResponse2001;
     return this.apiClient.callApi('/client/{clientID}/promotion', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDPromotionPost operation.
    * @callback module:api/PromotionApi~clientClientIDPromotionPostCallback
@@ -94,12 +97,10 @@ export default class PromotionApi {
    * @param {Number} opts.dateEnd Дата окончания акции
    * @param {module:api/PromotionApi~clientClientIDPromotionPostCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDPromotionPost(clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPromotionPost");
     }
@@ -118,12 +119,14 @@ export default class PromotionApi {
       'date_start': opts['dateStart'],
       'date_end': opts['dateEnd']
     };
+
     let authNames = ['bearerAuth'];
     let contentTypes = ['multipart/form-data'];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}/promotion', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDPromotionPromotionIDDelete operation.
    * @callback module:api/PromotionApi~clientClientIDPromotionPromotionIDDeleteCallback
@@ -139,16 +142,13 @@ export default class PromotionApi {
    * @param {Number} promotionID Id requested Promotion
    * @param {module:api/PromotionApi~clientClientIDPromotionPromotionIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDPromotionPromotionIDDelete(clientID, promotionID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPromotionPromotionIDDelete");
-    } // verify the required parameter 'promotionID' is set
-
-
+    }
+    // verify the required parameter 'promotionID' is set
     if (promotionID === undefined || promotionID === null) {
       throw new Error("Missing the required parameter 'promotionID' when calling clientClientIDPromotionPromotionIDDelete");
     }
@@ -160,12 +160,14 @@ export default class PromotionApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuth'];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}/promotion/{promotionID}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDPromotionPromotionIDGet operation.
    * @callback module:api/PromotionApi~clientClientIDPromotionPromotionIDGetCallback
@@ -182,16 +184,13 @@ export default class PromotionApi {
    * @param {module:api/PromotionApi~clientClientIDPromotionPromotionIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDPromotionPromotionIDGet(clientID, promotionID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPromotionPromotionIDGet");
-    } // verify the required parameter 'promotionID' is set
-
-
+    }
+    // verify the required parameter 'promotionID' is set
     if (promotionID === undefined || promotionID === null) {
       throw new Error("Missing the required parameter 'promotionID' when calling clientClientIDPromotionPromotionIDGet");
     }
@@ -203,12 +202,14 @@ export default class PromotionApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = Object;
     return this.apiClient.callApi('/client/{clientID}/promotion/{promotionID}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDPromotionPromotionIDPatch operation.
    * @callback module:api/PromotionApi~clientClientIDPromotionPromotionIDPatchCallback
@@ -232,17 +233,14 @@ export default class PromotionApi {
    * @param {Number} opts.dateEnd Дата окончания акции
    * @param {module:api/PromotionApi~clientClientIDPromotionPromotionIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDPromotionPromotionIDPatch(clientID, promotionID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPromotionPromotionIDPatch");
-    } // verify the required parameter 'promotionID' is set
-
-
+    }
+    // verify the required parameter 'promotionID' is set
     if (promotionID === undefined || promotionID === null) {
       throw new Error("Missing the required parameter 'promotionID' when calling clientClientIDPromotionPromotionIDPatch");
     }
@@ -263,6 +261,7 @@ export default class PromotionApi {
       'date_end': opts['dateEnd'],
       '_method': "PATCH"
     };
+
     let authNames = ['bearerAuth'];
     let contentTypes = ['multipart/form-data'];
     let accepts = ['application/json'];

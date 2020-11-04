@@ -10,13 +10,14 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from '../ApiClient';
+
 /**
  * The InlineObject model module.
  * @module model/InlineObject
  * @version 1.2.1
  */
-
 class InlineObject {
   /**
    * Constructs a new <code>InlineObject</code>.
@@ -26,20 +27,21 @@ class InlineObject {
    * @param serviceType {Array.<module:model/InlineObject.ServiceTypeEnum>} Тип услуги - для кошек, для собак, для других
    */
   constructor(name, imageUpload, serviceType) {
+
     InlineObject.initialize(this, name, imageUpload, serviceType);
   }
+
   /**
    * Initializes the fields of this object.
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-
-
   static initialize(obj, name, imageUpload, serviceType) {
     obj['name'] = name;
     obj['image_upload'] = imageUpload;
     obj['service_type'] = serviceType;
   }
+
   /**
    * Constructs a <code>InlineObject</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -47,8 +49,6 @@ class InlineObject {
    * @param {module:model/InlineObject} obj Optional instance to populate.
    * @return {module:model/InlineObject} The populated <code>InlineObject</code> instance.
    */
-
-
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new InlineObject();
@@ -56,46 +56,43 @@ class InlineObject {
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-
       if (data.hasOwnProperty('image_upload')) {
         obj['image_upload'] = ApiClient.convertToType(data['image_upload'], File);
       }
-
       if (data.hasOwnProperty('service_type')) {
         obj['service_type'] = ApiClient.convertToType(data['service_type'], ['Number']);
       }
     }
-
     return obj;
   }
 
 }
+
 /**
  * Название Услуги
  * @member {String} name
  */
-
-
 InlineObject.prototype['name'] = undefined;
+
 /**
  * Загружаемое изображение услуги
  * @member {File} image_upload
  */
-
 InlineObject.prototype['image_upload'] = undefined;
+
 /**
  * Тип услуги - для кошек, для собак, для других
  * @member {Array.<module:model/InlineObject.ServiceTypeEnum>} service_type
  */
-
 InlineObject.prototype['service_type'] = undefined;
+
 /**
  * Allowed values for the <code>serviceType</code> property.
  * @enum {Number}
  * @readonly
  */
-
 InlineObject['ServiceTypeEnum'] = {
+
   /**
    * value: 0
    * @const
@@ -114,4 +111,5 @@ InlineObject['ServiceTypeEnum'] = {
    */
   "2": 2
 };
+
 export default InlineObject;

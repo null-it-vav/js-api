@@ -10,16 +10,18 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from "../ApiClient";
 import Bearer from '../model/Bearer';
 import OneOfMasterClient from '../model/OneOfMasterClient';
+
 /**
 * OAuth service.
 * @module api/OAuthApi
 * @version 1.2.1
 */
-
 export default class OAuthApi {
+
   /**
   * Constructs a new OAuthApi. 
   * @alias module:api/OAuthApi
@@ -30,6 +32,7 @@ export default class OAuthApi {
   constructor(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
   }
+
   /**
    * Callback function to receive the result of the oauthClientLoginPost operation.
    * @callback module:api/OAuthApi~oauthClientLoginPostCallback
@@ -45,11 +48,9 @@ export default class OAuthApi {
    * @param {module:api/OAuthApi~oauthClientLoginPostCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/Bearer}
    */
-
-
   oauthClientLoginPost(body, callback) {
-    let postBody = body; // verify the required parameter 'body' is set
-
+    let postBody = body;
+    // verify the required parameter 'body' is set
     if (body === undefined || body === null) {
       throw new Error("Missing the required parameter 'body' when calling oauthClientLoginPost");
     }
@@ -58,12 +59,14 @@ export default class OAuthApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = ['application/json'];
     let accepts = ['application/json'];
     let returnType = Bearer;
     return this.apiClient.callApi('/oauth/client/login', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the oauthMasterLoginPost operation.
    * @callback module:api/OAuthApi~oauthMasterLoginPostCallback
@@ -79,11 +82,9 @@ export default class OAuthApi {
    * @param {module:api/OAuthApi~oauthMasterLoginPostCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/Bearer}
    */
-
-
   oauthMasterLoginPost(body, callback) {
-    let postBody = body; // verify the required parameter 'body' is set
-
+    let postBody = body;
+    // verify the required parameter 'body' is set
     if (body === undefined || body === null) {
       throw new Error("Missing the required parameter 'body' when calling oauthMasterLoginPost");
     }
@@ -92,12 +93,14 @@ export default class OAuthApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = ['application/json'];
     let accepts = ['application/json'];
     let returnType = Bearer;
     return this.apiClient.callApi('/oauth/master/login', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the oauthMeGet operation.
    * @callback module:api/OAuthApi~oauthMeGetCallback
@@ -112,14 +115,14 @@ export default class OAuthApi {
    * @param {module:api/OAuthApi~oauthMeGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/OneOfMasterClient}
    */
-
-
   oauthMeGet(callback) {
     let postBody = null;
+
     let pathParams = {};
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuth'];
     let contentTypes = [];
     let accepts = ['application/json'];

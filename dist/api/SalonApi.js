@@ -10,16 +10,18 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from "../ApiClient";
 import InlineResponse200 from '../model/InlineResponse200';
 import Salon from '../model/Salon';
+
 /**
 * Salon service.
 * @module api/SalonApi
 * @version 1.2.1
 */
-
 export default class SalonApi {
+
   /**
   * Constructs a new SalonApi. 
   * @alias module:api/SalonApi
@@ -30,6 +32,7 @@ export default class SalonApi {
   constructor(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
   }
+
   /**
    * Callback function to receive the result of the clientClientIDSalonGet operation.
    * @callback module:api/SalonApi~clientClientIDSalonGetCallback
@@ -45,11 +48,9 @@ export default class SalonApi {
    * @param {module:api/SalonApi~clientClientIDSalonGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/InlineResponse200}
    */
-
-
   clientClientIDSalonGet(clientID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonGet");
     }
@@ -60,12 +61,14 @@ export default class SalonApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuth'];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = InlineResponse200;
     return this.apiClient.callApi('/client/{clientID}/salon', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDSalonPost operation.
    * @callback module:api/SalonApi~clientClientIDSalonPostCallback
@@ -81,16 +84,13 @@ export default class SalonApi {
    * @param {module:model/Salon} salon Store *Salon* entity
    * @param {module:api/SalonApi~clientClientIDSalonPostCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDSalonPost(clientID, salon, callback) {
-    let postBody = salon; // verify the required parameter 'clientID' is set
-
+    let postBody = salon;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonPost");
-    } // verify the required parameter 'salon' is set
-
-
+    }
+    // verify the required parameter 'salon' is set
     if (salon === undefined || salon === null) {
       throw new Error("Missing the required parameter 'salon' when calling clientClientIDSalonPost");
     }
@@ -101,12 +101,14 @@ export default class SalonApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuth'];
     let contentTypes = ['application/json'];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}/salon', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDSalonSalonIDDelete operation.
    * @callback module:api/SalonApi~clientClientIDSalonSalonIDDeleteCallback
@@ -122,16 +124,13 @@ export default class SalonApi {
    * @param {Number} salonID ID салона
    * @param {module:api/SalonApi~clientClientIDSalonSalonIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDSalonSalonIDDelete(clientID, salonID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonSalonIDDelete");
-    } // verify the required parameter 'salonID' is set
-
-
+    }
+    // verify the required parameter 'salonID' is set
     if (salonID === undefined || salonID === null) {
       throw new Error("Missing the required parameter 'salonID' when calling clientClientIDSalonSalonIDDelete");
     }
@@ -143,12 +142,14 @@ export default class SalonApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuth'];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}/salon/{salonID}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDSalonSalonIDGet operation.
    * @callback module:api/SalonApi~clientClientIDSalonSalonIDGetCallback
@@ -165,16 +166,13 @@ export default class SalonApi {
    * @param {module:api/SalonApi~clientClientIDSalonSalonIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDSalonSalonIDGet(clientID, salonID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonSalonIDGet");
-    } // verify the required parameter 'salonID' is set
-
-
+    }
+    // verify the required parameter 'salonID' is set
     if (salonID === undefined || salonID === null) {
       throw new Error("Missing the required parameter 'salonID' when calling clientClientIDSalonSalonIDGet");
     }
@@ -186,12 +184,14 @@ export default class SalonApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = ['bearerAuth'];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = Object;
     return this.apiClient.callApi('/client/{clientID}/salon/{salonID}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDSalonSalonIDPatch operation.
    * @callback module:api/SalonApi~clientClientIDSalonSalonIDPatchCallback
@@ -208,21 +208,17 @@ export default class SalonApi {
    * @param {module:model/Salon} salon Optional description in *Markdown*
    * @param {module:api/SalonApi~clientClientIDSalonSalonIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDSalonSalonIDPatch(clientID, salonID, salon, callback) {
-    let postBody = salon; // verify the required parameter 'clientID' is set
-
+    let postBody = salon;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDSalonSalonIDPatch");
-    } // verify the required parameter 'salonID' is set
-
-
+    }
+    // verify the required parameter 'salonID' is set
     if (salonID === undefined || salonID === null) {
       throw new Error("Missing the required parameter 'salonID' when calling clientClientIDSalonSalonIDPatch");
-    } // verify the required parameter 'salon' is set
-
-
+    }
+    // verify the required parameter 'salon' is set
     if (salon === undefined || salon === null) {
       throw new Error("Missing the required parameter 'salon' when calling clientClientIDSalonSalonIDPatch");
     }
@@ -236,6 +232,7 @@ export default class SalonApi {
     let formParams = {
       _method: "PATCH"
     };
+
     let authNames = ['bearerAuth'];
     let contentTypes = ['application/json'];
     let accepts = ['application/json'];

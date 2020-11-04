@@ -10,13 +10,14 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from '../ApiClient';
+
 /**
  * The Salon model module.
  * @module model/Salon
  * @version 1.2.1
  */
-
 class Salon {
   /**
    * Constructs a new <code>Salon</code>.
@@ -24,16 +25,17 @@ class Salon {
    * @alias module:model/Salon
    */
   constructor() {
+
     Salon.initialize(this);
   }
+
   /**
    * Initializes the fields of this object.
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-
-
   static initialize(obj) {}
+
   /**
    * Constructs a <code>Salon</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -41,8 +43,6 @@ class Salon {
    * @param {module:model/Salon} obj Optional instance to populate.
    * @return {module:model/Salon} The populated <code>Salon</code> instance.
    */
-
-
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Salon();
@@ -50,46 +50,42 @@ class Salon {
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-
       if (data.hasOwnProperty('address')) {
         obj['address'] = ApiClient.convertToType(data['address'], 'String');
       }
-
       if (data.hasOwnProperty('long')) {
         obj['long'] = ApiClient.convertToType(data['long'], 'Number');
       }
-
       if (data.hasOwnProperty('lat')) {
         obj['lat'] = ApiClient.convertToType(data['lat'], 'Number');
       }
     }
-
     return obj;
   }
 
 }
+
 /**
  * @member {Number} id
  */
-
-
 Salon.prototype['id'] = undefined;
+
 /**
  * Адрес салона
  * @member {String} address
  */
-
 Salon.prototype['address'] = undefined;
+
 /**
  * География - долгота
  * @member {Number} long
  */
-
 Salon.prototype['long'] = undefined;
+
 /**
  * География - широта
  * @member {Number} lat
  */
-
 Salon.prototype['lat'] = undefined;
+
 export default Salon;

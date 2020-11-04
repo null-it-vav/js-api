@@ -10,18 +10,20 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from "../ApiClient";
 import InlineResponse2001 from '../model/InlineResponse2001';
 import InlineResponse2002 from '../model/InlineResponse2002';
 import InlineResponse2003 from '../model/InlineResponse2003';
 import Order from '../model/Order';
+
 /**
 * Application service.
 * @module api/ApplicationApi
 * @version 1.2.1
 */
-
 export default class ApplicationApi {
+
   /**
   * Constructs a new ApplicationApi. 
   * @alias module:api/ApplicationApi
@@ -32,6 +34,7 @@ export default class ApplicationApi {
   constructor(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
   }
+
   /**
    * Callback function to receive the result of the clientClientIDGet operation.
    * @callback module:api/ApplicationApi~clientClientIDGetCallback
@@ -47,11 +50,9 @@ export default class ApplicationApi {
    * @param {module:api/ApplicationApi~clientClientIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDGet(clientID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDGet");
     }
@@ -62,12 +63,14 @@ export default class ApplicationApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = Object;
     return this.apiClient.callApi('/client/{clientID}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDMasterGet operation.
    * @callback module:api/ApplicationApi~clientClientIDMasterGetCallback
@@ -87,17 +90,14 @@ export default class ApplicationApi {
    * @param {module:api/ApplicationApi~clientClientIDMasterGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDMasterGet(clientID, salonID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterGet");
-    } // verify the required parameter 'salonID' is set
-
-
+    }
+    // verify the required parameter 'salonID' is set
     if (salonID === undefined || salonID === null) {
       throw new Error("Missing the required parameter 'salonID' when calling clientClientIDMasterGet");
     }
@@ -112,12 +112,14 @@ export default class ApplicationApi {
     };
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = Object;
     return this.apiClient.callApi('/client/{clientID}/master', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDMasterMasterIDGet operation.
    * @callback module:api/ApplicationApi~clientClientIDMasterMasterIDGetCallback
@@ -134,16 +136,13 @@ export default class ApplicationApi {
    * @param {module:api/ApplicationApi~clientClientIDMasterMasterIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDMasterMasterIDGet(clientID, masterID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterMasterIDGet");
-    } // verify the required parameter 'masterID' is set
-
-
+    }
+    // verify the required parameter 'masterID' is set
     if (masterID === undefined || masterID === null) {
       throw new Error("Missing the required parameter 'masterID' when calling clientClientIDMasterMasterIDGet");
     }
@@ -155,12 +154,14 @@ export default class ApplicationApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = Object;
     return this.apiClient.callApi('/client/{clientID}/master/{masterID}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDMasterMasterIDWorkingDiapasonGet operation.
    * @callback module:api/ApplicationApi~clientClientIDMasterMasterIDWorkingDiapasonGetCallback
@@ -182,17 +183,14 @@ export default class ApplicationApi {
    * @param {module:api/ApplicationApi~clientClientIDMasterMasterIDWorkingDiapasonGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/InlineResponse2003}
    */
-
-
   clientClientIDMasterMasterIDWorkingDiapasonGet(masterID, clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'masterID' is set
-
+    let postBody = null;
+    // verify the required parameter 'masterID' is set
     if (masterID === undefined || masterID === null) {
       throw new Error("Missing the required parameter 'masterID' when calling clientClientIDMasterMasterIDWorkingDiapasonGet");
-    } // verify the required parameter 'clientID' is set
-
-
+    }
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterMasterIDWorkingDiapasonGet");
     }
@@ -209,12 +207,14 @@ export default class ApplicationApi {
     };
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = InlineResponse2003;
     return this.apiClient.callApi('/client/{clientID}/master/{masterID}/working-diapason', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGet operation.
    * @callback module:api/ApplicationApi~clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGetCallback
@@ -232,21 +232,17 @@ export default class ApplicationApi {
    * @param {module:api/ApplicationApi~clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGet(masterID, clientID, workingDiapasonID, callback) {
-    let postBody = null; // verify the required parameter 'masterID' is set
-
+    let postBody = null;
+    // verify the required parameter 'masterID' is set
     if (masterID === undefined || masterID === null) {
       throw new Error("Missing the required parameter 'masterID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGet");
-    } // verify the required parameter 'clientID' is set
-
-
+    }
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGet");
-    } // verify the required parameter 'workingDiapasonID' is set
-
-
+    }
+    // verify the required parameter 'workingDiapasonID' is set
     if (workingDiapasonID === undefined || workingDiapasonID === null) {
       throw new Error("Missing the required parameter 'workingDiapasonID' when calling clientClientIDMasterMasterIDWorkingDiapasonWorkingDiapasonIDGet");
     }
@@ -259,12 +255,14 @@ export default class ApplicationApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = Object;
     return this.apiClient.callApi('/client/{clientID}/master/{masterID}/working-diapason/{workingDiapasonID}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDOrderPost operation.
    * @callback module:api/ApplicationApi~clientClientIDOrderPostCallback
@@ -280,16 +278,13 @@ export default class ApplicationApi {
    * @param {module:model/Order} order Store *Order* entity
    * @param {module:api/ApplicationApi~clientClientIDOrderPostCallback} callback The callback function, accepting three arguments: error, data, response
    */
-
-
   clientClientIDOrderPost(clientID, order, callback) {
-    let postBody = order; // verify the required parameter 'clientID' is set
-
+    let postBody = order;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDOrderPost");
-    } // verify the required parameter 'order' is set
-
-
+    }
+    // verify the required parameter 'order' is set
     if (order === undefined || order === null) {
       throw new Error("Missing the required parameter 'order' when calling clientClientIDOrderPost");
     }
@@ -300,12 +295,14 @@ export default class ApplicationApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = ['application/json'];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/client/{clientID}/order', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDPromotionGet operation.
    * @callback module:api/ApplicationApi~clientClientIDPromotionGetCallback
@@ -324,12 +321,10 @@ export default class ApplicationApi {
    * @param {module:api/ApplicationApi~clientClientIDPromotionGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/InlineResponse2001}
    */
-
-
   clientClientIDPromotionGet(clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPromotionGet");
     }
@@ -343,12 +338,14 @@ export default class ApplicationApi {
     };
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = InlineResponse2001;
     return this.apiClient.callApi('/client/{clientID}/promotion', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDPromotionPromotionIDGet operation.
    * @callback module:api/ApplicationApi~clientClientIDPromotionPromotionIDGetCallback
@@ -365,16 +362,13 @@ export default class ApplicationApi {
    * @param {module:api/ApplicationApi~clientClientIDPromotionPromotionIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDPromotionPromotionIDGet(clientID, promotionID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDPromotionPromotionIDGet");
-    } // verify the required parameter 'promotionID' is set
-
-
+    }
+    // verify the required parameter 'promotionID' is set
     if (promotionID === undefined || promotionID === null) {
       throw new Error("Missing the required parameter 'promotionID' when calling clientClientIDPromotionPromotionIDGet");
     }
@@ -386,12 +380,14 @@ export default class ApplicationApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = Object;
     return this.apiClient.callApi('/client/{clientID}/promotion/{promotionID}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDServiceGet operation.
    * @callback module:api/ApplicationApi~clientClientIDServiceGetCallback
@@ -410,12 +406,10 @@ export default class ApplicationApi {
    * @param {module:api/ApplicationApi~clientClientIDServiceGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/InlineResponse2002}
    */
-
-
   clientClientIDServiceGet(clientID, opts, callback) {
     opts = opts || {};
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDServiceGet");
     }
@@ -429,12 +423,14 @@ export default class ApplicationApi {
     };
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];
     let returnType = InlineResponse2002;
     return this.apiClient.callApi('/client/{clientID}/service', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
+
   /**
    * Callback function to receive the result of the clientClientIDServiceServiceIDGet operation.
    * @callback module:api/ApplicationApi~clientClientIDServiceServiceIDGetCallback
@@ -451,16 +447,13 @@ export default class ApplicationApi {
    * @param {module:api/ApplicationApi~clientClientIDServiceServiceIDGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link Object}
    */
-
-
   clientClientIDServiceServiceIDGet(clientID, serviceID, callback) {
-    let postBody = null; // verify the required parameter 'clientID' is set
-
+    let postBody = null;
+    // verify the required parameter 'clientID' is set
     if (clientID === undefined || clientID === null) {
       throw new Error("Missing the required parameter 'clientID' when calling clientClientIDServiceServiceIDGet");
-    } // verify the required parameter 'serviceID' is set
-
-
+    }
+    // verify the required parameter 'serviceID' is set
     if (serviceID === undefined || serviceID === null) {
       throw new Error("Missing the required parameter 'serviceID' when calling clientClientIDServiceServiceIDGet");
     }
@@ -472,6 +465,7 @@ export default class ApplicationApi {
     let queryParams = {};
     let headerParams = {};
     let formParams = {};
+
     let authNames = [];
     let contentTypes = [];
     let accepts = ['application/json'];

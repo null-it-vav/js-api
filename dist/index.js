@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  *
  */
+
 import ApiClient from './ApiClient';
 import Bearer from './model/Bearer';
 import Client from './model/Client';
@@ -33,6 +34,7 @@ import PromotionApi from './api/PromotionApi';
 import SalonApi from './api/SalonApi';
 import ServiceApi from './api/ServiceApi';
 import WorkingDiapasonApi from './api/WorkingDiapasonApi';
+
 /**
 * API___GroomCRM____________________________________________Changelogv1_2_2______________________salon_idv1_2_1_________v1_2_0__________v1_1_4___WorkingDiapasonv1_1_3_____v1_1_2_______v1_1_1_______OneSignal__FCM__APNsv1_1_0____APIv1_0_4_______________push_device_id______.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
@@ -64,120 +66,141 @@ import WorkingDiapasonApi from './api/WorkingDiapasonApi';
 * @module index
 * @version 1.2.1
 */
-
 export {
 /**
  * The ApiClient constructor.
  * @property {module:ApiClient}
  */
-ApiClient
+ApiClient,
+
 /**
  * The Bearer model constructor.
  * @property {module:model/Bearer}
  */
-, Bearer
+Bearer,
+
 /**
  * The Client model constructor.
  * @property {module:model/Client}
  */
-, Client
+Client,
+
 /**
  * The InlineResponse200 model constructor.
  * @property {module:model/InlineResponse200}
  */
-, InlineResponse200
+InlineResponse200,
+
 /**
  * The InlineResponse2001 model constructor.
  * @property {module:model/InlineResponse2001}
  */
-, InlineResponse2001
+InlineResponse2001,
+
 /**
  * The InlineResponse2002 model constructor.
  * @property {module:model/InlineResponse2002}
  */
-, InlineResponse2002
+InlineResponse2002,
+
 /**
  * The InlineResponse2003 model constructor.
  * @property {module:model/InlineResponse2003}
  */
-, InlineResponse2003
+InlineResponse2003,
+
 /**
  * The Master model constructor.
  * @property {module:model/Master}
  */
-, Master
+Master,
+
 /**
  * The OneOfMasterClient model constructor.
  * @property {module:model/OneOfMasterClient}
  */
-, OneOfMasterClient
+OneOfMasterClient,
+
 /**
  * The Order model constructor.
  * @property {module:model/Order}
  */
-, Order
+Order,
+
 /**
  * The Promotion model constructor.
  * @property {module:model/Promotion}
  */
-, Promotion
+Promotion,
+
 /**
  * The Salon model constructor.
  * @property {module:model/Salon}
  */
-, Salon
+Salon,
+
 /**
  * The Service model constructor.
  * @property {module:model/Service}
  */
-, Service
+Service,
+
 /**
  * The WorkingDiapason model constructor.
  * @property {module:model/WorkingDiapason}
  */
-, WorkingDiapason
+WorkingDiapason,
+
 /**
 * The ApplicationApi service constructor.
 * @property {module:api/ApplicationApi}
 */
-, ApplicationApi
+ApplicationApi,
+
 /**
 * The ClientApi service constructor.
 * @property {module:api/ClientApi}
 */
-, ClientApi
+ClientApi,
+
 /**
 * The MasterApi service constructor.
 * @property {module:api/MasterApi}
 */
-, MasterApi
+MasterApi,
+
 /**
 * The OAuthApi service constructor.
 * @property {module:api/OAuthApi}
 */
-, OAuthApi
+OAuthApi,
+
 /**
 * The OrderApi service constructor.
 * @property {module:api/OrderApi}
 */
-, OrderApi
+OrderApi,
+
 /**
 * The PromotionApi service constructor.
 * @property {module:api/PromotionApi}
 */
-, PromotionApi
+PromotionApi,
+
 /**
 * The SalonApi service constructor.
 * @property {module:api/SalonApi}
 */
-, SalonApi
+SalonApi,
+
 /**
 * The ServiceApi service constructor.
 * @property {module:api/ServiceApi}
 */
-, ServiceApi
+ServiceApi,
+
 /**
 * The WorkingDiapasonApi service constructor.
 * @property {module:api/WorkingDiapasonApi}
 */
-, WorkingDiapasonApi };
+WorkingDiapasonApi };
