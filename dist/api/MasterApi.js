@@ -182,6 +182,7 @@ export default class MasterApi {
    * @param {Number} opts.salonId 
    * @param {File} opts.imageUpload 
    * @param {String} opts.name 
+   * @param {String} opts.schedule 
    * @param {String} opts.phone 
    * @param {String} opts.description 
    * @param {String} opts.email 
@@ -212,6 +213,7 @@ export default class MasterApi {
       'salon_id': opts['salonId'],
       'image_upload': opts['imageUpload'],
       'name': opts['name'],
+      'schedule': opts['schedule'],
       'phone': opts['phone'],
       'description': opts['description'],
       'email': opts['email'],
@@ -244,6 +246,7 @@ export default class MasterApi {
    * @param {Number} opts.salonId 
    * @param {File} opts.imageUpload 
    * @param {String} opts.name 
+   * @param {String} opts.schedule 
    * @param {String} opts.phone 
    * @param {String} opts.description 
    * @param {String} opts.email 
@@ -270,6 +273,7 @@ export default class MasterApi {
       'salon_id': opts['salonId'],
       'image_upload': opts['imageUpload'],
       'name': opts['name'],
+      'schedule': opts['schedule'],
       'phone': opts['phone'],
       'description': opts['description'],
       'email': opts['email'],

@@ -62,6 +62,9 @@ class Master {
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('schedule')) {
+        obj['schedule'] = ApiClient.convertToType(data['schedule'], 'String');
+      }
       if (data.hasOwnProperty('phone')) {
         obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
       }
@@ -104,6 +107,11 @@ Master.prototype['image_upload'] = undefined;
  * @member {String} name
  */
 Master.prototype['name'] = undefined;
+
+/**
+ * @member {String} schedule
+ */
+Master.prototype['schedule'] = undefined;
 
 /**
  * @member {String} phone
