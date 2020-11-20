@@ -124,6 +124,8 @@ export default class ClientApi {
    * @param {String} opts.email Электронная почта
    * @param {Array.<module:model/Salon>} opts.salons 
    * @param {File} opts.image Логотип клиента
+   * @param {File} opts.imageUpload Логотип клиента
+   * @param {File} opts.appImageUpload Логотип приложения
    * @param {Object} opts.settings 
    * @param {module:api/ClientApi~clientClientIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
    */
@@ -148,14 +150,17 @@ export default class ClientApi {
       'email': opts['email'],
       'salons': this.apiClient.buildCollectionParam(opts['salons'], 'csv'),
       'image': opts['image'],
-      'settings': opts['settings']
+      'image_upload': opts['imageUpload'],
+      'app_image_upload': opts['appImageUpload'],
+      'settings': opts['settings'],
+      '_method': 'PATCH'
     };
 
     let authNames = ['bearerAuthAdmin'];
     let contentTypes = ['multipart/form-data'];
     let accepts = ['application/json'];
     let returnType = null;
-    return this.apiClient.callApi('/client/{clientID}', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    return this.apiClient.callApi('/client/{clientID}', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
   }
 
   /**
@@ -213,6 +218,8 @@ export default class ClientApi {
    * @param {String} opts.email Электронная почта
    * @param {Array.<module:model/Salon>} opts.salons 
    * @param {File} opts.image Логотип клиента
+   * @param {File} opts.imageUpload Логотип клиента
+   * @param {File} opts.appImageUpload Логотип приложения
    * @param {Object} opts.settings 
    * @param {module:api/ClientApi~clientPostCallback} callback The callback function, accepting three arguments: error, data, response
    */
@@ -231,6 +238,8 @@ export default class ClientApi {
       'email': opts['email'],
       'salons': this.apiClient.buildCollectionParam(opts['salons'], 'csv'),
       'image': opts['image'],
+      'image_upload': opts['imageUpload'],
+      'app_image_upload': opts['appImageUpload'],
       'settings': opts['settings']
     };
 
