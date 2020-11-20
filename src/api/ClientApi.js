@@ -140,6 +140,8 @@ export default class ClientApi {
      * @param {String} opts.email Электронная почта
      * @param {Array.<module:model/Salon>} opts.salons 
      * @param {File} opts.image Логотип клиента
+     * @param {File} opts.imageUpload Логотип клиента
+     * @param {File} opts.appImageUpload Логотип приложения
      * @param {Object} opts.settings 
      * @param {module:api/ClientApi~clientClientIDPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -166,6 +168,8 @@ export default class ClientApi {
         'email': opts['email'],
         'salons': this.apiClient.buildCollectionParam(opts['salons'], 'csv'),
         'image': opts['image'],
+        'image_upload': opts['imageUpload'],
+        'app_image_upload': opts['appImageUpload'],
         'settings': opts['settings'],
         '_method': 'PATCH'
       };
@@ -243,6 +247,8 @@ export default class ClientApi {
      * @param {String} opts.email Электронная почта
      * @param {Array.<module:model/Salon>} opts.salons 
      * @param {File} opts.image Логотип клиента
+     * @param {File} opts.imageUpload Логотип клиента
+     * @param {File} opts.appImageUpload Логотип приложения
      * @param {Object} opts.settings 
      * @param {module:api/ClientApi~clientPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -264,6 +270,8 @@ export default class ClientApi {
         'email': opts['email'],
         'salons': this.apiClient.buildCollectionParam(opts['salons'], 'csv'),
         'image': opts['image'],
+        'image_upload': opts['imageUpload'],
+        'app_image_upload': opts['appImageUpload'],
         'settings': opts['settings']
       };
 

@@ -70,6 +70,12 @@ class Client {
             if (data.hasOwnProperty('image')) {
                 obj['image'] = ApiClient.convertToType(data['image'], File);
             }
+            if (data.hasOwnProperty('image_upload')) {
+                obj['image_upload'] = ApiClient.convertToType(data['image_upload'], File);
+            }
+            if (data.hasOwnProperty('app_image_upload')) {
+                obj['app_image_upload'] = ApiClient.convertToType(data['app_image_upload'], File);
+            }
             if (data.hasOwnProperty('settings')) {
                 obj['settings'] = ApiClient.convertToType(data['settings'], Object);
             }
@@ -120,6 +126,18 @@ Client.prototype['salons'] = undefined;
  * @member {File} image
  */
 Client.prototype['image'] = undefined;
+
+/**
+ * Логотип клиента
+ * @member {File} image_upload
+ */
+Client.prototype['image_upload'] = undefined;
+
+/**
+ * Логотип приложения
+ * @member {File} app_image_upload
+ */
+Client.prototype['app_image_upload'] = undefined;
 
 /**
  * @member {Object} settings
