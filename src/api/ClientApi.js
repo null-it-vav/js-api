@@ -166,6 +166,7 @@ export default class ClientApi {
         'type': opts['type'],
         'name': opts['name'],
         'email': opts['email'],
+        'lang': opts['lang'],
         'salons': this.apiClient.buildCollectionParam(opts['salons'], 'csv'),
         'image': opts['image'],
         'image_upload': opts['imageUpload'],
