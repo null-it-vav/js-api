@@ -67,7 +67,7 @@ class Service {
                 obj['image'] = ApiClient.convertToType(data['image'], 'String');
             }
             if (data.hasOwnProperty('price')) {
-                obj['price'] = ApiClient.convertToType(data['price'], 'Number');
+                obj['price'] = ApiClient.convertToType(data['price'], 'String');
             }
             if (data.hasOwnProperty('text')) {
                 obj['text'] = ApiClient.convertToType(data['text'], 'String');
