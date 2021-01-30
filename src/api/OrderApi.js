@@ -1,6 +1,6 @@
 /**
  * Groomer Service
- * API для будущей GroomCRM или назовите ее уже как-нибудь. На этой странице расписаны основные эндпоинты, по которым можно получить данные из базы данных (или положить их туда, если будет такая возможность). Также здесь можно будет протестировать эти самые эндпоинты, посмотреть ответы и всякое такое.  ### Changelog  **v1.2.2**: Добавлена сущность Салонов - географических расположений точек обслуживания клиентов, к которым привязываются мастера. Для получения списка мастеров салона добавлен фильтр salon_id  **v1.2.1**: Добавил эндпоинт для получения информации об авторизованном Клиенте/Мастере  **v1.2.0**: Обновлены пути, респонсы, эндпоинты для приложений вынесены в отдельный стек  **v1.1.4**: Обновил структуру WorkingDiapason  **v1.1.3**: Добавил описания возвращаемых кодов.  **v1.1.2**: Удалил упоминания Питомцев и Пушей из АПИ  **v1.1.1**: Добавил параметр \"платформа\" для заказа, заменил OneSignal на FCM + APNs  **v1.1.0**: Убрал пуши из API  **v1.0.4**: добавлены фильтры по датам, добавлено поле телефона для мастеров (для смс-оповещений), добавлено поле push_device_id для отправки пушей на телефон. 
+ * API для будущей GroomCRM или назовите ее уже как-нибудь. На этой странице расписаны основные эндпоинты, по которым можно получить данные из базы данных (или положить их туда, если будет такая возможность). Также здесь можно будет протестировать эти самые эндпоинты, посмотреть ответы и всякое такое.  ### Changelog  **v1.2.2**: Добавлена сущность Салонов - географических расположений точек обслуживания клиентов, к которым привязываются мастера. Для получения списка мастеров салона добавлен фильтр salon_id  **v1.2.1**: Добавил эндпоинт для получения информации об авторизованном Клиенте/Мастере  **v1.2.0**: Обновлены пути, респонсы, эндпоинты для приложений вынесены в отдельный стек  **v1.1.4**: Обновил структуру WorkingDiapason  **v1.1.3**: Добавил описания возвращаемых кодов.  **v1.1.2**: Удалил упоминания Питомцев и Пушей из АПИ  **v1.1.1**: Добавил параметр \"платформа\" для заказа, заменил OneSignal на FCM + APNs  **v1.1.0**: Убрал пуши из API  **v1.0.4**: добавлены фильтры по датам, добавлено поле телефона для мастеров (для смс-оповещений), добавлено поле push_device_id для отправки пушей на телефон.
  *
  * The version of the OpenAPI document: 1.2.1
  * Contact: kosolapus@gmail.com
@@ -23,7 +23,7 @@ import Order from '../model/Order';
 export default class OrderApi {
 
     /**
-    * Constructs a new OrderApi. 
+    * Constructs a new OrderApi.
     * @alias module:api/OrderApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
@@ -43,7 +43,7 @@ export default class OrderApi {
      */
 
     /**
-     * 
+     *
      * Store *Order* entity
      * @param {Number} clientID ID аккаунта
      * @param {Object} opts Optional parameters
@@ -64,7 +64,8 @@ export default class OrderApi {
       };
       let queryParams = {
         'limit': opts['limit'],
-        'offset': opts['offset']
+        'offset': opts['offset'],
+        'master_id': opts['master_id'] ? opts['master_id'] : null
       };
       let headerParams = {
       };
@@ -91,8 +92,8 @@ export default class OrderApi {
      */
 
     /**
-     * 
-     * 
+     *
+     *
      * @param {Number} orderID Id requested Order
      * @param {Number} clientID ID аккаунта
      * @param {module:api/OrderApi~clientClientIDOrderOrderIDDeleteCallback} callback The callback function, accepting three arguments: error, data, response
@@ -139,8 +140,8 @@ export default class OrderApi {
      */
 
     /**
-     * 
-     * 
+     *
+     *
      * @param {Number} orderID Id requested Order
      * @param {Number} clientID ID аккаунта
      * @param {module:api/OrderApi~clientClientIDOrderOrderIDGetCallback} callback The callback function, accepting three arguments: error, data, response
@@ -188,8 +189,8 @@ export default class OrderApi {
      */
 
     /**
-     * 
-     * 
+     *
+     *
      * @param {Number} orderID Id requested Order
      * @param {Number} clientID ID аккаунта
      * @param {module:model/Order} order Optional description in *Markdown*
@@ -243,7 +244,7 @@ export default class OrderApi {
 
     /**
      * Создание заявки на оказание услуг
-     * 
+     *
      * @param {Number} clientID ID аккаунта
      * @param {module:model/Order} order Store *Order* entity
      * @param {module:api/OrderApi~clientClientIDOrderPostCallback} callback The callback function, accepting three arguments: error, data, response
